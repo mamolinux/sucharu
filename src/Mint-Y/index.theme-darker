@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Mint-Y-Darker
+Comment=A light flat theme with transparent elements, mac-styled 3D title buttons, and dark-coloured menu and titlebars.
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Mint-Y-Darker
+MetacityTheme=Mint-Y-Dark
+IconTheme=Mint-Y
+CursorTheme=FreedomOS-Dark
+ButtonLayout=menu:minimize,maximize,close

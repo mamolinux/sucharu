@@ -415,11 +415,11 @@ StScrollBar {
 // Panel
 //
 #panel {
-  font-weight: bold;
+  // font-weight: bold;
   /* sets the height of horizontal panels */
-  height: 40px;
+  height: 32px;
   /* sets the width of vertical panels */
-  width: 32px;
+  width: 48px;
 
   &Left {
     spacing: 4px;
@@ -524,14 +524,16 @@ StScrollBar {
 
 
   &-top, &-bottom, &-left, &-right {
-    color: $selected_fg_color;
+    // color: $selected_fg_color;
     border: none;
-    background-color: transparentize($panel_bg, 0.01);
+    // background-color: transparentize($panel_bg, 0.01);
+    background-color: $panel_bg_panel;
     font-size: 1em;
     padding: 0px;
   }
 
   &-top {
+    // background-image: $panel_bg_panel_top;
     box-shadow: 0 1px darken($panel_bg, 6%);
   }
 
@@ -540,6 +542,7 @@ StScrollBar {
   }
 
   &-left {
+    // background-image: $panel_bg_panel;
     box-shadow: 1px 0 darken($panel_bg, 6%);
   }
 

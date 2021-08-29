@@ -1,12 +1,12 @@
 [Desktop Entry]
 Type=X-GNOME-Metatheme
 Name=Mint-Y-Dark
-Comment=A dark flat theme with transparent elements
+Comment=A dark flat theme with transparent elements and mac-styled 3D title buttons.
 Encoding=UTF-8
 
 [X-GNOME-Metatheme]
 GtkTheme=Mint-Y-Dark
 MetacityTheme=Mint-Y
 IconTheme=Mint-Y
-CursorTheme=DMZ-Black
+CursorTheme=FreedomOS-Yellow
 ButtonLayout=menu:minimize,maximize,close

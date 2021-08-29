@@ -294,8 +294,9 @@ NautilusListView .view { border-bottom: 1px solid $borders_color; }
     scrollbar { @extend %dark_sidebar_scrollbar }
   }
 
-  /* This is to keep the separator next to the sidebar dark so we don't see a gap
-     between it and the trash bar */
+  /* This is to keep the separator next to the sidebar dark so we do not see
+  * a gap between it and the trash bar */
+  
   grid > paned > separator { background-image: _solid($dark_sidebar_bg); }
 
   // Fix padding of the statusbar buttons
@@ -323,10 +324,28 @@ NautilusListView .view { border-bottom: 1px solid $borders_color; }
   .caja-side-pane {
 
     .view,
+    treeview,
     textview text,
     notebook {
       background-color: $dark_sidebar_bg;
       color: $dark_sidebar_fg;
+    }
+    
+    notebook {
+      treeview {
+        &.view:selected, &.view:selected:hover {
+          background-color: $selected_bg_color;
+          color: $selected_fg_color;
+        }
+      }
+    }
+  }
+  
+  .caja-notebook treeview {
+    &.view:selected, &.view:selected:hover {
+      background-color: $selected_bg_color;
+      background-color: $selected_bg_color;
+      color: $selected_fg_color;
     }
   }
 }
@@ -736,7 +755,8 @@ SynapseGuiViewVirgilio *:selected { background-color: $selected_bg_color; }
   color: $panel_fg;
   background-color: $panel_bg;
 
-  &, menubar { background-color: $panel_bg; }
+  // &, menubar { background-color: $panel_bg; }
+  &, menubar { background-image: $panel_bg_panel; }
 
   menubar,
   #PanelApplet label,
@@ -1012,7 +1032,7 @@ EvWindow .content-view .view:focus:selected {
     -gtk-icon-transform: scale(0.9);
   }
 
-  @if $variant=='light' {
+  @if $variant=='light' and $darker=='false' {
       toolbar {
         color: $header_fg;
         background-color: $header_bg;

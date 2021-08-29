@@ -344,11 +344,10 @@ StScrollBar {
   spacing: .5em; }
 
 #panel {
-  font-weight: bold;
   /* sets the height of horizontal panels */
-  height: 40px;
+  height: 32px;
   /* sets the width of vertical panels */
-  width: 32px; }
+  width: 48px; }
   #panelLeft {
     spacing: 4px; }
     #panelLeft:dnd {
@@ -441,9 +440,8 @@ StScrollBar {
     background-gradient-end: rgba(0, 255, 0, 0.2); }
 
 .panel-top, .panel-bottom, .panel-left, .panel-right {
-  color: #ffffff;
   border: none;
-  background-color: rgba(47, 47, 47, 0.99);
+  background-color: DarkGreen;
   font-size: 1em;
   padding: 0px; }
 
