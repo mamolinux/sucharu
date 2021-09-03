@@ -69,10 +69,10 @@ $panel_bg_panel: $panel_bg;
     $panel_bg_panel: #951616;
 }
 @else if $variantcol =='sand' {
-    $panel_bg_panel: #951616;
+    $panel_bg_panel: #615334;
 }
 @else if $variantcol =='teal' {
-    $panel_bg_panel: #951616;
+    $panel_bg_panel: #005555;
 }
 
 $entry_bg: if($variant=='light', $base_color, lighten($base_color, 0%));
