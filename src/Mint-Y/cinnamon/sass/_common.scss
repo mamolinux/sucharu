@@ -527,27 +527,29 @@ StScrollBar {
     // color: $selected_fg_color;
     border: none;
     // background-color: transparentize($panel_bg, 0.01);
-    background-color: $panel_bg_panel;
     font-size: 1em;
     padding: 0px;
   }
 
   &-top {
-    // background-image: $panel_bg_panel_top;
-    box-shadow: 0 1px darken($panel_bg, 6%);
+    background-color: $panel_bg_panel;
+    box-shadow: 0 1px darken($panel_bg_panel, 6%);
   }
 
   &-bottom {
-    box-shadow: 0 -1px darken($panel_bg, 6%);
+    background-color: $panel_bg_panel;
+    box-shadow: 0 -1px darken($panel_bg_panel, 6%);
   }
 
   &-left {
     // background-image: $panel_bg_panel;
-    box-shadow: 1px 0 darken($panel_bg, 6%);
+    background-color: transparentize(darken($panel_bg_panel, 20%), 0.4);
+    box-shadow: 1px 0 lighten($panel_bg_panel, 6%);
   }
 
   &-right {
-    box-shadow: -1px 0 darken($panel_bg, 6%);
+    background-color: transparentize(darken($panel_bg_panel, 20%), 0.4);
+    box-shadow: -1px 0 lighten($panel_bg_panel, 6%);
   }
 
   &-dummy {

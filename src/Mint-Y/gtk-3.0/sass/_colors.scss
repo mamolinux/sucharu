@@ -5,7 +5,7 @@
 $base_color: if($variant =='light', #ffffff, #404040);
 $text_color: if($variant == 'light', #303030, #dadada);
 $bg_color: if($variant =='light', #f0f0f0, #383838);
-$fg_color: if($variant =='light' or $darker =='true', #303030, #dadada);
+$fg_color: if($variant =='light' or $darker =='true', #404040, #d9d9d9);
 $selected_fg_color: #ffffff;
 $selected_bg_color: if($variant == 'light', #92b372, #8fa876);
 $selected_borders_color: darken($selected_bg_color, 20%);
@@ -34,13 +34,13 @@ $insensitive_bg_color: if($variant == 'light', mix($bg_color, $base_color, 40%),
 
 $dim_label_fg_color: transparentize($fg_color, 0.35);
 
-$header_bg: if($variant=='light' and $darker=='false', #d9d9d9, #2f2f2f);
+$header_bg: if($variant=='light' and $darker=='false', #cccccc, #3d3d3d);
 $header_bg_backdrop: if($darker == 'true' or $variant == 'dark', lighten($header_bg, 1.5%), lighten($header_bg, 3%));
-$header_border: if($variant == 'light' and $darker == 'false', #bdbdbd, darken($header_bg, 4%));
+$header_border: if($variant == 'light' and $darker == 'false', #d0d0d0, #2f2f2f);
 $header_highlight: if($variant == 'light' and $darker == 'false', #eeeeee, #373737);
 $header_fg: if($variant == 'light' and $darker == 'true', $bg_color, saturate(transparentize($fg_color, 0.0), 10%));
 
-$dark_sidebar_bg: if($variant == 'light' and $darker == 'false', #cccccc, #353535);
+$dark_sidebar_bg: if($variant == 'light' and $darker == 'false', #bfbfbf, #292929);
 $dark_sidebar_fg: if($variant == 'light' and $darker == 'false', #404040, #dbdbdb);
 $dark_sidebar_border: if($variant == 'light', $dark_sidebar_bg, darken($dark_sidebar_bg, 5%));
 
@@ -90,9 +90,11 @@ $trough_color: if($variant == 'light', #ffffff, darken($bg_color, 5%));
 
 $titlebar_fg: if($variant == 'light', #404040, $fg_color);
 $titlebar_fg: if($darker == 'true', $fg_color, $titlebar_fg);
-$wm_title: if($variant == 'light', #404040, $fg_color);
-$wm_title_unfocused: if($variant == 'light', #9d9d9d, #a7a7a7);
-$wm_bg: $header_bg;
+$wm_title: if($variant == 'light' and $darker =='false', $fg_color, #e6e6e6);
+$wm_title_unfocused: if($variant == 'light' and $darker =='false', #808080, #bfbfbf);
+$wm_bg: if($variant == 'light' and $darker =='false', darken($header_bg, 10%), #141414);
+// $wm_bg_unfocused: if($variant == 'light', #cccccc, #333333);
 $wm_bg_unfocused: $header_bg;
-$wm_highlight: $header_highlight;
+// $wm_highlight: $header_highlight;
+$wm_highlight: if($variant == 'light' and $darker =='false', darken($header_bg, 10%), #141414);
 $wm_border: $header_border;

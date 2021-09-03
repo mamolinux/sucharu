@@ -10,26 +10,35 @@
 
 <!-- meaningfull constants -->
 
-<constant name="C_title_focused" value="#404040" />
-<constant name="C_title_unfocused" value="#9d9d9d" />
+<!-- <constant name="C_title_focused" value="#d9d9d9" />
+<constant name="C_title_unfocused" value="#bfbfbf" />
 
-<constant name="C_wm_bg" value="#b3b3b3" />
-<constant name="C_wm_bg_unfocused" value="#bfbfbf" />
+<constant name="C_wm_bg" value="#1a1a1a" />
+<constant name="C_wm_bg_unfocused" value="#333333" />
 
-<constant name="C_wm_border" value="#d0d0d0" />
-<constant name="C_wm_highlight" value="#eeeeee" />
+<constant name="C_wm_border" value="#2f2f2f" />
+<constant name="C_wm_highlight" value="#373737" /> -->
+
+<constant name="C_title_focused" value="gtk:custom(wm_title,#d9d9d9)" />
+<constant name="C_title_unfocused" value="gtk:custom(wm_title_unfocused,#bfbfbf)" />
+
+<constant name="C_wm_bg" value="gtk:custom(wm_bg,#1a1a1a)" />
+<constant name="C_wm_bg_unfocused" value="gtk:custom(wm_bg_unfocused,#333333)" />
+
+<constant name="C_wm_border" value="gtk:custom(wm_border,#2f2f2f)" />
+<constant name="C_wm_highlight" value="gtk:custom(wm_highlight,#373737)" />
 
 <!-- window button colors -->
 
 <!-- minimize, maximize -->
-<constant name="C_button_bg_hover" value="#fdfdfd" />
-<constant name="C_button_bg_active" value="#909090" />
+<constant name="C_button_bg_hover" value="#4c4c4c" />
+<constant name="C_button_bg_active" value="#949494" />
 
-<constant name="C_button_border_hover" value="#d1d1d1" />
+<constant name="C_button_border_hover" value="#262626" />
 
-<constant name="C_icon_bg_focused" value="#404040" />
-<constant name="C_icon_bg_unfocused" value="#b6b6b6" />
-<constant name="C_icon_bg_hover" value="#404040" />
+<constant name="C_icon_bg_focused" value="#909090" />
+<constant name="C_icon_bg_unfocused" value="#666666" />
+<constant name="C_icon_bg_hover" value="#c4c4c4" />
 <constant name="C_icon_bg_active" value="#ffffff" />
 
 <!-- geometries -->

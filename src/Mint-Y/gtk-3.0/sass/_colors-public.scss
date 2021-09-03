@@ -32,7 +32,7 @@
 @define-color content_view_bg #{"" + $base_color};
 
 //WM
-$wm_bg_unfocused: opacify($header_bg_backdrop, 1);
+// $wm_bg_unfocused: opacify($header_bg_backdrop, 1);
 
 @define-color wm_title #{"" + $wm_title};
 @define-color wm_title_unfocused #{"" + $wm_title_unfocused};
