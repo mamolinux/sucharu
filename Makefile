@@ -1,8 +1,8 @@
-all: buildthemes
+all: clean buildthemes
 
 buildthemes:
 	@echo "Building the themes"
 	./generate-themes.py
 
 clean:
-	rm -rf usr
+	rm -rf usr __pycache__
