@@ -1,3 +1,33 @@
+mint-themes (1.8.8+freedom1) uma; urgency=medium
+
+  [ Himadri Sekhar Basu ]
+  * Remove Mint-X and Linux Mint themes
+  * Modify panel colours.
+  * Modify variation "Teal"
+  * Modify variation "Sand"
+  * Modify variation "Red"
+  * Modify variation "Purple"
+  * Modify variation "Pink"
+  * Modify variation "Orange"
+  * Modify variation "Grey"
+  * Modify variation "Brown"
+  * Modify variation "Blue"
+  * Modify variation "Aqua"
+  * Re-introduce "darker" variation and change panel colors based on variation.
+  * Create README
+  * Add LICENSE
+  
+  [ JosephMcc ]
+  * Mint-Y: Only ship a single metacity theme
+  * Mint-Y: Add a dark variant to the light theme
+  * Mint-Y: Remove the -darker variation
+  * test-mint-y: Add a couple more things
+  * Mint-X-Gtk3: Add styling for app-notification
+  * Gtk3: Better match csd and ssd window shadows
+  * Mint-Y-Gtk2: Put separators in menus
+
+ -- Himadri Sekhar Basu <hsb10@iitbbs.ac.in>  Sat, 04 Sep 2021 00:28:40 +0530
+
 mint-themes (1.8.8) uma; urgency=medium
 
   [ Archisman Panigrahi ]

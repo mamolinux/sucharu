@@ -1,14 +1,14 @@
 Source: mint-themes
 Section: gnome
 Priority: optional
-Maintainer: Clement Lefebvre <root@linuxmint.com>
+Maintainer: Himadri Sekhar Basu <hsb10@iitbbs.ac.in>
 Build-Depends: debhelper (>= 9), sassc
 Standards-Version: 3.9.5
 
 Package: mint-themes
 Replaces: mint-clearloox-theme, mint-x-theme, mint-y-theme, mint-z-theme, mint-themes-gtk3, cinnamon-themes
 Conflicts: mint-clearloox-theme, mint-x-theme, mint-y-theme, mint-z-theme, mint-themes-gtk3, cinnamon-themes
-Depends: ${misc:Depends}, mint-x-icons, mint-y-icons
+Depends: ${misc:Depends}, mint-y-icons, freedom-y-cursors
 Architecture: all
 Description: Mint themes
  A collection of mint themes.
