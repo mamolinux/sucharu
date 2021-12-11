@@ -1,3 +1,17 @@
+mamolinux-themes (1.9.2+mamolinux1) focal; urgency=medium
+
+  * Follow the metacity rules from yaru-cinnamon
+  * Don't track .css files as they are generated via scss
+  * Mint-Y-Gtk3: Fix "-Darker" themes
+  * Gtk2: Update "-Darker" theme
+  * Use multiple processors to generate assets faster
+  * Rename theme to Sucharu
+  * Sucharu-cinnamon: fix panel colors
+  * Fix generate and test scripts
+  * Fix dependencies and update homepage
+
+ -- Himadri Sekhar Basu <hsb10@iitbbs.ac.in>  Thu, 09 Dec 2021 16:55:17 +0530
+
 mint-themes (1.9.2) una; urgency=medium
 
   * Xfwm4: titlebar color fixes
