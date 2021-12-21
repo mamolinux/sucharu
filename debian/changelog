@@ -1,3 +1,9 @@
+mamolinux-themes (1.9.5mamolinux1) stable; urgency=medium
+
+  * Sucharu cinnamon: Use _tweaks to modify theme
+
+ -- Himadri Sekhar Basu <hsb10@iitbbs.ac.in>  Tue, 21 Dec 2021 18:24:38 +0530
+
 mint-themes (1.9.5) una; urgency=medium
 
   [ Michael Webster ]
