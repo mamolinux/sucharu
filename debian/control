@@ -3,8 +3,8 @@ Section: gnome
 Priority: optional
 Homepage: https://github.com/hsbasu/mamolinux-themes
 Maintainer: Himadri Sekhar Basu <hsb10@iitbbs.ac.in>
-Build-Depends: debhelper (>= 10), sassc
-Standards-Version: 3.9.5
+Build-Depends: debhelper (>= 12), sassc, inkscape, gtk2-engines-pixbuf, gtk2-engines-murrine, gnome-themes-standard, python3
+Standards-Version: 4.5.0
 
 Package: mamolinux-themes
 Replaces: mint-themes, mint-clearloox-theme, mint-x-theme, mint-y-theme, mint-z-theme, mint-themes-gtk3, cinnamon-themes
