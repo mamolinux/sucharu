@@ -79,9 +79,7 @@ $panel_bg: if($variant == 'light' and $darker == 'false', #cccccc, #353535);
 $panel_fg: if($variant == 'light' and $darker == 'false', #404040, #dbdbdb);
 
 // Panel colors
-$panel_bg_panel: if($variant == 'light' and $darker == 'false',
-	linear-gradient(yellow, orange, tomato, red, crimson),
-	linear-gradient(GreenYellow, LawnGreen, MediumSeaGreen, ForestGreen, DarkGreen));
+$panel_bg_panel: if($variant == 'light' and $darker == 'false', yellow, DarkGreen);
 
 $entry_bg: if($variant=='light', $base_color, lighten($base_color, 0%));
 $entry_border: if($variant == 'light', #bababa, darken($borders_color, 0%));
