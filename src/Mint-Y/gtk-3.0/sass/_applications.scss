@@ -103,7 +103,7 @@ TerminalWindow {
 // MATE Terminal
 //
 vte-terminal {
-  -TerminalScreen-background-darkness: 0.97;
+  -TerminalScreen-background-darkness: 1.0;
   background-color: $terminal_bg;
   color: $terminal_fg;
 }
