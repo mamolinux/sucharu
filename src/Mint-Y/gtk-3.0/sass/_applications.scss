@@ -770,7 +770,10 @@ SynapseGuiViewVirgilio *:selected { background-color: $selected_bg_color; }
   background-color: $panel_bg;
 
   // &, menubar { background-color: $panel_bg; }
-  &, menubar { background-image: $panel_bg_panel; }
+  &, menubar {
+    background-image: linear-gradient(to bottom,
+                                        $panel_bg_panel,
+                                        shade($panel_bg_panel, 0.85)); }
 
   menubar,
   #PanelApplet label,
