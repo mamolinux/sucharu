@@ -419,7 +419,9 @@ StScrollBar {
   /* sets the height of horizontal panels */
   height: 32px;
   /* sets the width of vertical panels */
-  width: 48px;
+  width: 32px;
+  /* Set the symbolic foreground color for icons, and importantly, the system tray applet icons */
+  color: $fg_color;
 
   &Left {
     spacing: 4px;
