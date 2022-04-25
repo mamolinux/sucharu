@@ -4,7 +4,7 @@
 // $fg_color: if($variant =='light', #202020, #f0f0f0);
 // We need to set this first because we use it to tint many
 // of the remaining colors
-$selected_bg_color: #92b372;
+$selected_bg_color: if($variant == 'light', #92b372, #8fa876);
 
 $base_color: if($variant =='light', mix($selected_bg_color, #ffffff, 2%), mix($selected_bg_color, #404040, 2%));
 $text_color: if($variant == 'light', #202020, #d3d3d3);
