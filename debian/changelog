@@ -1,3 +1,16 @@
+mamolinux-themes (1.9.8mamolinux1) stable; urgency=medium
+
+  [Himadri Sekhar Basu]
+  * fixes #7
+  * Add plank themes for each colour and variants (#8)
+    - Add light and dark plank themes for each colour
+    - generate-themes.py: comment removing directory 'usr'
+    - Update .gitignore
+    - Update copyright
+    - Create separate packages for mamolinux-themes and mamolinux-themes-plank
+
+ -- Himadri Sekhar Basu <hsb10@iitbbs.ac.in>  Fri, 06 May 2022 23:28:08 +0530
+
 mint-themes (1.9.8) una; urgency=medium
 
   [ JosephMcc ]
