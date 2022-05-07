@@ -1,3 +1,13 @@
+mamolinux-themes (1.9.8mamolinux2) stable; urgency=medium
+
+  [Himadri Sekhar Basu]
+  * Update debian packaging (#9)
+    - Update architectures
+    - fix dependency of mamolinux-themes from mamolinux-cursors
+      to mamolinux-themes-cursor
+
+ -- Himadri Sekhar Basu <hsb10@iitbbs.ac.in>  Sat, 07 May 2022 20:22:46 +0530
+
 mamolinux-themes (1.9.8mamolinux1) stable; urgency=medium
 
   [Himadri Sekhar Basu]
