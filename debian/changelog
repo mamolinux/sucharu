@@ -1,3 +1,11 @@
+mamolinux-themes (1.9.8mamolinux3) stable; urgency=medium
+
+  [Himadri Sekhar Basu]
+  * fix packaging of plank themes (#11)
+    - rename mamolinux-plank-themes.install to mamolinux-themes-plank.install
+
+ -- Himadri Sekhar Basu <hsb10@iitbbs.ac.in>  Sun, 08 May 2022 09:36:32 +0530
+
 mamolinux-themes (1.9.8mamolinux2) stable; urgency=medium
 
   [Himadri Sekhar Basu]
