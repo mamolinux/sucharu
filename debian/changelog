@@ -1,3 +1,19 @@
+mamolinux-themes (1.9.8mamolinux4) stable; urgency=medium
+
+  * Update readme with new instructions (#12)
+  * fix typo (#13)
+  * Gtk3: use resize button for maximized windows (#14)
+    - use resize/restore button for maximized windows
+      instead of maximize button
+    - Update variations with resize/restore button
+    - Update all assets of variations
+  * Sucharu-Cinnamon: Rounded hovers and corners (#15)
+    - Make corners and hovers rounded for Sucharu cinnamon shell
+  * Sucharu-Gtk3.0: Rounded hovers and corners (#16)
+    - Make corners and hovers rounded for Sucharu Gtk3 theme for lightDM
+
+ -- Himadri Sekhar Basu <hsb10@iitbbs.ac.in>  Wed, 01 Jun 2022 22:58:34 +0530
+
 mamolinux-themes (1.9.8mamolinux3) stable; urgency=medium
 
   [Himadri Sekhar Basu]
