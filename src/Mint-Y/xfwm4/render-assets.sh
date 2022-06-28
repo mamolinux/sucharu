@@ -15,8 +15,8 @@ render()
     echo Rendering $1
     $INKSCAPE --export-id=$2 \
             --export-id-only \
-            --export-png=$1 $SRC_FILE >/dev/null \
-    && $OPTIPNG -o7 --quiet $1
+            --export-filename=$1 $SRC_FILE >/dev/null
+    $OPTIPNG -o7 --quiet $1
 }
 
 # check command avalibility

@@ -16,12 +16,12 @@ render()
         $INKSCAPE --export-id=$2 \
                 --export-dpi=192 \
                 --export-id-only \
-                --export-png=$1 $SRC_FILE >/dev/null \
+                --export-filename=$1 $SRC_FILE >/dev/null \
         && $OPTIPNG -o7 --quiet $1
     else
         $INKSCAPE --export-id=$2 \
                 --export-id-only \
-                --export-png=$1 $SRC_FILE >/dev/null \
+                --export-filename=$1 $SRC_FILE >/dev/null \
         && $OPTIPNG -o7 --quiet $1
     fi
 }

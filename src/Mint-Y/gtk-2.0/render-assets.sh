@@ -12,10 +12,10 @@ ulimit -s 1024
 render()
 {
     echo Rendering $1
-    $INKSCAPE --export-id=$2 \
+    $INKSCAPE --export-id=$i \
               --export-id-only \
-              --export-png=$1 $SRC_FILE >/dev/null \
-    && $OPTIPNG -o7 --quiet $1
+              --export-filename=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
+    && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png 
 }
 
 for i in `cat $INDEX`
