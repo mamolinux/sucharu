@@ -1,7 +1,7 @@
 @function get_accent_color($accent_color, $is_dark: false) {
     $color: null;
     @if $accent_color == 'default' {
-        $color: #0e8420;
+        $color: #12a327;
     } @else if $accent_color == 'aqua' {
         $color: #6cabcd;
     } @else if $accent_color == 'blue' {
@@ -29,10 +29,10 @@
     @return $color;
 }
 
-$yaru_is_dark_variant: @yaru_dark_variant@;
-$yaru_accent_bg_color: get_accent_color('@yaru_accent_color@', $yaru_is_dark_variant);
-$accent_bg_color: $yaru_accent_bg_color;
-$accent_color: $yaru_accent_bg_color;
-@debug("Accent color is " + $yaru_accent_bg_color);
+$sucharu_is_dark_variant: @sucharu_dark_variant@;
+$sucharu_accent_bg_color: get_accent_color('@sucharu_accent_color@', $sucharu_is_dark_variant);
+$accent_bg_color: $sucharu_accent_bg_color;
+$accent_color: $sucharu_accent_bg_color;
+@debug("Accent color is " + $sucharu_accent_bg_color);
 
-@import '@yaru_theme_entry_point@'
+@import '@sucharu_theme_entry_point@'

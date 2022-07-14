@@ -1,5 +1,5 @@
 project('Sucharu',
-        version: '1.9.8',
+        version: '2.0.1',
         meson_version: '>= 0.59',
         license : ['GPL3', 'CC BY-SA 4.0'],
         default_options: ['prefix=/usr'])
@@ -13,29 +13,28 @@ sassc = find_program('sassc')
 subdir('common')
 
 components = [
-  #'metacity',
+  # 'metacity',
   'gnome-shell',
-  #'gtk',
-  #'icons',
+  # 'gtk',
   'gtksourceview',
-  #'sounds',
-  #'sessions',
-  #'ubuntu-unity',
-  #'xfwm4',
-  #'cinnamon-shell',
+  # 'sounds',
+  # 'sessions',
+  # 'ubuntu-unity',
+  # 'xfwm4',
+  # 'cinnamon-shell',
 ]
 
 enabled_accent_colors = get_option('accent-colors')
 
 foreach component: components
   if not get_option(component)
-    message('skip component ' + component)
+    message('Skipping component ' + component)
     continue
   endif
 
-  message('build component ' + component)
+  message('\n\n\tBuilding component ' + component)
   subdir(component)
 
 endforeach
 
-run_command('make')
+run_command('make', check: true)
