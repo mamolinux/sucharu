@@ -1,3 +1,23 @@
+sucharu (2.0.2) stable; urgency=medium
+
+  * Use different colors in panel for different modes (#1)
+    - Use light accent color for panel background in light mode
+    - Use dark variant of accent color for panel background in dark mode
+    - Use #12a327 as new green color
+    - Change variable names to sucharu from yaru
+  * Rename mamolinux-themes to sucharu (#2)
+    - d/control: Change source package name to sucharu
+    - d/control: Update dh-compat to 13
+    - d/control: require meson >= 0.59
+    - d/control: Change architectures to all
+    - d/control: Remove plank from dependency
+    - Rename mamolinux-themes to sucharu-themes
+    - Rename mamolinux-themes-plank to sucharu-theme-plank
+    - meson.build: Comment component gtksourceview
+    - meson_options: Comment component gtksourceview and soundi
+
+ -- Himadri Sekhar Basu <hsb10@iitbbs.ac.in>  Thu, 14 Jul 2022 20:21:38 +0530
+
 mint-themes (2.0.1) vanessa; urgency=medium
 
   [ JosephMcc ]
@@ -50,7 +70,7 @@ mint-themes (1.9.9) vanessa; urgency=medium
   * Mint-Y-Gtk3: Fix some issues with gtk3 window borders
   * Mint-Y-Cinnamon: Fix styling of the gwl number badge
 
- -- Clement Lefebvre <clem@macbook>  Tue, 14 Jun 2022 14:21:54 +0200
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 14 Jun 2022 14:21:54 +0200
 
 mamolinux-themes (1.9.8mamolinux4) stable; urgency=medium
 
