@@ -16,7 +16,7 @@ components = [
   # 'metacity',
   'gnome-shell',
   # 'gtk',
-  'gtksourceview',
+  # 'gtksourceview',
   # 'sounds',
   # 'sessions',
   # 'ubuntu-unity',
