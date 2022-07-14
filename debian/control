@@ -1,11 +1,11 @@
-Source: mamolinux-themes
+Source: sucharu
 Section: gnome
 Priority: optional
 Maintainer: Himadri Sekhar Basu <hsb10@iitbbs.ac.in>
-Build-Depends: debhelper-compat (= 12),
+Build-Depends: debhelper-compat (= 13),
                dh-migrations,
 Build-Depends-Indep: libglib2.0-dev,
-                     meson (>= 0.50),
+                     meson (>= 0.59),
                      sassc,
                      inkscape,
                      gtk2-engines-pixbuf,
@@ -13,7 +13,7 @@ Build-Depends-Indep: libglib2.0-dev,
                      gnome-themes-standard,
                      python3
 Standards-Version: 4.6.0
-Homepage: https://github.com/hsbasu/mamolinux-themes
+Homepage: https://github.com/hsbasu/sucharu
 
 Package: sucharu-theme-gnome-shell
 Architecture: all
@@ -26,22 +26,22 @@ Description: Sucharu GNOME Shell desktop theme
  This package contains the GNOME Shell theme part
  .
  If you want to follow development, more information here:
- https://github.com/hsbasu/mamolinux-themes/gnome-shell.
+ https://github.com/hsbasu/sucharu/gnome-shell.
 
-Package: mamolinux-themes
-Architecture: any
-Multi-Arch: foreign
-Replaces: mint-themes, mint-clearloox-theme, mint-x-theme, mint-y-theme, mint-z-theme, mint-themes-gtk3, cinnamon-themes
-Conflicts: mint-themes, mint-clearloox-theme, mint-x-theme, mint-y-theme, mint-z-theme, mint-themes-gtk3, cinnamon-themes
+Package: sucharu-themes
+Architecture: all
+Replaces: mamolinux-themes
+Conflicts: mamolinux-themes
 Depends: ${misc:Depends}, mamolinux-icons, mamolinux-themes-cursor
 Description: MamoLinux Desktop themes
  A collection of GTK, Metacity, Cinnamon themes
  for MamoLinux
 
-Package: mamolinux-themes-plank
-Architecture: any
-Multi-Arch: foreign
-Depends: ${misc:Depends}, plank
+Package: sucharu-theme-plank
+Architecture: all
+Replaces: mamolinux-themes-plank
+Conflicts: mamolinux-themes-plank
+Depends: ${misc:Depends}
 Description: Plank themes for MamoLinux
  A collection of Plank themes
  for MamoLinux
