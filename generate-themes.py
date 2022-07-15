@@ -62,6 +62,8 @@ def generate_theme(color):
             if (variant == "-Dark"):
                 os.system("cp sass/gtk-dark.scss sass/gtk.scss")
                 os.system("sassc ./sass/gtk.scss gtk.css")
+            elif (variant == "-Darker"):
+                os.system("cp sass/gtk-darker.scss sass/gtk.scss")
             else:
                 os.system("sassc ./sass/gtk-dark.scss gtk-dark.css")
                 os.system("sassc ./sass/gtk.scss gtk.css")
