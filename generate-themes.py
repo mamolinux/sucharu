@@ -13,7 +13,7 @@ def change_value (key, value, file):
     
 def usage ():
     print ("Usage: generate-themes.py [color]")
-    print ("color can be 'Aqua', 'Blue', 'Brown', 'Grey', 'Orange', 'Pink', 'Purple', 'Red', 'Sand', 'Teal' or 'All'.")
+    print ("color can be 'Aqua', 'Blue', 'Brown', 'Grey', 'Orange', 'Pink', 'Purple', 'Red', 'Sand', 'Teal', 'Yellow' or 'All'.")
     sys.exit(1)
 
 def y_colorize_directory (path, variation):
@@ -52,7 +52,7 @@ def generate_theme(color):
                 change_value(key, "%s-%s" % (original_name, color), theme_index)
             
             for key in ["CursorTheme"]:
-                change_value(key, "FreedomOS-%s" % color, theme_index)
+                change_value(key, "Sucharu-%s" % color, theme_index)
             
             # Regenerate GTK4 sass
             os.system("cp -R src/Mint-Y/gtk-4.0/sass %s/gtk-4.0/" % theme)
@@ -146,7 +146,7 @@ if len(sys.argv) < 2:
     usage()
 else:
     color_variation = sys.argv[1]
-    if not color_variation in ["Aqua", "Blue", "Brown", "Grey", "Orange", "Pink", "Purple", "Red", "Sand", "Teal", "All"]:
+    if not color_variation in ["Aqua", "Blue", "Brown", "Grey", "Orange", "Pink", "Purple", "Red", "Sand", "Teal", 'Yellow', "All"]:
         usage()
 
 curdir = os.getcwd()
