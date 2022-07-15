@@ -24,6 +24,7 @@ def update_color (color):
     os.system("rm -rf %s" % variation)
     os.system("mkdir -p %s/gtk-2.0" % variation)
     os.system("mkdir -p %s/gtk-3.0" % variation)
+    os.system("mkdir -p %s/gtk-4.0" % variation)
     os.system("mkdir -p %s/xfwm4" % variation)
     os.system("mkdir -p %s/xfwm4-dark" % variation)
 
@@ -32,6 +33,7 @@ def update_color (color):
     assets.append("gtk-2.0/assets.svg")
     assets.append("gtk-2.0/assets-dark.svg")
     assets.append("gtk-3.0/assets.svg")
+    assets.append("gtk-4.0/assets.svg")
     assets.append("xfwm4/assets.svg")
     assets.append("xfwm4-dark/assets.svg")
 
@@ -41,6 +43,8 @@ def update_color (color):
     files.append("gtk-2.0/assets.txt")
     files.append("gtk-3.0/assets")
     files.append("gtk-3.0/assets.txt")
+    files.append("gtk-4.0/assets")
+    files.append("gtk-4.0/assets.txt")
     files.append("xfwm4/assets.txt")
     files.append("xfwm4-dark/assets.txt")
 
@@ -77,6 +81,11 @@ def update_color (color):
 
     print("**Rendering gtk-3.0 assets...")
     os.chdir(variation+"/gtk-3.0/")
+    os.system("rm -rf assets/*")
+    os.system(rendering_script+" s2")
+
+    print("**Rendering gtk-4.0 assets...")
+    os.chdir(variation+"/gtk-4.0/")
     os.system("rm -rf assets/*")
     os.system(rendering_script+" s2")
 
