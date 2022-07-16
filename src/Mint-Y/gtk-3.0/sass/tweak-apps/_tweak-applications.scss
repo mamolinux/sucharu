@@ -1,0 +1,77 @@
+
+
+//
+// GNOME Terminal
+//
+vte-terminal.terminal-screen {
+  -TerminalScreen-background-darkness: 1.0;
+  background-color: $terminal_bg;
+  color: $terminal_fg;
+}
+
+//
+// MATE Terminal
+//
+vte-terminal {
+  -TerminalScreen-background-darkness: 1.0;
+  background-color: $terminal_bg;
+  color: $terminal_fg;
+}
+
+//
+// Caja
+//
+
+.caja-navigation-window {
+
+	.caja-side-pane {
+  
+	  .view,
+	  treeview,
+	  textview text,
+	  notebook {
+		background-color: $dark_sidebar_bg;
+		color: $dark_sidebar_fg;
+	  }
+	}
+  
+  .caja-notebook treeview {
+    &.view:selected, &.view:selected:hover {
+      background-color: $selected_bg_color;
+      color: $selected_fg_color;
+
+      .frame { border-width: 1px 0 0 0; }
+
+      .view > box,
+      viewport.frame {
+        border: 1px solid $borders_color;
+        border-width: 1px 0 0 0;
+      }
+    }
+  }
+}
+
+//
+// Fallback Mode/Budgie Panel/Mate Panel
+//
+.gnome-panel-menu-bar,
+.mate-panel-menu-bar {
+	&, menubar {
+		background-image: linear-gradient(to bottom, $panel_bg_panel,	shade($panel_bg_panel, 0.85));
+	}
+}
+
+//
+// Thunar
+//
+.thunar {
+  @if $variant=='light' and $darker=='false' {
+      toolbar {
+        color: $header_fg;
+        background-color: $header_bg;
+      }
+  }
+}
+
+
+
