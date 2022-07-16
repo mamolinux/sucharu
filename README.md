@@ -1,44 +1,51 @@
-# [Sucharu Themes](https://hsbasu.github.io/mamolinux-themes)
+# [Sucharu Themes](https://hsbasu.github.io/sucharu)
 
 <p align="center">
-	<a href="https://github.com/hsbasu/mamolinux-themes/blob/master/LICENSE">
-		<img src="https://img.shields.io/github/license/hsbasu/mamolinux-themes?label=License" alt="License"
+	<a href="https://github.com/hsbasu/sucharu/blob/master/LICENSE">
+		<img src="https://img.shields.io/github/license/hsbasu/sucharu?label=License" alt="License"
 	</a>
   	<a href="#">
-		<img src="https://img.shields.io/github/repo-size/hsbasu/mamolinux-themes?label=Repo%20size" alt="GitHub repo size">
+		<img src="https://img.shields.io/github/repo-size/hsbasu/sucharu?label=Repo%20size" alt="GitHub repo size">
   	</a>
-	<a href="https://github.com/hsbasu/mamolinux-themes/issues" target="_blank">
-		<img src="https://img.shields.io/github/issues/hsbasu/mamolinux-themes?label=Issues" alt="Open Issues">
+	<a href="https://github.com/hsbasu/sucharu/issues" target="_blank">
+		<img src="https://img.shields.io/github/issues/hsbasu/sucharu?label=Issues" alt="Open Issues">
 	</a>
-	<a href="https://github.com/hsbasu/mamolinux-themes/pulls" target="_blank">
-		<img src="https://img.shields.io/github/issues-pr/hsbasu/mamolinux-themes?label=PR" alt="Open PRs">
+	<a href="https://github.com/hsbasu/sucharu/pulls" target="_blank">
+		<img src="https://img.shields.io/github/issues-pr/hsbasu/sucharu?label=PR" alt="Open PRs">
 	</a>
-  	<a href="https://github.com/hsbasu/mamolinux-themes/releases/latest">
-		<img src="https://img.shields.io/github/v/release/hsbasu/mamolinux-themes?label=Latest%20Stable%20Release" alt="GitHub release (latest by date)">
+  	<a href="https://github.com/hsbasu/sucharu/releases/latest">
+		<img src="https://img.shields.io/github/v/release/hsbasu/sucharu?label=Latest%20Stable%20Release" alt="GitHub release (latest by date)">
   	</a>
 	<a href="#download-latest-version">
-		<img src="https://img.shields.io/github/downloads/hsbasu/mamolinux-themes/total?label=Downloads" alt="Downloads">
+		<img src="https://img.shields.io/github/downloads/hsbasu/sucharu/total?label=Downloads" alt="Downloads">
 	</a>
-	<a href="https://github.com/hsbasu/mamolinux-themes/releases/download/1.9.8mamolinux3/mamolinux-themes_1.9.8mamolinux3_all.deb">
-		<img src="https://img.shields.io/github/downloads/hsbasu/mamolinux-themes/1.9.8mamolinux3/mamolinux-themes_1.9.8mamolinux3_all.deb?color=blue&label=Downloads%40Latest%20Binary" alt="GitHub release (latest by date and asset)">
+	<a href="https://github.com/hsbasu/sucharu/releases/download/1.9.8mamolinux3/sucharu_1.9.8mamolinux3_all.deb">
+		<img src="https://img.shields.io/github/downloads/hsbasu/sucharu/1.9.8mamolinux3/sucharu_1.9.8mamolinux3_all.deb?color=blue&label=Downloads%40Latest%20Binary" alt="GitHub release (latest by date and asset)">
 	</a>
 </p>
 
-A GTK theme with mac-styled 3D title buttons.
+A theme package with mac-styled 3D title buttons and circular components.
 
 ## Download Latest Version
 <p align="center">
-	<a href="https://github.com/hsbasu/mamolinux-themes/zipball/master">Download Source (.zip)</a></br>
-	<a href="https://github.com/hsbasu/mamolinux-themes/tarball/master">Download Source (.tar.gz)</a></br>
-	<a href="https://github.com/hsbasu/mamolinux-themes/releases/download/1.9.8mamolinux3/mamolinux-themes_1.9.8mamolinux3_all.deb">Download Binary (.deb)</a>
+	<a href="https://github.com/hsbasu/sucharu/zipball/master">Download Source (.zip)</a></br>
+	<a href="https://github.com/hsbasu/sucharu/tarball/master">Download Source (.tar.gz)</a></br>
+	<a href="https://github.com/hsbasu/sucharu/releases/download/1.9.8mamolinux3/sucharu_1.9.8mamolinux3_all.deb">Download Binary (.deb)</a>
 </p>
 
 ## Features and Screenshots
-          
-### GTK theme
-A GTK theme with mac-styled 3D title buttons.
 
-This theme is based on [Mint-Y](https://github.com/linuxmint/mint-themes) themes.
+This package provides theme for components:
+1. Gnome-shell
+2. Cinnmon-shell
+3. Gtk-2.0
+4. Gtk-3.0
+5. Gtk-4.0
+6. Metacity
+7. Xfwm
+8. Plank
+
+This theme is based on [Yaru](https://github.com/ubuntu/yaru) and [Mint-Y](https://github.com/linuxmint/mint-themes) themes.
 
 <p align="center">
 	<img src="#" alt="Main Window (Light)">
@@ -63,19 +70,20 @@ This theme is based on [Mint-Y](https://github.com/linuxmint/mint-themes) themes
 
 ## Dependencies
 ```
-debhelper ( > = 12)
+debhelper ( > = 13)
 gnome-themes-standard
 gtk2-engines-murrine
 gtk2-engines-pixbuf
 inkscape
 python3
 sassc
+meson (> 0.59)
 ```
 ### Debian/Ubuntu based distro
-To install dependencies on Debian/Ubuntu based systems, run:
+To install the build dependencies on Debian/Ubuntu based systems, run:
 ```
 sudo apt install debhelper gnome-themes-standard gtk2-engines-murrine \
-gtk2-engines-pixbuf inkscape python3 sassc
+gtk2-engines-pixbuf inkscape python3 sassc meson
 ```
 
 ### Other Linux-based distro
@@ -87,9 +95,9 @@ Remove `apt install` in the command given in [Debian/Ubuntu based distros](#debi
 ### Debian/Ubuntu based systems
 There are two methods, these themes can be installed/used on a Debian/Ubuntu based system. First, download and unzip the source package using:
 ```
-wget https://github.com/hsbasu/mamolinux-themes/archive/refs/heads/master.zip
+wget https://github.com/hsbasu/sucharu/archive/refs/heads/master.zip
 unzip master.zip
-cd mamolinux-themes-master
+cd sucharu-master
 ```
 
 1. **Option 1:** Manually copying necessary files to root (`/`). For that, follow the steps below:
@@ -104,19 +112,25 @@ cd mamolinux-themes-master
 		```
 		sudo cp -R usr /
 		```
+	3. To build **gnome-shell**, use meson as,
+		```
+		meson builddir
+		meson compile -C builddir
+		meson install -C builddir
+		```
 
 2. **Option 2:** Build debian packages and install it. To build a debian package on your own:
 	1. from the `/path/to/repo` run:
 		```
 		dpkg-buildpackage --no-sign
 		```
-		This will create `mamolinux-themes_*.deb` and `mamolinux-themes-plank_*.deb` package at `../path/to/repo`.
+		This will create `sucharu_*.deb` and `sucharu-plank_*.deb` package at `../path/to/repo`.
 	2. Install the debian packages using
 		```
 		sudo dpkg -i *.deb
 		sudo apt install -f
 		```
-	After it is installed, set the themes from your distro's theme manager or use the [Theme Manager](https://hsbasu.github.io/theme-manager).
+	After it is installed, set the themes from your distro's theme manager or use the [Theme Manager](https://hsbasu.github.io/theme-manager) to change themes automatically after certain periods.
 
 ### Other Linux-based systems
 1. Install the [dependencies](#other-linux-based-distro).
@@ -125,15 +139,15 @@ cd mamolinux-themes-master
 ### For Developers
 Coming Soon or create a PR.
 
-**I have no knowledge on how to use `meson` or `npm` for testing. If you can offer any help regarding this, please start a discussion [here](https://github.com/hsbasu/mamolinux-themes/discussions) or create a [PR](https://github.com/hsbasu/mamolinux-themes/compare). It will be more than welcome.**
+**I have no knowledge on how to use `meson` or `npm` for testing. If you can offer any help regarding this, please start a discussion [here](https://github.com/hsbasu/sucharu/discussions) or create a [PR](https://github.com/hsbasu/sucharu/compare). It will be more than welcome.**
 
 ## User Manual
 Coming Soon or create a PR.
 
 ## Issue Tracking and Contributing
 If you are interested to contribute and enrich the code, you are most welcome. You can do it by:
-1. If you find a bug, to open a new issue with details: [Click Here](https://github.com/hsbasu/mamolinux-themes/issues)
-2. If you know how to fix a bug or want to add new feature/documentation to the existing package, please create a [Pull Request](https://github.com/hsbasu/mamolinux-themes/compare).
+1. If you find a bug, to open a new issue with details: [Click Here](https://github.com/hsbasu/sucharu/issues)
+2. If you know how to fix a bug or want to add new feature/documentation to the existing package, please create a [Pull Request](https://github.com/hsbasu/sucharu/compare).
 
 ## Contributors
 
