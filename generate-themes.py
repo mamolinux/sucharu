@@ -38,7 +38,8 @@ def generate_theme(color):
             # Copy theme
             theme = "usr/share/themes/%s-%s" % (original_name, color)
             theme_index = os.path.join(theme, "index.theme")
-            os.system("cp -R usr/share/themes/%s %s" % (original_name, theme))
+            os.system("mkdir -p %s" % theme)
+            os.system("cp -R usr/share/themes/%s/* %s" % (original_name, theme))
             
             # Theme name
             for key in ["Name", "GtkTheme"]:
@@ -58,16 +59,14 @@ def generate_theme(color):
             os.system("cp -R src/Mint-Y/gtk-4.0/sass %s/gtk-4.0/" % theme)
             y_colorize_directory("%s/gtk-4.0/sass" % theme, color)
             os.chdir("%s/gtk-4.0" % theme)
-
             if (variant == "-Dark"):
                 os.system("cp sass/gtk-dark.scss sass/gtk.scss")
-                os.system("sassc ./sass/gtk.scss gtk.css")
             elif (variant == "-Darker"):
                 os.system("cp sass/gtk-darker.scss sass/gtk.scss")
             else:
-                os.system("sassc ./sass/gtk-dark.scss gtk-dark.css")
-                os.system("sassc ./sass/gtk.scss gtk.css")
-
+                os.system("rm sass/gtk-dark.scss sass/gtk-darker.scss")
+            
+            os.system("sassc ./sass/gtk.scss gtk.css")
             os.system("rm -rf sass .sass-cache")
             os.chdir(curdir)
 

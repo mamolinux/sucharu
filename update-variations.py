@@ -114,6 +114,9 @@ else:
 
 # Mint-Y variations
 curdir = os.getcwd()
+# override for inkscape. when ulimit is set to "unlimited"
+# inkscape fails with segfault
+os.system("ulimit -s 4096")
 
 if color_variation == "All":
     for color in y_hex_colors1.keys():
