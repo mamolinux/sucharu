@@ -68,8 +68,8 @@ SushiFontWidget {
 //
 vte-terminal.terminal-screen {
   -TerminalScreen-background-darkness: 1.0;
-  background-color: $terminal_bg;
-  color: $terminal_fg
+  background-color: #3f3f3f;
+  color: #fff;
 }
 
 terminal-screen-container,
@@ -104,8 +104,8 @@ TerminalWindow {
 //
 vte-terminal {
   -TerminalScreen-background-darkness: 1.0;
-  background-color: $terminal_bg;
-  color: $terminal_fg;
+  background-color: #3f3f3f;
+  color: #fff;
 }
 
 //
@@ -326,7 +326,6 @@ NautilusListView .view { border-bottom: 1px solid $borders_color; }
   .caja-side-pane {
 
     .view,
-    treeview,
     textview text,
     notebook {
       background-color: $dark_sidebar_bg;
@@ -339,21 +338,6 @@ NautilusListView .view { border-bottom: 1px solid $borders_color; }
     viewport.frame {
       border: 1px solid $borders_color;
       border-width: 1px 0 0 0;
-    }
-  }
-  
-  .caja-notebook treeview {
-    &.view:selected, &.view:selected:hover {
-      background-color: $selected_bg_color;
-      color: $selected_fg_color;
-
-      .frame { border-width: 1px 0 0 0; }
-
-      .view > box,
-      viewport.frame {
-        border: 1px solid $borders_color;
-        border-width: 1px 0 0 0;
-      }
     }
   }
 }
@@ -780,11 +764,7 @@ SynapseGuiViewVirgilio *:selected { background-color: $selected_bg_color; }
   color: $panel_fg;
   background-color: $panel_bg;
 
-  // &, menubar { background-color: $panel_bg; }
-  &, menubar {
-    background-image: linear-gradient(to bottom,
-                                        $panel_bg_panel,
-                                        shade($panel_bg_panel, 0.85)); }
+  &, menubar { background-color: $panel_bg; }
 
   menubar,
   #PanelApplet label,
@@ -1042,7 +1022,7 @@ EvWindow .content-view .view:focus:selected {
     -gtk-icon-transform: scale(0.9);
   }
 
-  @if $variant=='light' and $darker=='false' {
+  @if $variant=='light' {
       toolbar {
         color: $header_fg;
         background-color: $header_bg;

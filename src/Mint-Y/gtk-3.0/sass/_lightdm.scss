@@ -1,6 +1,6 @@
 // the panel widget at the top
 #panel_window {
-  background-color: $panel_bg_panel;
+  background-color: $panel_bg;
   color: $panel_fg;
   font-weight: bold;
   box-shadow: inset 0 -1px darken($panel_bg, 7%);
@@ -16,13 +16,9 @@
   menubar menuitem:disabled {
     color: transparentize($panel_fg, 0.5);
 
-    label {
-      color: inherit;
-    }
+    label { color: inherit; }
   }
-  menubar menu > menuitem {
-    font-weight: normal;
-  }
+  menubar menu > menuitem { font-weight: normal; }
 }
 
 // the login window
@@ -78,9 +74,7 @@
   color: $fg_color;
   font-size: 13px;
 
-  menu {
-    font-weight: normal;
-  }
+  menu { font-weight: normal; }
 }
 
 // the user's avatar box
