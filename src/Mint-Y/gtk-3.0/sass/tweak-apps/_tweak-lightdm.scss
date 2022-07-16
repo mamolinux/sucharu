@@ -1,5 +1,8 @@
 // the panel widget at the top
 #panel_window {
+  background-color: $panel_bg_panel;
+
+  // the menubars/menus of the panel, i.e. indicators
   menubar,
   menubar > menuitem {
     background-color: $panel_bg_panel;
