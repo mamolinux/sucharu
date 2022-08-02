@@ -1,6 +1,6 @@
 project('Sucharu',
         version: '2.0.1',
-        meson_version: '>= 0.59',
+        meson_version: '>= 0.60',
         license : ['GPL3', 'CC BY-SA 4.0'],
         default_options: ['prefix=/usr'])
 
@@ -21,7 +21,7 @@ components = [
   # 'sessions',
   # 'ubuntu-unity',
   # 'xfwm4',
-  # 'cinnamon-shell',
+  'cinnamon-shell',
 ]
 
 enabled_accent_colors = get_option('accent-colors')
