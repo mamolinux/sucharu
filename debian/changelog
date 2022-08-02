@@ -1,3 +1,52 @@
+sucharu (2.0.3) stable; urgency=medium
+
+  * Add new variant Yellow (#3)
+    - Add Yellow variant for cinnamon, GTK and XFWM
+    - Add new Sucharu Colour Palette
+  * Use single rendering script for all variations (#4)
+    - uses single render-assets.sh for all variations
+    - single rendering script takes care of all assets
+      used in gtk variations and xfwm variations
+    - reduces repo size and better automation
+    - No need to include .png files with repo as
+      they can be generated during building deb packaging
+    - better rendering of assets for new themes like gtk-4.0
+    - original rendering scripts has been kept back but can be removed
+  * Add darker mode for gtk-4.0 (#6)
+    - Update variations with gtk-4.0
+    - Add darker or transion mode for gtk4
+    - Add titlebutton assets for gtk4
+    - New svg for gtk thumbnails
+  * build darker mode for gtk 3 and 4 (#7)
+    - parse sass for darker mode for gtk 3 and 4
+    - Remove generated css for gtk4
+    - Update .gitignore for new package names
+  * fix gtk, xfwm and Yellow variation (#8)
+    - gtk3: Update assets
+    - gtk4: Update assets
+    - build-themes: Update build script for gtk4 for default colour
+    - generate-themes: fix copying the whole default theme directory
+      and update build script for gtk4
+    - update-variations: fix inkscape segfault
+    - Yellow: update gtk3 and gtk4 assets
+    - xfwm: remove rendering scripts
+  * Update readme for new source name (#9)
+    - Rename to Sucharu
+    - Add supported theme components
+  * Separate sucharu-specific modifications (#10)
+    - Put all sucharu-specific modifications into
+      tweak-apps directory
+  * Rebase scss files with Mint-Y themes (#11)
+  * Build cinnamon theme using meson (#12)
+    - Add source files in cinnamon-shell/src
+    - Create new binary package sucharu-theme-cinnamon-shell
+      for cinnamon themes
+    - Keep only gtk, metacity and xfwm themes in sucharu-themes
+    - Update required meson version to 0.60
+  * fix typo in variable name (#13)
+
+ -- Himadri Sekhar Basu <hsb10@iitbbs.ac.in>  Tue, 02 Aug 2022 22:38:52 +0530
+
 sucharu (2.0.2) stable; urgency=medium
 
   * Use different colors in panel for different modes (#1)
