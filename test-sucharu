@@ -1,0 +1,27 @@
+#!/bin/bash
+
+sudo rm -rf /usr/share/themes/Sucharu*
+rm -rf builddir
+
+meson builddir
+meson compile -C builddir
+meson install -C builddir
+
+gsettings set org.cinnamon.theme name 'Sucharu'
+gsettings set org.cinnamon.desktop.interface gtk-theme 'Sucharu'
+gsettings set org.gnome.desktop.interface gtk-theme 'Sucharu'
+sleep 5
+gsettings set org.cinnamon.theme name 'Sucharu-dark'
+gsettings set org.cinnamon.desktop.interface gtk-theme 'Sucharu-dark'
+gsettings set org.gnome.desktop.interface gtk-theme 'Sucharu-dark'
+sleep 5
+gsettings set org.cinnamon.desktop.interface gtk-theme 'Sucharu-darker'
+gsettings set org.gnome.desktop.interface gtk-theme 'Sucharu-darker'
+sleep 5
+gsettings set org.cinnamon.theme name 'Sucharu-aqua'
+gsettings set org.cinnamon.desktop.interface gtk-theme 'Sucharu-aqua'
+gsettings set org.gnome.desktop.interface gtk-theme 'Sucharu-aqua'
+sleep 5
+gsettings set org.cinnamon.theme name 'Sucharu-aqua-dark'
+gsettings set org.cinnamon.desktop.interface gtk-theme 'Sucharu-aqua-dark'
+gsettings set org.gnome.desktop.interface gtk-theme 'Sucharu-aqua-dark'
