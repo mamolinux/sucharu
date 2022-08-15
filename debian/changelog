@@ -1,3 +1,17 @@
+sucharu (2.0.4) stable; urgency=medium
+
+  * Rename test script to sucharu (#14)
+  * Add workflow to update mamolinux/stable branch (#15)
+  * Gtk3: fix titlebar buttons and nemo disk-size bg (#16)
+    - Fix overlapped close, min and max buttons
+    - Fix disk full background in nemo treeview for light theme
+    - Fully rebase with mint's Gtk3 theme
+  * Gtk4: Add sucharu specific modifications (#17)
+    - Add Sucharu specific modifications as comments
+  * xfwm4: restore xfwm rendering scripts (#18)
+
+ -- Himadri Sekhar Basu <hsb10@iitbbs.ac.in>  Mon, 15 Aug 2022 08:38:54 +0530
+
 sucharu (2.0.3) stable; urgency=medium
 
   * Add new variant Yellow (#3)
