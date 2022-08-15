@@ -3,16 +3,15 @@
 //
 .nemo-window {
   .places-treeview {
-		-NemoPlacesTreeView-disk-full-bg-color: if($variant == 'light', #aaaaaa, $dark_sidebar_fg);
-    -NemoPlacesTreeView-disk-full-fg-color: darken($selected_bg_color, 10%);
+		-NemoPlacesTreeView-disk-full-bg-color: if($variant == 'light' and $darker == 'false', #dddddd, $dark_sidebar_fg);
     
     .view:hover {
       &.cell{
         background-color: transparentize($selected_bg_color, 0.5);
       }
-      &:last-child {
-        // border-radius: 10px;
-      }
+      // &:last-child {
+      //   border-radius: 10px;
+      // }
     }
   }
   
@@ -24,6 +23,10 @@
         // border-radius: 10px;
         color: $dark_sidebar_fg;
       }
+    }
+
+    .view, row {
+      background-color: inherit;
     }
   }
 
