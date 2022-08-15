@@ -19,6 +19,21 @@ vte-terminal {
 }
 
 //
+// Nautilus
+//
+.nautilus-window,
+filechooser {
+
+  placessidebar.sidebar list {
+
+    row.sidebar-row {
+      border: 20px;
+      border-radius: 99px;
+    }
+  }
+}
+
+//
 // Caja
 //
 
