@@ -19,8 +19,17 @@
 	<a href="#download-latest-version">
 		<img src="https://img.shields.io/github/downloads/hsbasu/sucharu/total?label=Downloads" alt="Downloads">
 	</a>
-	<a href="https://github.com/hsbasu/sucharu/releases/download/1.9.8mamolinux3/sucharu_1.9.8mamolinux3_all.deb">
-		<img src="https://img.shields.io/github/downloads/hsbasu/sucharu/1.9.8mamolinux3/sucharu_1.9.8mamolinux3_all.deb?color=blue&label=Downloads%40Latest%20Binary" alt="GitHub release (latest by date and asset)">
+	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.4/sucharu-theme-cinnamon-shell_2.0.4_all.deb">
+		<img src="https://img.shields.io/github/downloads/hsbasu/sucharu/2.0.4/sucharu-theme-cinnamon-shell_2.0.4_all.deb?color=blue&label=Downloads%40Latest%20Binary" alt="GitHub release (latest by date and asset)">
+	</a>
+	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.4/sucharu-theme-gnome-shell_2.0.4_all.deb">
+		<img src="https://img.shields.io/github/downloads/hsbasu/sucharu/2.0.4/sucharu-theme-gnome-shell_2.0.4_all.deb?color=blue&label=Downloads%40Latest%20Binary" alt="GitHub release (latest by date and asset)">
+	</a>
+	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.4/sucharu-theme-plank_2.0.4_all.deb">
+		<img src="https://img.shields.io/github/downloads/hsbasu/sucharu/2.0.4/sucharu-theme-plank_2.0.4_all.deb?color=blue&label=Downloads%40Latest%20Binary" alt="GitHub release (latest by date and asset)">
+	</a>
+	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.4/sucharu-themes_2.0.4_all.deb">
+		<img src="https://img.shields.io/github/downloads/hsbasu/sucharu/2.0.4/sucharu-themes_2.0.4_all.deb?color=blue&label=Downloads%40Latest%20Binary" alt="GitHub release (latest by date and asset)">
 	</a>
 </p>
 
@@ -30,7 +39,10 @@ A theme package with mac-styled 3D title buttons and circular components.
 <p align="center">
 	<a href="https://github.com/hsbasu/sucharu/zipball/master">Download Source (.zip)</a></br>
 	<a href="https://github.com/hsbasu/sucharu/tarball/master">Download Source (.tar.gz)</a></br>
-	<a href="https://github.com/hsbasu/sucharu/releases/download/1.9.8mamolinux3/sucharu_1.9.8mamolinux3_all.deb">Download Binary (.deb)</a>
+	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.4/sucharu-theme-cinnamon-shell_2.0.4_all.deb">Download Cinnamon Shell Binary (.deb)</a></br>
+	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.4/sucharu-theme-gnome-shell_2.0.4_all.deb">Download GNOME Shell Binary (.deb)</a></br>
+	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.4/sucharu-theme-plank_2.0.4_all.deb">Download Plank Binary (.deb)</a></br>
+	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.4/sucharu-themes_2.0.4_all.deb">Download GTK, Metacity and XFWM Binary (.deb)</a>
 </p>
 
 ## Features and Screenshots
@@ -130,7 +142,7 @@ cd sucharu-master
 		sudo dpkg -i *.deb
 		sudo apt install -f
 		```
-	After it is installed, set the themes from your distro's theme manager or use the [Theme Manager](https://hsbasu.github.io/theme-manager) to change themes automatically after certain periods.
+	After it is installed, set the themes from your distro's theme manager or use the [**Theme Manager**](https://hsbasu.github.io/theme-manager) to change themes automatically after certain periods.
 
 ### Other Linux-based systems
 1. Install the [dependencies](#other-linux-based-distro).
@@ -155,7 +167,7 @@ If you are interested to contribute and enrich the code, you are most welcome. Y
 [Himadri Sekhar Basu](https://github.com/hsbasu) is the author and current maintainer.
 
 ## Donations
-I am a freelance programmer. So, If you like this app and would like to offer me a coffee ( &#9749; ) to motivate me further, you can do so via:
+I am a freelance programmer. So, If you like these themes and would like to offer me a coffee ( &#9749; ) to motivate me further, you can do so via:
 
 [![](https://liberapay.com/assets/widgets/donate.svg)](https://liberapay.com/hsbasu/donate)
 [![](https://www.paypalobjects.com/webstatic/i/logo/rebrand/ppcom.svg)](https://paypal.me/hsbasu)
