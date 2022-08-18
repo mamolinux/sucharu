@@ -1,0 +1,214 @@
+
+$darker_asset_suffix: if($darker=='true', '-dark', $asset_suffix);
+
+// menu buttons
+menuitem.button.flat,
+modelbutton.flat {
+	&:checked { color: $menu_selected_fg_color; }
+}
+
+//
+// Spinbuttons
+//
+spinbutton {
+  // button:active { color: $selected_fg_color; }
+}
+
+%header_widgets {
+  // Headerbar Entries
+  entry {
+
+		&:focus {
+			background-clip: if($darker=='false' and $variant=='light', border-box, padding-box);
+		}
+
+    @each $e_type, $e_color, $e_fg_color in (warning, $warning_color, $warning_fg_color),
+                                            (error, $error_color, $error_fg_color) {
+      &.#{$e_type} {
+        border-color: if($darker=='false' and $variant=='light', $e_color, $header_entry_border);
+  	  }
+		}
+	}
+
+  // Headerbar Buttons
+  button {
+    &:active, &:checked {
+      @include button(header-active);
+      background-clip: if($darker=='false' and $variant=='light', border-box, padding-box);
+    }
+  }
+
+  // Headerbar ComboBoxes
+  combobox {
+    > .linked > entry.combo {
+      &:dir(ltr) {
+        @if $variant=='light' and $darker=='false' { &:focus { box-shadow: 1px 0 $selected_bg_color; } }
+      }
+      &:dir(rtl) {
+        @if $variant=='light' and $darker=='false' { &:focus { box-shadow: -1px 0 $selected_bg_color; } }
+      }
+    }
+	}
+
+  progressbar {
+    trough { background-color: if($variant=='light' and $darker=='false', opacify($header_button_border, 0.05), $header_button_border); }
+  }
+
+  // Headerbar Scale
+  scale {
+    $_trough_bg: if($variant=='light' and $darker=='false', opacify($header_button_border, 0.05), $header_button_border);
+
+    slider {
+      $_slider_border: if($variant=='light' and $darker=='false', opacify($header_button_border, 0.2), opacify($header_button_border, 0.3));
+      $_slider_bg: if($variant=='light' and $darker=='false', opacify($header_button_bg,1), lighten(opacify($header_bg,1), 10%));
+    }
+    trough {
+      &:disabled { background-color: if($variant=='light' and $darker=='false', transparentize($_trough_bg, 0.05), transparentize($_trough_bg, 0.1)); }
+    }
+  }
+}
+
+//
+// Tree Views
+//
+treeview.view {
+
+  border-left-color: transparentize($fg_color, 0.85);   // this is actually the tree lines color,
+  border-top-color: transparentize(black, 0.9);       // while this is the grid lines color, better than nothing
+}
+
+//
+// Menus
+//
+menubar,
+.menubar {
+	
+  > menuitem {
+
+    &:hover { //Seems like it :hover even with keyboard focus
+      color: $menu_selected_fg_color;
+    }
+	}
+}
+
+menu,
+.menu {
+
+  menuitem {
+
+    &:hover {
+      color: $menu_selected_fg_color;
+    }
+	}
+}
+
+@each $k,$l in ('',''),
+               (':checked','-active'),
+               (':disabled','-insensitive'),
+               (':checked:disabled','-active-insensitive') {
+
+  // load switch troughs from .png files in assets directory
+
+  headerbar switch#{$k},
+  .primary-toolbar switch#{$k},
+  .primary-toolbar toolbar switch#{$k} {
+    background-image: -gtk-scaled(url("assets/switch#{$l}-header#{$darker_asset_suffix}.png"),url("assets/switch#{$l}-header#{$darker_asset_suffix}@2.png"));
+  }
+}
+
+//
+// Calendar
+//
+calendar {
+  &:indeterminate { color: gtkalpha(currentColor,0.55); }
+  &.highlight {
+    color: $fg_color;
+  }
+}
+
+
+//
+// Window Decorations
+//
+decoration {
+
+  $_wm_border: if($variant=='light' and $darker=='false', transparentize(black, 0.77), transparentize(black, 0.25));
+
+	.ssd &,
+  .csd & {
+		border-radius: if($variant=='light' and $darker=='false', 8px 8px 0 0, 4px 4px 0 0);
+		// box-shadow: 0 0 0 1px $_wm_border;
+		box-shadow: 0 0 0 1px if($darker=='true' or $variant == 'dark', transparentize(black, 0.35), $_wm_border);
+	}
+}
+
+//
+// Titlebuttons
+//
+headerbar,
+.titlebar,
+.background headerbar,
+.background .titlebar,
+headerbar.selection-mode {
+
+  &.default-decoration button.titlebutton { // no vertical padding for ssd buttons
+    padding-top: 0px;                       // already handled by the titlebar-padding
+    padding-bottom: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+    min-width: 22px;
+    min-height: 22px;
+    margin: 0;
+  }
+
+  button.titlebutton {
+
+    @extend .image-button;
+
+    @include button(undecorated);
+
+    &:hover {
+      @include button(header-hover);
+    }
+    &:active, &:checked {
+      @include button(header-active);
+    }
+
+    &.close, &.maximize, &.minimize {
+      &, &:hover, &:active, &:active:hover, &:disabled {
+        color: transparent;
+        background-color: transparent;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-width: 0;
+        box-shadow: none;
+      }
+
+      &:backdrop {
+        &, &:hover, &:active, &:active:hover, &:disabled {
+          opacity: 1;
+        }
+      }
+    }
+		
+    // Load png assets for each button
+    @each $n, $k in ('close','close'), ('maximize','max'), ('minimize','min') {
+      @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
+        &.#{$n}#{$l} {
+          background-image: -gtk-scaled(url('assets/titlebutton-#{$k}#{$m}#{$asset_suffix}.png'),
+                                        url('assets/titlebutton-#{$k}#{$m}#{$asset_suffix}@2.png'));
+        }
+      }
+    }
+    
+    .fullscreen &,
+    .maximized & {
+      @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
+        &.maximize#{$l} {
+          background-image: -gtk-scaled(url('assets/titlebutton-resize#{$m}#{$asset_suffix}.png'),
+                                        url('assets/titlebutton-resize#{$m}#{$asset_suffix}@2.png'));
+        }
+      }
+    }
+  }
+}

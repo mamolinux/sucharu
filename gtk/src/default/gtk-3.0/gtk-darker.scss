@@ -1,0 +1,12 @@
+$variant: 'light';
+$darker: 'true';
+$tint: 'no-tint';
+
+@import 'sass/colors';
+@import 'sass/drawing';
+@import 'sass/common';
+@import 'sass/applications';
+@import 'sass/lightdm';
+@import 'sass/colors-public';
+@import 'sass/libhandy';
+@import 'sass/tweaks';
