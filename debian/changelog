@@ -1,3 +1,18 @@
+sucharu (2.0.5) stable; urgency=medium
+
+  * Update readme with version 2.0.4 (#19)
+    - Add separate download links for all the components
+  * Automate upstream Cinnamon theme refresh (#21)
+    - Open a PR and refresh daily if Cinnamon upstream has some
+      theme-related changes pending.
+  * Auto update new upstream snapshot for Cinnamon (#20)
+  * New upstream snapshot for Cinnamon (#22)
+  * Fix Theme parsing error (#23)
+    - GTK apps are throwing error 'none' is not a valid color name.
+      Use 'transparent' instead of none.
+
+ -- Himadri Sekhar Basu <hsb10@iitbbs.ac.in>  Mon, 26 Sep 2022 09:50:23 +0530
+
 sucharu (2.0.4) stable; urgency=medium
 
   * Rename test script to sucharu (#14)
