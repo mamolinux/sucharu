@@ -1,0 +1,117 @@
+style "entry" {
+
+  engine "pixmap" {
+
+    image {
+      function = SHADOW
+      state = NORMAL
+      detail= "entry"
+      file = "assets/entry-border-bg-solid.png"
+      border = { 12, 12, 12, 12 }
+      stretch = TRUE
+      shadow = IN
+    }
+
+    image {
+      function = SHADOW
+      state = INSENSITIVE
+      detail = "entry"
+      file = "assets/entry-border-disabled-bg.png"
+      border = { 12, 12, 12, 12 }
+      stretch = TRUE
+      shadow = IN
+    }
+
+    image {
+      function = SHADOW
+      state = ACTIVE
+      detail = "entry"
+      file = "assets/entry-border-active-bg-solid.png"
+      border = { 12, 12, 12, 12 }
+      stretch = TRUE
+    }
+
+    image {
+      function = FLAT_BOX
+      detail = "entry_bg"
+      state = NORMAL
+      overlay_file = "assets/null.png"
+      overlay_border = { 0, 0, 0, 0 }
+      overlay_stretch = TRUE
+    }
+
+    image {
+      function = FLAT_BOX
+      detail = "entry_bg"
+      state = ACTIVE
+      overlay_file = "assets/null.png"
+      overlay_border = { 0, 0, 0, 0 }
+      overlay_stretch = TRUE
+    }
+  }
+}
+
+style "notebook_entry" {
+  xthickness = 6
+  
+  engine "pixmap" {
+
+    image {
+      function = SHADOW
+      state = NORMAL
+      detail = "entry"
+      file = "assets/notebook-entry-border-bg.png"
+      border = { 12, 12, 12, 12 }
+      stretch = TRUE
+      shadow = IN
+    }
+
+    image {
+      function = SHADOW
+      detail = "entry"
+      state = INSENSITIVE
+      file = "assets/notebook-entry-border-disabled-bg.png"
+      border = { 12, 12, 12, 12 }
+      stretch = TRUE
+      shadow = IN
+    }
+
+    image {
+      function = SHADOW
+      state = ACTIVE
+      detail = "entry"
+      file = "assets/notebook-entry-border-active-bg.png"
+      border = { 6, 6, 6, 6 }
+      stretch = TRUE
+    }
+
+    image {
+      function = FLAT_BOX
+      state = NORMAL
+      detail = "entry_bg"
+      overlay_file = "assets/null.png"
+      overlay_border = { 0, 0, 0, 0 }
+      overlay_stretch = TRUE
+    }
+
+    image {
+      function = FLAT_BOX
+      state = ACTIVE
+      detail = "entry_bg"
+      overlay_file = "assets/null.png"
+      overlay_border = { 0, 0, 0, 0 }
+      overlay_stretch = TRUE
+    }
+  }
+}
+
+# We use this weird selector to target an offscreen entry as created
+# by Chrome/Chromium to derive the style for its toolbar
+widget_class "<GtkEntry>"                                           style "standalone_entry"
+
+# Openoffice, Libreoffice
+class "GtkWindow"                                                   style "toplevel_hack"
+widget "*openoffice-toplevel*GtkEntry"                              style "libreoffice_entry"
+widget "*openoffice-toplevel*GtkSpinButton"                         style "libreoffice_entry"
+widget "*libreoffice-toplevel*GtkEntry"                             style "libreoffice_entry"
+widget "*libreoffice-toplevel*GtkSpinButton"                        style "libreoffice_entry"

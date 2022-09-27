@@ -1,0 +1,15 @@
+[Desktop Entry]
+Name=@FlavourThemeName@
+Type=X-GNOME-Metatheme
+Comment=MamoLinux @FlavourThemeName@ theme
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=@FlavourThemeName@
+MetacityTheme=@MetacityThemeName@
+IconTheme=@IconThemeName@
+CursorTheme=@ThemeName@
+CursorSize=24
+X-Sucharu-Dark=@DarkTheme@
+X-Sucharu-Accent-Name=@AccentName@
+X-Sucharu-Accent-Color=@AccentColor@

@@ -15,8 +15,8 @@ subdir('common')
 components = [
   # 'metacity',
   'gnome-shell',
-  # 'gtk',
-  # 'gtksourceview',
+  'gtk',
+  'gtksourceview',
   # 'sounds',
   # 'sessions',
   # 'ubuntu-unity',
