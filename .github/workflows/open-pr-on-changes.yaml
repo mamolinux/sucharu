@@ -22,6 +22,51 @@ jobs:
             src: src/Mint-Y/cinnamon/,
             dest: cinnamon-shell/upstream
           },
+          # {
+          #   project: GTK3,
+          #   repo: "https://gitlab.gnome.org/GNOME/gtk.git",
+          #   upstreambranch: gtk-3-24,
+          #   localbranch: gtk3,
+          #   projectdir: gtk,
+          #   src: gtk/theme/Adwaita/,
+          #   dest: gtk/upstream/gtk-3.0/Adwaita
+          # },
+          {
+            project: GTK3,
+            repo: "https://github.com/linuxmint/mint-themes.git",
+            upstreambranch: master,
+            localbranch: gtk3,
+            projectdir: mint-themes,
+            src: src/Mint-Y/gtk-3.0/,
+            dest: gtk/upstream/gtk-3.0/Mint-Y
+          },
+          # {
+          #   project: GTK4,
+          #   repo: "https://gitlab.gnome.org/GNOME/gtk.git",
+          #   upstreambranch: main,
+          #   localbranch: gtk4,
+          #   projectdir: gtk,
+          #   src: gtk/theme/Default/,
+          #   dest: gtk/upstream/gtk-4.0/Default
+          # },
+          {
+            project: GTK4,
+            repo: "https://github.com/linuxmint/mint-themes.git",
+            upstreambranch: master,
+            localbranch: gtk4,
+            projectdir: mint-themes,
+            src: src/Mint-Y/gtk-4.0/,
+            dest: gtk/upstream/gtk-4.0/Mint-Y
+          },
+          # {
+          #   project: Libhandy,
+          #   repo: "https://gitlab.gnome.org/GNOME/libhandy.git",
+          #   upstreambranch: main,
+          #   localbranch: libhandy,
+          #   projectdir: libhandy,
+          #   src: src/themes/,
+          #   dest: gtk/upstream/libhandy/themes
+          # },
       ]
     steps:
       # Checkout code
@@ -61,6 +106,6 @@ jobs:
           commit-message: New upstream snapshot for ${{ matrix.buildenv.project }}
           title: Auto update new upstream snapshot for ${{ matrix.buildenv.project }}
           labels: automated pr, new upstream
-          body: "[New upstream ${{ matrix.buildenv.project }} changes](https://github.com/ubuntu/yaru/actions?query=workflow%3A%22Update+PR+on+upstream+changes+once+landed+on+ubuntu%22) by GitHub Action"
+          body: "[New upstream ${{ matrix.buildenv.project }} changes](https://github.com/hsbasu/sucharu/actions?query=workflow%3A%22Update+PR+on+upstream+changes+once+landed+on+ubuntu%22) by GitHub Action"
           branch: upstream-${{ matrix.buildenv.localbranch }}-update
           token: ${{ secrets.GITHUB_TOKEN }}
