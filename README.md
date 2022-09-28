@@ -19,17 +19,20 @@
 	<a href="#download-latest-version">
 		<img src="https://img.shields.io/github/downloads/hsbasu/sucharu/total?label=Downloads" alt="Downloads">
 	</a>
-	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.4/sucharu-theme-cinnamon-shell_2.0.4_all.deb">
-		<img src="https://img.shields.io/github/downloads/hsbasu/sucharu/2.0.4/sucharu-theme-cinnamon-shell_2.0.4_all.deb?color=blue&label=Downloads%40Latest%20Binary" alt="GitHub release (latest by date and asset)">
+	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.5/sucharu-theme-cinnamon-shell_2.0.5_all.deb">
+		<img src="https://img.shields.io/github/downloads/hsbasu/sucharu/2.0.5/sucharu-theme-cinnamon-shell_2.0.5_all.deb?color=blue&label=Downloads%40Latest%20Binary" alt="GitHub release (latest by date and asset)">
 	</a>
-	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.4/sucharu-theme-gnome-shell_2.0.4_all.deb">
-		<img src="https://img.shields.io/github/downloads/hsbasu/sucharu/2.0.4/sucharu-theme-gnome-shell_2.0.4_all.deb?color=blue&label=Downloads%40Latest%20Binary" alt="GitHub release (latest by date and asset)">
+	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.5/sucharu-theme-gnome-shell_2.0.5_all.deb">
+		<img src="https://img.shields.io/github/downloads/hsbasu/sucharu/2.0.5/sucharu-theme-gnome-shell_2.0.5_all.deb?color=blue&label=Downloads%40Latest%20Binary" alt="GitHub release (latest by date and asset)">
 	</a>
-	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.4/sucharu-theme-plank_2.0.4_all.deb">
-		<img src="https://img.shields.io/github/downloads/hsbasu/sucharu/2.0.4/sucharu-theme-plank_2.0.4_all.deb?color=blue&label=Downloads%40Latest%20Binary" alt="GitHub release (latest by date and asset)">
+	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.5/sucharu-theme-gtk_2.0.5_all.deb">
+		<img src="https://img.shields.io/github/downloads/hsbasu/sucharu/2.0.5/sucharu-theme-gtk_2.0.5_all.deb?color=blue&label=Downloads%40Latest%20Binary" alt="GitHub release (latest by date and asset)">
 	</a>
-	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.4/sucharu-themes_2.0.4_all.deb">
-		<img src="https://img.shields.io/github/downloads/hsbasu/sucharu/2.0.4/sucharu-themes_2.0.4_all.deb?color=blue&label=Downloads%40Latest%20Binary" alt="GitHub release (latest by date and asset)">
+	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.5/sucharu-theme-plank_2.0.5_all.deb">
+		<img src="https://img.shields.io/github/downloads/hsbasu/sucharu/2.0.5/sucharu-theme-plank_2.0.5_all.deb?color=blue&label=Downloads%40Latest%20Binary" alt="GitHub release (latest by date and asset)">
+	</a>
+	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.5/sucharu-themes_2.0.5_all.deb">
+		<img src="https://img.shields.io/github/downloads/hsbasu/sucharu/2.0.5/sucharu-themes_2.0.5_all.deb?color=blue&label=Downloads%40Latest%20Binary" alt="GitHub release (latest by date and asset)">
 	</a>
 </p>
 
@@ -39,10 +42,11 @@ A theme package with mac-styled 3D title buttons and circular components.
 <p align="center">
 	<a href="https://github.com/hsbasu/sucharu/zipball/master">Download Source (.zip)</a></br>
 	<a href="https://github.com/hsbasu/sucharu/tarball/master">Download Source (.tar.gz)</a></br>
-	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.4/sucharu-theme-cinnamon-shell_2.0.4_all.deb">Download Cinnamon Shell Binary (.deb)</a></br>
-	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.4/sucharu-theme-gnome-shell_2.0.4_all.deb">Download GNOME Shell Binary (.deb)</a></br>
-	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.4/sucharu-theme-plank_2.0.4_all.deb">Download Plank Binary (.deb)</a></br>
-	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.4/sucharu-themes_2.0.4_all.deb">Download GTK, Metacity and XFWM Binary (.deb)</a>
+	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.5/sucharu-theme-cinnamon-shell_2.0.5_all.deb">Download Cinnamon Shell Binary (.deb)</a></br>
+	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.5/sucharu-theme-gnome-shell_2.0.5_all.deb">Download GNOME Shell Binary (.deb)</a></br>
+	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.5/sucharu-theme-gtk_2.0.5_all.deb">Download GNOME Shell Binary (.deb)</a></br>
+	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.5/sucharu-theme-plank_2.0.5_all.deb">Download Plank Binary (.deb)</a></br>
+	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.5/sucharu-themes_2.0.5_all.deb">Download GTK, Metacity and XFWM Binary (.deb)</a>
 </p>
 
 ## Features and Screenshots
@@ -82,14 +86,14 @@ This theme is based on [Yaru](https://github.com/ubuntu/yaru) and [Mint-Y](https
 
 ## Dependencies
 ```
-debhelper ( > = 13)
+debhelper ( >= 13 )
 gnome-themes-standard
 gtk2-engines-murrine
 gtk2-engines-pixbuf
 inkscape
 python3
 sassc
-meson (> 0.59)
+meson ( >= 0.60 )
 ```
 ### Debian/Ubuntu based distro
 To install the build dependencies on Debian/Ubuntu based systems, run:
@@ -99,7 +103,7 @@ gtk2-engines-pixbuf inkscape python3 sassc meson
 ```
 
 ### Other Linux-based distro
-Remove `apt install` in the command given in [Debian/Ubuntu based distros](#debianubuntu-based-distro) and use the command for the package manager of the target system(eg. `yum install`, `dnf install`, `pacman -S` etc.)
+Remove `apt install` and the `debhelper` package in the command given in [Debian/Ubuntu based distros](#debianubuntu-based-distro) and use the command for the package manager of the target system(eg. `yum install`, `dnf install`, `pacman -S` etc.)
 
 **Note**: There might be cases where one or more dependencies might not be available for your system. But that is highly unlikely. In such situations, please [create an issue](#issue-tracking-and-contributing).
 
@@ -118,7 +122,7 @@ cd sucharu-master
 		make clean
 		make all
 		```
-		from the `/path/to/repo` in a terminal. It will create the **GTK** and **Cinnamon** themes in `usr/share/themes`, and **Plank themes** in `usr/share/plank/themes`.
+		from the `/path/to/repo` in a terminal. It will create the **GTK**, **Metacity**, **XFWM** and **Cinnamon** themes in `usr/share/themes`, and **Plank themes** in `usr/share/plank/themes`.
 
 	2. Copy the contents of `usr/` to `/usr/`:
 		```
@@ -136,7 +140,7 @@ cd sucharu-master
 		```
 		dpkg-buildpackage --no-sign
 		```
-		This will create `sucharu_*.deb` and `sucharu-plank_*.deb` package at `../path/to/repo`.
+		This will create `sucharu-theme*.deb` packages at `../path/to/repo`.
 	2. Install the debian packages using
 		```
 		sudo dpkg -i *.deb
@@ -150,8 +154,6 @@ cd sucharu-master
 
 ### For Developers
 Coming Soon or create a PR.
-
-**I have no knowledge on how to use `meson` or `npm` for testing. If you can offer any help regarding this, please start a discussion [here](https://github.com/hsbasu/sucharu/discussions) or create a [PR](https://github.com/hsbasu/sucharu/compare). It will be more than welcome.**
 
 ## User Manual
 Coming Soon or create a PR.
