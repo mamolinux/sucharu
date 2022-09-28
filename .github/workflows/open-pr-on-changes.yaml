@@ -22,6 +22,33 @@ jobs:
             src: src/Mint-Y/cinnamon/,
             dest: cinnamon-shell/upstream
           },
+          {
+            project: GTK3,
+            repo: "https://gitlab.gnome.org/GNOME/gtk.git",
+            upstreambranch: gtk-3-24,
+            localbranch: gtk3,
+            projectdir: gtk,
+            src: gtk/theme/Adwaita/,
+            dest: gtk/upstream/gtk-3.0/Adwaita
+          },
+          {
+            project: GTK4,
+            repo: "https://gitlab.gnome.org/GNOME/gtk.git",
+            upstreambranch: main,
+            localbranch: gtk4,
+            projectdir: gtk,
+            src: gtk/theme/Default/,
+            dest: gtk/upstream/gtk-4.0/Default
+          },
+          {
+            project: Libhandy,
+            repo: "https://gitlab.gnome.org/GNOME/libhandy.git",
+            upstreambranch: main,
+            localbranch: libhandy,
+            projectdir: libhandy,
+            src: src/themes/,
+            dest: gtk/upstream/libhandy/themes
+          },
       ]
     steps:
       # Checkout code
