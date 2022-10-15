@@ -18,8 +18,8 @@ components = [
   'gtk',
   'gtksourceview',
   # 'sounds',
-  # 'sessions',
-  # 'ubuntu-unity',
+  'sessions',
+  'ubuntu-unity',
   'xfwm4',
   'cinnamon-shell',
 ]
