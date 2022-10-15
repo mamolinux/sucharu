@@ -20,7 +20,7 @@ components = [
   # 'sounds',
   # 'sessions',
   # 'ubuntu-unity',
-  # 'xfwm4',
+  'xfwm4',
   'cinnamon-shell',
 ]
 
