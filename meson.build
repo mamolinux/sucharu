@@ -13,7 +13,7 @@ sassc = find_program('sassc')
 subdir('common')
 
 components = [
-  # 'metacity',
+  'metacity',
   'gnome-shell',
   'gtk',
   'gtksourceview',
