@@ -9,9 +9,9 @@ override_dh_auto_configure:
 		-Dcinnamon-shell=false \
 		-Dgnome-shell-gresource=true \
 		-Dgnome-shell-user-themes-support=enabled \
-		# -Dubuntu-unity=true \
-		# -Dsessions=false \
-		# -Dxfwm4=true
+		-Dubuntu-unity=true \
+		-Dsessions=false \
+		-Dxfwm4=true
 		
 override_dh_auto_build:
 	make -j6 "INSTALL=install --strip-program=true"

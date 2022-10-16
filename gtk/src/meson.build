@@ -24,7 +24,7 @@ foreach flavour: flavours
     base_theme_name = flavour.split('-darker')[0]
   else
     base_theme_name = flavour
-  endif  
+  endif
   message('Working on : ' + base_theme_name+ '\n')
   message('')
   is_accent = enabled_accent_colors.contains(base_theme_name)
