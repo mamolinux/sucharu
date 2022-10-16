@@ -1,3 +1,33 @@
+sucharu (2.0.6) stable; urgency=medium
+
+  * Build gtk themes using meson (#24)
+    - Add source files in gtk/src
+    - Add assets for each colour accents
+    - Create new binary package sucharu-theme-gtk
+      for gtk themes
+    - Keep only metacity and xfwm themes in sucharu-themes
+  * binary deb package for gtk (#25)
+    - Create new binary package sucharu-theme-gtk
+      for gtk themes
+    - Move gtk themes built by meson to sucharu-theme-gtk
+  * Update readme with version 2.0.5 (#26)
+    - Add dummy download link for gtk components
+      which will be activated in the next version
+    - Update dependency
+    - Update manual install instructions
+  * Add metacity component for Sucharu (#27)
+  * Add xfwm4 component for Sucharu (#28)
+  * Add sessions and unity components for Sucharu (#29)
+    - Ripped off from Yaru.
+  * Debian packaging for unity and xfwm4 (#30)
+    - Add debian packaging for unity
+    - Separate xfwm4 debian packaging
+    - GTK: remove trailing space
+    - Add Vcs browser
+    - Modify description of GTK packaging
+
+ -- Himadri Sekhar Basu <hsb10@iitbbs.ac.in>  Sun, 16 Oct 2022 10:29:02 +0530
+
 sucharu (2.0.5) stable; urgency=medium
 
   * Update readme with version 2.0.4 (#19)
