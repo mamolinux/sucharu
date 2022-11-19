@@ -21,13 +21,4 @@ override_dh_auto_clean:
 	make -j6 clean
 	dh_auto_clean -O--buildsystem=meson
 	
-override_dh_install:
-	dh_install -O--buildsystem=meson
-	mkdir -p debian/sucharu-themes/usr/share/themes/Sucharu
-	cp -r debian/tmp/usr/share/themes/Sucharu/gtk* debian/sucharu-themes/usr/share/themes/Sucharu
-	cp -r debian/tmp/usr/share/themes/Sucharu/index.theme debian/sucharu-themes/usr/share/themes/Sucharu
-	mkdir -p debian/sucharu-theme-gtk/usr/share/themes/Sucharu
-	cp -r usr/share/themes/Sucharu/gtk* debian/sucharu-theme-gtk/usr/share/themes/Sucharu
-	cp -r usr/share/themes/Sucharu/index.theme debian/sucharu-theme-gtk/usr/share/themes/Sucharu
-
 override_dh_missing:

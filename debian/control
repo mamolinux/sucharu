@@ -42,6 +42,9 @@ Description: Sucharu GNOME Shell desktop theme
 
 Package: sucharu-theme-gtk
 Architecture: all
+Replaces: sucharu-themes ( << 2.0.6 )
+Breaks: sucharu-themes ( << 2.0.6 )
+Conflicts: sucharu-themes ( << 2.0.6 )
 Depends: ${misc:Depends},
          gnome-themes-extra,
          gtk2-engines-pixbuf,
@@ -50,19 +53,31 @@ Depends: ${misc:Depends},
 Description: Sucharu GTK themes
  A collection of GTK+ themes for MamoLinux
  .
- This package contains the GTK+ 2, 3 and 4 theme parts
+ This package contains the GTK+ 2, 3 and 4,
+ and Metacity theme parts
  .
  If you want to follow development, more information here:
  https://github.com/hsbasu/sucharu/gtk.
 
 Package: sucharu-themes
 Architecture: all
-Replaces: mamolinux-themes
-Conflicts: mamolinux-themes
-Depends: ${misc:Depends}, mamolinux-icons, mamolinux-themes-cursor
-Description: MamoLinux Desktop themes
- A collection of GTK, Metacity and XFWM4 themes
- for MamoLinux
+Depends: ${misc:Depends},
+         sucharu-theme-cinnamon-shell,
+         sucharu-theme-gnome-shell,
+         sucharu-theme-gtk,
+         sucharu-theme-plank,
+         sucharu-theme-unity,
+         sucharu-theme-xfwm4,
+         mamolinux-icons,
+         mamolinux-themes-cursor
+Description: Metapackage for all MamoLinux Desktop themes
+ A metapackage for all Sucharu themes for MamoLinux
+ .
+ This package contains the Cinnamon, GTK+ 2, 3 and 4,
+ GNOME Shell, Metacity, Unity and XFWM4 theme 
+ .
+ If you want to follow development, more information here:
+ https://github.com/hsbasu/sucharu
 
 Package: sucharu-theme-plank
 Architecture: all
