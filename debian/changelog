@@ -1,3 +1,18 @@
+sucharu (2.0.7) stable; urgency=medium
+
+  * change file permission to non-executable (#31)
+  * update copyright for files copied from yaru (#32)
+  * Build cinnamon using meson and fix lintian (#33)
+    - Build and package cinnamon using meson
+    - Update gnome-shell break version to 43
+    - Build only plank themes using Makefile
+  * Package gtk themes in sucharu-theme-gtk (#34)
+    - Add gtk and metacity themes to sucharu-theme-gtk
+    - Create a metapackage sucharu-themes
+      containing all Sucharu theme parts
+
+ -- Himadri Sekhar Basu <hsb10@iitbbs.ac.in>  Sat, 19 Nov 2022 20:39:38 +0530
+
 sucharu (2.0.6) stable; urgency=medium
 
   * Build gtk themes using meson (#24)
