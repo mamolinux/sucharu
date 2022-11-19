@@ -1,11 +1,23 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: mamolinux-themes
+Upstream-Name: sucharu
 Upstream-Contact: Himadri Sekhar Basu <hsb10@iitbbs.ac.in>
-Source: https://github.com/hsbasu/mamolinux-themes
+Source: https://github.com/hsbasu/sucharu
 
 Files: *
-Copyright: 2012-2014 Clement Lefebvre <root@linuxmint.com>
-		   2021 Himadri Sekhar Basu <hsb10@iitbbs.ac.in>
+Copyright: 2017-2018, Canonical
+           2009-2015, Red Hat, Inc.
+           2009, Intel Corporation
+           2015, Руслан Ижбулатов <lrn1986@gmail.com>
+		   2012-2014 Clement Lefebvre <root@linuxmint.com>
+		   2021-2022 Himadri Sekhar Basu <hsb10@iitbbs.ac.in>
+License: GPL-3.0+
+
+Files: gnome-shell/upstream/*
+Copyright: 2009-2015 Red Hat, Inc.
+           2009 Intel Corporation
+           2017-2022, Canonical
+License: LGPL-2.1
+
 License: GPL-3+
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -22,3 +34,30 @@ License: GPL-3+
  .
  On Debian systems, the complete text of the GNU General
  Public License version 3 can be found in "/usr/share/common-licenses/GPL-3".
+
+License: LGPL-2.1
+ This program is free software; you can redistribute it and/or modify it
+ under the terms and conditions of the GNU Lesser General Public License,
+ version 2.1, as published by the Free Software Foundation.
+ .
+ This program is distributed in the hope it will be useful, but WITHOUT ANY
+ WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for
+ more details.
+ .
+ You should have received a copy of the GNU Lesser General Public License
+ along with this program; if not, write to the Free Software Foundation,
+ Inc., 51 Franklin St - Fifth Floor, Boston, MA 02110-1301 USA.
+
+License: LGPL-3.0
+ This file is free software; you can redistribute it and/or modify it under
+ the terms of the GNU Lesser General Public License as published by the Free Software
+ Foundation; version 3.
+ .
+ This file is distributed in the hope that it will be useful, but WITHOUT
+ ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more
+ details.
+ .
+ You should have received a copy of the GNU General Public License along with
+ this program; if not, see <https://www.gnu.org/licenses/lgpl-3.0.txt>
