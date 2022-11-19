@@ -1,6 +1,6 @@
 SHELL:=/bin/bash
 
-all: buildthemes buildplankthemes
+all: buildplankthemes
 
 buildthemes:
 	@echo "Building desktop themes"
