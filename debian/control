@@ -19,8 +19,7 @@ Vcs-Git: https://github.com/hsbasu/sucharu.git
 
 Package: sucharu-theme-cinnamon-shell
 Architecture: all
-Depends: ${shlibs:Depends},
-         ${misc:Depends},
+Depends: ${misc:Depends},
 Description: Sucharu Cinnamon Shell desktop theme
  This is the Cinnamon Shell theme for MamoLinux
  .
@@ -31,9 +30,8 @@ Description: Sucharu Cinnamon Shell desktop theme
 
 Package: sucharu-theme-gnome-shell
 Architecture: all
-Depends: ${shlibs:Depends},
-         ${misc:Depends},
-Breaks: gnome-shell (<< 42~)
+Depends: ${misc:Depends},
+Breaks: gnome-shell (<< 43~)
 Description: Sucharu GNOME Shell desktop theme
  This is the GNOME Shell theme for MamoLinux
  .
@@ -44,8 +42,7 @@ Description: Sucharu GNOME Shell desktop theme
 
 Package: sucharu-theme-gtk
 Architecture: all
-Depends: ${shlibs:Depends},
-         ${misc:Depends},
+Depends: ${misc:Depends},
          gnome-themes-extra,
          gtk2-engines-pixbuf,
          gtk2-engines-murrine,
@@ -77,8 +74,7 @@ Description: Sucharu Plank themes
 
 Package: sucharu-theme-unity
 Architecture: all
-Depends: ${shlibs:Depends},
-         ${misc:Depends},
+Depends: ${misc:Depends},
 Description: Sucharu Unity themes
  A collection of Unity themes for MamoLinux
  .
@@ -89,8 +85,7 @@ Description: Sucharu Unity themes
 
 Package: sucharu-theme-xfwm4
 Architecture: all
-Depends: ${shlibs:Depends},
-         ${misc:Depends}
+Depends: ${misc:Depends}
 Description: Sucharu XFWM4 themes
  A collection of XFWM4 themes for MamoLinux
  .
