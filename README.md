@@ -19,20 +19,20 @@
 	<a href="#download-latest-version">
 		<img src="https://img.shields.io/github/downloads/hsbasu/sucharu/total?label=Downloads" alt="Downloads">
 	</a>
-	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.5/sucharu-theme-cinnamon-shell_2.0.5_all.deb">
-		<img src="https://img.shields.io/github/downloads/hsbasu/sucharu/2.0.5/sucharu-theme-cinnamon-shell_2.0.5_all.deb?color=blue&label=Downloads%40Latest%20Binary" alt="GitHub release (latest by date and asset)">
+	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.7/sucharu-theme-cinnamon-shell_2.0.7_all.deb">
+		<img src="https://img.shields.io/github/downloads/hsbasu/sucharu/2.0.7/sucharu-theme-cinnamon-shell_2.0.7_all.deb?color=blue&label=Downloads%40Latest%20Binary" alt="GitHub release (latest by date and asset)">
 	</a>
-	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.5/sucharu-theme-gnome-shell_2.0.5_all.deb">
-		<img src="https://img.shields.io/github/downloads/hsbasu/sucharu/2.0.5/sucharu-theme-gnome-shell_2.0.5_all.deb?color=blue&label=Downloads%40Latest%20Binary" alt="GitHub release (latest by date and asset)">
+	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.7/sucharu-theme-gnome-shell_2.0.7_all.deb">
+		<img src="https://img.shields.io/github/downloads/hsbasu/sucharu/2.0.7/sucharu-theme-gnome-shell_2.0.7_all.deb?color=blue&label=Downloads%40Latest%20Binary" alt="GitHub release (latest by date and asset)">
 	</a>
-	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.5/sucharu-theme-gtk_2.0.5_all.deb">
-		<img src="https://img.shields.io/github/downloads/hsbasu/sucharu/2.0.5/sucharu-theme-gtk_2.0.5_all.deb?color=blue&label=Downloads%40Latest%20Binary" alt="GitHub release (latest by date and asset)">
+	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.7/sucharu-theme-gtk_2.0.7_all.deb">
+		<img src="https://img.shields.io/github/downloads/hsbasu/sucharu/2.0.7/sucharu-theme-gtk_2.0.7_all.deb?color=blue&label=Downloads%40Latest%20Binary" alt="GitHub release (latest by date and asset)">
 	</a>
-	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.5/sucharu-theme-plank_2.0.5_all.deb">
-		<img src="https://img.shields.io/github/downloads/hsbasu/sucharu/2.0.5/sucharu-theme-plank_2.0.5_all.deb?color=blue&label=Downloads%40Latest%20Binary" alt="GitHub release (latest by date and asset)">
+	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.7/sucharu-theme-plank_2.0.7_all.deb">
+		<img src="https://img.shields.io/github/downloads/hsbasu/sucharu/2.0.7/sucharu-theme-plank_2.0.7_all.deb?color=blue&label=Downloads%40Latest%20Binary" alt="GitHub release (latest by date and asset)">
 	</a>
-	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.5/sucharu-themes_2.0.5_all.deb">
-		<img src="https://img.shields.io/github/downloads/hsbasu/sucharu/2.0.5/sucharu-themes_2.0.5_all.deb?color=blue&label=Downloads%40Latest%20Binary" alt="GitHub release (latest by date and asset)">
+	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.7/sucharu-themes_2.0.7_all.deb">
+		<img src="https://img.shields.io/github/downloads/hsbasu/sucharu/2.0.7/sucharu-themes_2.0.7_all.deb?color=blue&label=Downloads%40Latest%20Binary" alt="GitHub release (latest by date and asset)">
 	</a>
 </p>
 
@@ -42,11 +42,13 @@ A theme package with mac-styled 3D title buttons and circular components.
 <p align="center">
 	<a href="https://github.com/hsbasu/sucharu/zipball/master">Download Source (.zip)</a></br>
 	<a href="https://github.com/hsbasu/sucharu/tarball/master">Download Source (.tar.gz)</a></br>
-	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.5/sucharu-theme-cinnamon-shell_2.0.5_all.deb">Download Cinnamon Shell Binary (.deb)</a></br>
-	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.5/sucharu-theme-gnome-shell_2.0.5_all.deb">Download GNOME Shell Binary (.deb)</a></br>
-	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.5/sucharu-theme-gtk_2.0.5_all.deb">Download GNOME Shell Binary (.deb)</a></br>
-	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.5/sucharu-theme-plank_2.0.5_all.deb">Download Plank Binary (.deb)</a></br>
-	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.5/sucharu-themes_2.0.5_all.deb">Download GTK, Metacity and XFWM Binary (.deb)</a>
+	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.7/sucharu-theme-cinnamon-shell_2.0.7_all.deb">Download Cinnamon Shell Binary (.deb)</a></br>
+	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.7/sucharu-theme-gnome-shell_2.0.7_all.deb">Download GNOME Shell Binary (.deb)</a></br>
+	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.7/sucharu-theme-gtk_2.0.7_all.deb">Download GTK+ Binary (.deb)</a></br>
+	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.7/sucharu-theme-plank_2.0.7_all.deb">Download Plank Binary (.deb)</a></br>
+	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.7/sucharu-theme-unity_2.0.7_all.deb">Download Unity Binary (.deb)</a></br>
+	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.7/sucharu-theme-xfwm4_2.0.7_all.deb">Download XFWM4 Binary (.deb)</a></br>
+	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.7/sucharu-themes_2.0.7_all.deb">Download Metapackage (.deb)</a>
 </p>
 
 ## Features and Screenshots
