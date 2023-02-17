@@ -68,6 +68,9 @@ jobs:
           #   dest: gtk/upstream/libhandy/themes
           # },
       ]
+    
+    permissions: write-all
+    
     steps:
       # Checkout code
       - uses: actions/checkout@v3
