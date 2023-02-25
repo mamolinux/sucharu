@@ -1,11 +1,6 @@
 SHELL:=/bin/bash
 
 all: buildplankthemes
-
-buildthemes:
-	@echo "Building desktop themes"
-	python3 generate-themes.py All
-	@wait
 	
 buildplankthemes:
 	@echo "Building plank themes"
@@ -14,8 +9,4 @@ buildplankthemes:
 	cp -Rv plank-themes/* usr/share/plank/themes/
 
 clean:
-	rm -rf usr __pycache__
-	@echo "Remove generated css files."
-	for f in `find ./src -type f -name '*.css'`; do \
-		rm -f $$f; \
-	done
+	rm -rf usr
