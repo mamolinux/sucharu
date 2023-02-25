@@ -1,9 +1,9 @@
 #!/bin/bash
 
-sudo rm -rf /usr/share/themes/Sucharu*
+rm -rf ~/.local/share/themes/Sucharu*
 rm -rf builddir
 
-meson builddir
+meson -Dprefix=$HOME/.local builddir
 meson compile -C builddir
 meson install -C builddir
 

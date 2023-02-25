@@ -29,19 +29,25 @@ assert(theme_sources.length() > 0, 'No theme sources found')
 common_asset_dir = meson.current_source_dir() + '/assets/common-assets'
 common_theme_assets = files(
   run_command(
-    'find', common_asset_dir, '-name', '*.svg', check: true
+    'find', common_asset_dir, '-name', '*.svg', '-o', '-name', '*.png', check: true
   ).stdout().strip().split('\n')
 )
 
 colorable_asset_dir = meson.current_source_dir() + '/assets/colorable-assets'
-colorable_theme_assets = files(
-  run_command(
-    'find', colorable_asset_dir, '-name', '*.svg', check: true
+colorable_asset_file = meson.current_source_dir() + '/colorable-assets.txt'
+colorable_assets = run_command(
+    'cat', colorable_asset_file, check: true
   ).stdout().strip().split('\n')
-)
+
+colorable_assets_list = []
+foreach asset: colorable_assets
+  colorable_assets_list += meson.current_source_dir() + '/assets' + asset
+endforeach
+colorable_theme_assets = files(colorable_assets_list)
 
 colorable_assets_names = []
 foreach asset: colorable_theme_assets
+  # message(fs.parent(asset))
   basename = fs.name(asset)
   colorable_assets_names += basename
 endforeach
@@ -189,7 +195,18 @@ foreach variant: variants
   
   # install colorable assets
   foreach colorable_asset: colorable_theme_assets
-    asset_rel_dir = '@0@'.format(colorable_asset).replace(colorable_asset_dir, '').replace(fs.name(colorable_asset), '')
+    if '@0@'.format(colorable_asset).contains('common-assets')
+      asset_rel_dir = '@0@'.format(colorable_asset).replace(common_asset_dir, '').replace(fs.name(colorable_asset), '')
+      asset_rel_dir = '/common-assets'+asset_rel_dir
+    else
+      if is_dark
+        asset_rel_dir = '@0@'.format(colorable_asset).replace(colorable_asset_dir, '').replace(fs.name(colorable_asset), '')
+        asset_rel_dir = '/dark-assets'+asset_rel_dir
+      else
+        asset_rel_dir = '@0@'.format(colorable_asset).replace(colorable_asset_dir, '').replace(fs.name(colorable_asset), '')
+        asset_rel_dir = '/light-assets'+asset_rel_dir
+      endif
+    endif
     basename = join_paths(asset_rel_dir, fs.name(colorable_asset))
     target_name = fs.stem(basename) + '-' + variant + '.svg'
 
@@ -209,13 +226,8 @@ foreach variant: variants
     )
 
     asset_src = meson.current_build_dir() + '/' + variant + asset_rel_dir + fs.stem(basename) + '-' + variant + '.svg'
-    if is_dark
-      asset_dir = install_dir+'/dark-assets'+asset_rel_dir
-      asset_tgt = install_dir+'/dark-assets'+basename
-    else
-      asset_dir = install_dir+'/light-assets'+asset_rel_dir
-      asset_tgt = install_dir+'/light-assets'+basename
-    endif
+    asset_dir = install_dir+asset_rel_dir
+    asset_tgt = install_dir+basename
     meson.add_install_script(
       'rename-cinnamon-assets.sh', asset_src, asset_dir, asset_tgt
     )
