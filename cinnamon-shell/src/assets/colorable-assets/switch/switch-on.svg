@@ -1,16 +1,6 @@
-<svg width="50" height="20" xmlns="http://www.w3.org/2000/svg">
-  <g>
-    <rect x="-50" y="0" width="50" height="20" rx="12.5" ry="12.5"
-      style="fill:#00ff02;fill-opacity:1;stroke:none" transform="scale(-1,1)"/>
-    <rect rx="8" ry="8" x="-48" y="3" width="16" height="16"
-      style="fill:#000000;fill-opacity:0.2;stroke:none" transform="scale(-1,1)" />
-    <rect  rx="8" ry="8" x="-48" y="2" width="16" height="16"
-      style="fill:#ffffff;fill-opacity:1;stroke:none" transform="scale(-1,1)" />
-    <g transform="translate(6,13.535534)">
-      <rect transform="rotate(225)" ry="0.66666085" rx="0.66666085" x="0" y="0"
-        height="2" width="5" style="fill:#000;stroke:none" />
-      <rect transform="rotate(225)" ry="0" x="0" y="0" width="2" height="8"
-        style="fill:#000;stroke:none" />
-    </g>
-  </g>
+<svg version="1.1" viewBox="0 0 50 20" xmlns="http://www.w3.org/2000/svg">
+ <rect width="50" height="20" rx="12.5" ry="12.5" fill="#00ff02"/>
+ <rect x="32" y="3" width="16" height="16" rx="8" ry="8" fill-opacity=".2"/>
+ <rect x="32" y="2" width="16" height="16" rx="8" ry="8" fill="#fff"/>
+  <path d="m10.242 6.4648-4.2422 4.2422-1.6504-1.6504c-0.26116-0.26116-0.68025-0.26116-0.94141 0l-0.47266 0.47266c-0.26116 0.26116-0.26116 0.68025 0 0.94141l3.0645 3.0645 5.6562-5.6562-1.4141-1.4141z"/>
 </svg>
