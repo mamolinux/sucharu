@@ -1,38 +1,38 @@
 # [Sucharu Themes](https://hsbasu.github.io/sucharu)
 
 <p align="center">
-	<a href="https://github.com/hsbasu/sucharu/blob/master/LICENSE">
-		<img src="https://img.shields.io/github/license/hsbasu/sucharu?label=License" alt="License"
+	<a href="https://github.com/mamolinux/sucharu/blob/master/LICENSE">
+		<img src="https://img.shields.io/github/license/mamolinux/sucharu?label=License" alt="License"
 	</a>
   	<a href="#">
-		<img src="https://img.shields.io/github/repo-size/hsbasu/sucharu?label=Repo%20size" alt="GitHub repo size">
+		<img src="https://img.shields.io/github/repo-size/mamolinux/sucharu?label=Repo%20size" alt="GitHub repo size">
   	</a>
-	<a href="https://github.com/hsbasu/sucharu/issues" target="_blank">
-		<img src="https://img.shields.io/github/issues/hsbasu/sucharu?label=Issues" alt="Open Issues">
+	<a href="https://github.com/mamolinux/sucharu/issues" target="_blank">
+		<img src="https://img.shields.io/github/issues/mamolinux/sucharu?label=Issues" alt="Open Issues">
 	</a>
-	<a href="https://github.com/hsbasu/sucharu/pulls" target="_blank">
-		<img src="https://img.shields.io/github/issues-pr/hsbasu/sucharu?label=PR" alt="Open PRs">
+	<a href="https://github.com/mamolinux/sucharu/pulls" target="_blank">
+		<img src="https://img.shields.io/github/issues-pr/mamolinux/sucharu?label=PR" alt="Open PRs">
 	</a>
-  	<a href="https://github.com/hsbasu/sucharu/releases/latest">
-		<img src="https://img.shields.io/github/v/release/hsbasu/sucharu?label=Latest%20Stable%20Release" alt="GitHub release (latest by date)">
+  	<a href="https://github.com/mamolinux/sucharu/releases/latest">
+		<img src="https://img.shields.io/github/v/release/mamolinux/sucharu?label=Latest%20Stable%20Release" alt="GitHub release (latest by date)">
   	</a>
 	<a href="#download-latest-version">
-		<img src="https://img.shields.io/github/downloads/hsbasu/sucharu/total?label=Downloads" alt="Downloads">
+		<img src="https://img.shields.io/github/downloads/mamolinux/sucharu/total?label=Downloads" alt="Downloads">
 	</a>
-	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.7/sucharu-theme-cinnamon-shell_2.0.7_all.deb">
-		<img src="https://img.shields.io/github/downloads/hsbasu/sucharu/2.0.7/sucharu-theme-cinnamon-shell_2.0.7_all.deb?color=blue&label=Downloads%40Latest%20Binary" alt="GitHub release (latest by date and asset)">
+	<a href="https://github.com/mamolinux/sucharu/releases/download/2.0.7/sucharu-theme-cinnamon-shell_2.0.7_all.deb">
+		<img src="https://img.shields.io/github/downloads/mamolinux/sucharu/2.0.7/sucharu-theme-cinnamon-shell_2.0.7_all.deb?color=blue&label=Downloads%40Latest%20Binary" alt="GitHub release (latest by date and asset)">
 	</a>
-	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.7/sucharu-theme-gnome-shell_2.0.7_all.deb">
-		<img src="https://img.shields.io/github/downloads/hsbasu/sucharu/2.0.7/sucharu-theme-gnome-shell_2.0.7_all.deb?color=blue&label=Downloads%40Latest%20Binary" alt="GitHub release (latest by date and asset)">
+	<a href="https://github.com/mamolinux/sucharu/releases/download/2.0.7/sucharu-theme-gnome-shell_2.0.7_all.deb">
+		<img src="https://img.shields.io/github/downloads/mamolinux/sucharu/2.0.7/sucharu-theme-gnome-shell_2.0.7_all.deb?color=blue&label=Downloads%40Latest%20Binary" alt="GitHub release (latest by date and asset)">
 	</a>
-	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.7/sucharu-theme-gtk_2.0.7_all.deb">
-		<img src="https://img.shields.io/github/downloads/hsbasu/sucharu/2.0.7/sucharu-theme-gtk_2.0.7_all.deb?color=blue&label=Downloads%40Latest%20Binary" alt="GitHub release (latest by date and asset)">
+	<a href="https://github.com/mamolinux/sucharu/releases/download/2.0.7/sucharu-theme-gtk_2.0.7_all.deb">
+		<img src="https://img.shields.io/github/downloads/mamolinux/sucharu/2.0.7/sucharu-theme-gtk_2.0.7_all.deb?color=blue&label=Downloads%40Latest%20Binary" alt="GitHub release (latest by date and asset)">
 	</a>
-	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.7/sucharu-theme-plank_2.0.7_all.deb">
-		<img src="https://img.shields.io/github/downloads/hsbasu/sucharu/2.0.7/sucharu-theme-plank_2.0.7_all.deb?color=blue&label=Downloads%40Latest%20Binary" alt="GitHub release (latest by date and asset)">
+	<a href="https://github.com/mamolinux/sucharu/releases/download/2.0.7/sucharu-theme-plank_2.0.7_all.deb">
+		<img src="https://img.shields.io/github/downloads/mamolinux/sucharu/2.0.7/sucharu-theme-plank_2.0.7_all.deb?color=blue&label=Downloads%40Latest%20Binary" alt="GitHub release (latest by date and asset)">
 	</a>
-	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.7/sucharu-themes_2.0.7_all.deb">
-		<img src="https://img.shields.io/github/downloads/hsbasu/sucharu/2.0.7/sucharu-themes_2.0.7_all.deb?color=blue&label=Downloads%40Latest%20Binary" alt="GitHub release (latest by date and asset)">
+	<a href="https://github.com/mamolinux/sucharu/releases/download/2.0.7/sucharu-themes_2.0.7_all.deb">
+		<img src="https://img.shields.io/github/downloads/mamolinux/sucharu/2.0.7/sucharu-themes_2.0.7_all.deb?color=blue&label=Downloads%40Latest%20Binary" alt="GitHub release (latest by date and asset)">
 	</a>
 </p>
 
@@ -40,15 +40,15 @@ A theme package with mac-styled 3D title buttons and circular components.
 
 ## Download Latest Version
 <p align="center">
-	<a href="https://github.com/hsbasu/sucharu/zipball/master">Download Source (.zip)</a></br>
-	<a href="https://github.com/hsbasu/sucharu/tarball/master">Download Source (.tar.gz)</a></br>
-	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.7/sucharu-theme-cinnamon-shell_2.0.7_all.deb">Download Cinnamon Shell Binary (.deb)</a></br>
-	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.7/sucharu-theme-gnome-shell_2.0.7_all.deb">Download GNOME Shell Binary (.deb)</a></br>
-	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.7/sucharu-theme-gtk_2.0.7_all.deb">Download GTK+ Binary (.deb)</a></br>
-	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.7/sucharu-theme-plank_2.0.7_all.deb">Download Plank Binary (.deb)</a></br>
-	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.7/sucharu-theme-unity_2.0.7_all.deb">Download Unity Binary (.deb)</a></br>
-	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.7/sucharu-theme-xfwm4_2.0.7_all.deb">Download XFWM4 Binary (.deb)</a></br>
-	<a href="https://github.com/hsbasu/sucharu/releases/download/2.0.7/sucharu-themes_2.0.7_all.deb">Download Metapackage (.deb)</a>
+	<a href="https://github.com/mamolinux/sucharu/zipball/master">Download Source (.zip)</a></br>
+	<a href="https://github.com/mamolinux/sucharu/tarball/master">Download Source (.tar.gz)</a></br>
+	<a href="https://github.com/mamolinux/sucharu/releases/download/2.0.7/sucharu-theme-cinnamon-shell_2.0.7_all.deb">Download Cinnamon Shell Binary (.deb)</a></br>
+	<a href="https://github.com/mamolinux/sucharu/releases/download/2.0.7/sucharu-theme-gnome-shell_2.0.7_all.deb">Download GNOME Shell Binary (.deb)</a></br>
+	<a href="https://github.com/mamolinux/sucharu/releases/download/2.0.7/sucharu-theme-gtk_2.0.7_all.deb">Download GTK+ Binary (.deb)</a></br>
+	<a href="https://github.com/mamolinux/sucharu/releases/download/2.0.7/sucharu-theme-plank_2.0.7_all.deb">Download Plank Binary (.deb)</a></br>
+	<a href="https://github.com/mamolinux/sucharu/releases/download/2.0.7/sucharu-theme-unity_2.0.7_all.deb">Download Unity Binary (.deb)</a></br>
+	<a href="https://github.com/mamolinux/sucharu/releases/download/2.0.7/sucharu-theme-xfwm4_2.0.7_all.deb">Download XFWM4 Binary (.deb)</a></br>
+	<a href="https://github.com/mamolinux/sucharu/releases/download/2.0.7/sucharu-themes_2.0.7_all.deb">Download Metapackage (.deb)</a>
 </p>
 
 ## Features and Screenshots
@@ -89,10 +89,8 @@ This theme is based on [Yaru](https://github.com/ubuntu/yaru) and [Mint-Y](https
 ## Dependencies
 ```
 debhelper ( >= 13 )
-gnome-themes-standard
 gtk2-engines-murrine
 gtk2-engines-pixbuf
-inkscape
 python3
 sassc
 meson ( >= 0.60 )
@@ -100,8 +98,8 @@ meson ( >= 0.60 )
 ### Debian/Ubuntu based distro
 To install the build dependencies on Debian/Ubuntu based systems, run:
 ```
-sudo apt install debhelper gnome-themes-standard gtk2-engines-murrine \
-gtk2-engines-pixbuf inkscape python3 sassc meson
+sudo apt install debhelper gtk2-engines-murrine \
+gtk2-engines-pixbuf python3 sassc meson
 ```
 
 ### Other Linux-based distro
@@ -113,7 +111,7 @@ Remove `apt install` and the `debhelper` package in the command given in [Debian
 ### Debian/Ubuntu based systems
 There are two methods, these themes can be installed/used on a Debian/Ubuntu based system. First, download and unzip the source package using:
 ```
-wget https://github.com/hsbasu/sucharu/archive/refs/heads/master.zip
+wget https://github.com/mamolinux/sucharu/archive/refs/heads/master.zip
 unzip master.zip
 cd sucharu-master
 ```
@@ -162,8 +160,8 @@ Coming Soon or create a PR.
 
 ## Issue Tracking and Contributing
 If you are interested to contribute and enrich the code, you are most welcome. You can do it by:
-1. If you find a bug, to open a new issue with details: [Click Here](https://github.com/hsbasu/sucharu/issues)
-2. If you know how to fix a bug or want to add new feature/documentation to the existing package, please create a [Pull Request](https://github.com/hsbasu/sucharu/compare).
+1. If you find a bug, to open a new issue with details: [Click Here](https://github.com/mamolinux/sucharu/issues)
+2. If you know how to fix a bug or want to add new feature/documentation to the existing package, please create a [Pull Request](https://github.com/mamolinux/sucharu/compare).
 
 ## Contributors
 
