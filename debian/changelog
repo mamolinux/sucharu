@@ -1,3 +1,39 @@
+sucharu (2.0.8) stable; urgency=medium
+
+  * Update readme with version 2.0.7 (#35)
+    - Add binary download links for GTK+,
+      Unity and XFWM4
+  * Add GTK auto refresh (#38)
+    - Sync Mint-Y gtk themes to /gtk/upstream/gtk*/Mint-Y
+    - Upload Yaru gtk themes to /gtk/upstream/gtk*/Yaru
+      from commit a65449080
+  * New upstream snapshot for Cinnamon (#41)
+    Co-authored-by: hsbasu <hsbasu@users.noreply.github.com>
+  * New upstream snapshot for GTK3 (#39)
+    Co-authored-by: hsbasu <hsbasu@users.noreply.github.com>
+  * New upstream snapshot for GTK4 (#40)
+    Co-authored-by: hsbasu <hsbasu@users.noreply.github.com>
+  * fix permissions of github actions
+  * optimize assets for cinnamon theme (#44)
+    - Reduce the size using scour
+    - Update the dpi to support newer versions
+      while opened in inkscape
+  * Update build steps for colorable cinnamon assets (#45)
+    - Update meson build script to include png assets
+    - Read colorable assets from a file
+    - Update scss from upstream
+    - Update test script
+  * Update debian packaging (#46)
+    - Regress minimum gnome-shell version
+      to 42 to support jammy
+    - Update VCS source and links
+    - Remove unused dependencies
+    - Fix lintian from copyright
+    - Remove unnecessary lines from Makefile
+  * Update readme and cleanup unused sources (#47)
+
+ -- Himadri Sekhar Basu <hsb10@iitbbs.ac.in>  Sat, 25 Feb 2023 21:48:05 +0530
+
 sucharu (2.0.7) stable; urgency=medium
 
   * change file permission to non-executable (#31)
