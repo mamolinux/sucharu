@@ -125,6 +125,17 @@ StScrollBar {
 }
 
 //
+// Ripples
+//
+.ripple-pointer-location {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: transparentize($selected_bg_color, 0.7);
+  box-shadow: 0 0 2px 2px $selected_bg_color;
+}
+
+//
 // Slider
 //
 .popup-slider-menu-item,
@@ -189,14 +200,14 @@ StScrollBar {
   StBin {
     width: 16px;
     height: 16px;
-    background-image: url("#{$asset_path}/checkbox/checkbox-unchecked.svg");
+    background-image: url("#{$asset_path}/checkbox/radio-unchecked.svg");
   }
 
-  &:focus StBin { background-image: url("#{$asset_path}/checkbox/checkbox-unchecked-focused.svg"); }
+  &:focus StBin { background-image: url("#{$asset_path}/checkbox/radio-unchecked.svg"); }
 
-  &:checked StBin { background-image: url("#{$asset_path}/checkbox/checkbox-checked.svg"); }
+  &:checked StBin { background-image: url("#{$asset_path}/checkbox/radio-checked.svg"); }
 
-  &:focus:checked StBin { background-image: url("#{$asset_path}/checkbox/checkbox-checked-focused.svg"); }
+  &:focus:checked StBin { background-image: url("#{$asset_path}/checkbox/radio-checked.svg"); }
 }
 
 //
@@ -298,9 +309,9 @@ StScrollBar {
   border-right-width: 0;
 
   &:active {
-    color: $selected_fg_color;
+    color: $noaccent_selected_fg_color;
     // border-color: transparentize($fg_color, 0.89);
-    background-color: $selected_bg_color;
+    background-color: $noaccent_selected_bg_color;
   }
   &:insensitive {
     color: transparentize($fg_color, 0.5);
@@ -1403,7 +1414,7 @@ StScrollBar {
   &-favorites-box {
     padding: 10px;
     transition-duration: 300;
-    background-color: $base_color;
+    background-color: darken($base_color, 5%);
     border: 1px solid $borders_color;
   }
 
@@ -1413,7 +1424,7 @@ StScrollBar {
     border-radius: 2px;
 
     &:hover {
-      background-color: $selected_bg_color;
+      background-color: $noaccent_selected_bg_color;
     }
   }
 
@@ -1430,7 +1441,7 @@ StScrollBar {
   &-categories-box { padding: 10px 30px 10px 30px; }
 
   &-applications-inner-box,
-  &-applications-outer-box { padding: 10px 10px 0 10px; }
+  &-applications-outer-box { margin: 10px 10px 0 10px; }
 
   &-application-button {
     padding: 7px;
@@ -1441,8 +1452,8 @@ StScrollBar {
 
     &-selected {
       padding: 7px;
-      color: $selected_fg_color;
-      background-color: $selected_bg_color;
+      color: $noaccent_selected_fg_color;
+      background-color: $noaccent_selected_bg_color;
       border: 1px solid $borders_color;
 
       &:highlighted { font-weight: bold; }
@@ -1458,8 +1469,8 @@ StScrollBar {
 
     &-selected {
       padding: 7px;
-      color: $selected_fg_color;
-      background-color: $selected_bg_color;
+      color: $noaccent_selected_fg_color;
+      background-color: $noaccent_selected_bg_color;
       border: 1px solid $borders_color;
     }
     &-hover {
@@ -1735,13 +1746,15 @@ StScrollBar {
   }
 
   &-number-label {
+    font-size: 0.8em;
     z-index: 99;
     color: $tooltip_border_color;
   }
 
   &-badge {
-    border-radius: 256px;
+    border-radius: 9999px;
     background-color: $tooltip_fg_color;
+    margin: 0;
   }
 
   &-button-label {
@@ -2013,8 +2026,7 @@ StScrollBar {
     padding-bottom: 2px;
     // border-bottom-width: 1px;
     transition-duration: 200;
-
-    &:hover { background-color: $selected_bg_color; }
+    &:hover { background-color: $noaccent_selected_bg_color; }
   }
 
   &.vertical {
@@ -2078,8 +2090,8 @@ StScrollBar {
 
     &:hover,
     &:checked {
-      color: $selected_fg_color;
-      background-color: $selected_bg_color;
+      color: $noaccent_selected_fg_color;
+      background-color: $noaccent_selected_bg_color;
     }
 
     &:highlight {
@@ -2097,20 +2109,20 @@ StScrollBar {
     &:checked,
     .applet-box:hover &,
     .applet-box:checked & {
-      color: $selected_fg_color;
+      color: $noaccent_selected_fg_color;
       text-shadow: none;
     }
   }
 
   &-icon {
-    color: $selected_fg_color;
+    color: $noaccent_selected_fg_color;
     icon-size: 22px;
 
     &:hover,
     &:checked,
     .applet-box:hover > &,
     .applet-box:checked > & {
-      color: $selected_fg_color;
+      color: $noaccent_selected_fg_color;
       text-shadow: none;
     }
   }
@@ -2133,6 +2145,26 @@ StScrollBar {
     font-size: 1em;
     font-weight: bold;
     margin: 0px;
+}
+
+//
+// Cornerbar Applet
+//
+.applet-cornerbar {
+  width: 8px;
+  background-color: transparentize(black, 0.8);
+
+  &-box {
+    padding: 4px 4px;
+
+    &:hover {
+      background-color: $noaccent_selected_bg_color;
+    }
+  }
+
+  &.vertical {
+    height: 8px;
+  }
 }
 
 //

@@ -51,6 +51,17 @@ $active_borders_color: darken($borders_color,if($variant=='light', 5%, 3%));
     background-color: $active_bg_color;
     border-radius: 10px;
   }
+
+  &:rtl {
+    &:hover, &:focus {
+      background-color: $hover_bg_color;
+      border-radius: 10px;
+    }
+    &:active {
+      background-color: $active_bg_color;
+      border-radius: 10px;
+    }
+  }
 }
 
 // arrow forward
@@ -63,6 +74,17 @@ $active_borders_color: darken($borders_color,if($variant=='light', 5%, 3%));
 	  background-color: $active_bg_color;
 	  border-radius: 10px;
 	}
+
+  &:rtl {
+    &:hover, &:focus {
+      background-color: $hover_bg_color;
+      border-radius: 10px;
+    }
+    &:active {
+      background-color: $active_bg_color;
+      border-radius: 10px;
+    }
+  }
 }
 
 //
