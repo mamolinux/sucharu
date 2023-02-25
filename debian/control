@@ -7,15 +7,11 @@ Build-Depends: debhelper-compat (= 13),
 Build-Depends-Indep: libglib2.0-dev,
                      meson (>= 0.60),
                      sassc,
-                     inkscape,
-                     gtk2-engines-pixbuf,
-                     gtk2-engines-murrine,
-                     gnome-themes-standard,
                      python3
 Standards-Version: 4.6.0
 Homepage: https://hsbasu.github.io/sucharu
-Vcs-Browser: https://github.com/hsbasu/sucharu
-Vcs-Git: https://github.com/hsbasu/sucharu.git
+Vcs-Browser: https://github.com/mamolinux/sucharu
+Vcs-Git: https://github.com/mamolinux/sucharu.git
 
 Package: sucharu-theme-cinnamon-shell
 Architecture: all
@@ -26,19 +22,19 @@ Description: Sucharu Cinnamon Shell desktop theme
  This package contains the Cinnamon Shell theme part
  .
  If you want to follow development, more information here:
- https://github.com/hsbasu/sucharu/cinnamon-shell.
+ https://github.com/mamolinux/sucharu/cinnamon-shell.
 
 Package: sucharu-theme-gnome-shell
 Architecture: all
 Depends: ${misc:Depends},
-Breaks: gnome-shell (<< 43~)
+Breaks: gnome-shell (<< 42~)
 Description: Sucharu GNOME Shell desktop theme
  This is the GNOME Shell theme for MamoLinux
  .
  This package contains the GNOME Shell theme part
  .
  If you want to follow development, more information here:
- https://github.com/hsbasu/sucharu/gnome-shell.
+ https://github.com/mamolinux/sucharu/gnome-shell.
 
 Package: sucharu-theme-gtk
 Architecture: all
@@ -57,7 +53,7 @@ Description: Sucharu GTK themes
  and Metacity theme parts
  .
  If you want to follow development, more information here:
- https://github.com/hsbasu/sucharu/gtk.
+ https://github.com/mamolinux/sucharu/gtk.
 
 Package: sucharu-themes
 Architecture: all
@@ -77,7 +73,7 @@ Description: Metapackage for all MamoLinux Desktop themes
  GNOME Shell, Metacity, Unity and XFWM4 theme 
  .
  If you want to follow development, more information here:
- https://github.com/hsbasu/sucharu
+ https://github.com/mamolinux/sucharu.
 
 Package: sucharu-theme-plank
 Architecture: all
@@ -86,6 +82,11 @@ Conflicts: mamolinux-themes-plank
 Depends: ${misc:Depends}
 Description: Sucharu Plank themes
  A collection of Plank themes for MamoLinux
+ .
+ This package contains the Plank theme parts
+ .
+ If you want to follow development, more information here:
+ https://github.com/mamolinux/sucharu/plank-themes.
 
 Package: sucharu-theme-unity
 Architecture: all
@@ -96,7 +97,7 @@ Description: Sucharu Unity themes
  This package contains the Unity theme parts
  .
  If you want to follow development, more information here:
- https://github.com/hsbasu/sucharu/ubuntu-unity.
+ https://github.com/mamolinux/sucharu/ubuntu-unity.
 
 Package: sucharu-theme-xfwm4
 Architecture: all
@@ -107,4 +108,4 @@ Description: Sucharu XFWM4 themes
  This package contains the XFWM4 theme parts
  .
  If you want to follow development, more information here:
- https://github.com/hsbasu/sucharu/xfwm4.
+ https://github.com/mamolinux/sucharu/xfwm4.
