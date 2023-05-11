@@ -2087,8 +2087,9 @@ radio {
 // GtkScale
 //
 scale {
-  $_marks_length: 3px;
+  $_marks_length: 7px;
   $_marks_distance: 1px;
+  $_value_distance: 3px;
 
   min-height: 15px;
   min-width: 15px;
@@ -2232,7 +2233,18 @@ scale {
     &:disabled { background-color: transparent; }
   }
 
-  value { color: gtkalpha(currentColor, 0.4); }
+  value {
+    color: gtkalpha(currentColor, 0.4);
+
+    @each $value_class, $value_margin in (top, bottom),
+                                         (bottom, top),
+                                         (left, right),
+                                         (right, left) {
+      &.#{$value_class} {
+        margin-#{$value_margin}: $_value_distance;
+      }
+    }
+  }
 
   marks {
     color: gtkalpha(currentColor, 0.4);
@@ -2812,9 +2824,11 @@ infobar {
   &.question,
   &.warning,
   &.error {
-    background-color: $selected_bg_color;
-    color: $selected_fg_color;
-    caret-color: currentColor;
+    & > revealer > box {
+      background-color: $selected_bg_color;
+      color: $selected_fg_color;
+      caret-color: currentColor;
+    }
 
     button { @extend %selected_button }
 
@@ -2830,9 +2844,9 @@ infobar {
     }
   }
 
-  &.warning { background-color: $warning_color; }
-  &.error { background-color: $destructive_color; }
-  &.question { background-color: $question_color; }
+  &.warning > revealer > box { background-color: $warning_color; }
+  &.error > revealer > box { background-color: $destructive_color; }
+  &.question > revealer > box { background-color: $question_color; }
 }
 
 //
@@ -3200,23 +3214,24 @@ headerbar,
       color: $selected_fg_color;
       @include draw_circle($selected_bg_color);
 
+      &:backdrop { @include draw-circle($_wm_backdrop_icon_color); }
       &:hover { @include draw-circle(lighten($selected_bg_color, 5%)); }
       &:active { @include draw-circle(darken($selected_bg_color, 5%)); }
-      &:backdrop { @include draw-circle($_wm_backdrop_icon_color); }
     }
 
     &.maximize,
     &.minimize {
+      &:backdrop {
+        color: $_wm_backdrop_icon_color;
+      }
       &:hover,
       &:hover:backdrop {
+        color: $fg_color;
         @include draw-circle($wm_button_hover_bg);
       }
       &:active,
       &:active:backdrop {
         @include draw-circle($wm_button_active_bg);
-      }
-      &:backdrop {
-        color: $_wm_backdrop_icon_color;
       }
     }
   }
