@@ -1473,9 +1473,10 @@ StScrollBar {
       background-color: $noaccent_selected_bg_color;
       border: 1px solid $borders_color;
     }
-    &-hover {
-      background-color: red;
-      border-radius: 2px;
+    &:hover {
+      background-color: mix($noaccent_selected_bg_color, $bg_color, 40%);
+      border: 1px solid mix($borders_color, $bg_color, 40%);
+      border-radius: 0px;
     }
     &-greyed {
       padding: 7px;
@@ -1884,7 +1885,7 @@ StScrollBar {
 
   &-overlay {
     width: 290px;
-    height: 70px;
+    height: 5.4em;
     padding: 15px;
     spacing: 0.5em;
     background: transparentize($bg_color, 0.1);
@@ -2064,11 +2065,11 @@ StScrollBar {
 
   &-separator-line {
     width: 1px;
-    background: rgba(255,255,255, 0.12);
+    background: $applet_separator_color;
 
     &-vertical {
       height: 1px;
-      background: rgba(255,255,255, 0.12);
+      background: $applet_separator_color;
     }
   }
 
@@ -2152,13 +2153,13 @@ StScrollBar {
 //
 .applet-cornerbar {
   width: 8px;
-  background-color: transparentize(black, 0.8);
+  background-color: $corner_bar_unhighlighted;
 
   &-box {
     padding: 4px 4px;
 
-    &:hover {
-      background-color: $noaccent_selected_bg_color;
+    &:hover > .applet-cornerbar {
+      background-color: $corner_bar_highlighted;
     }
   }
 
