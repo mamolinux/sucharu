@@ -8,16 +8,16 @@ $variant: if($sucharu_is_dark_variant, 'dark', 'light');
 $sucharu_colors: (
     bg-color: $bg_color,
     accent-bg-color: $sucharu_accent_bg_color,
-    accent-active-color: $progress_bg_color,
-    accent-focused-color: if($variant == 'dark', darken($accent_bg_color, 7%), darken($accent_bg_color, 3%)),
+    accent-active-color: if($variant == 'light', darken($accent_bg_color, 15%), darken($accent_bg_color, 20%)),
+    accent-focused-color: if($variant == 'light', lighten($accent_bg_color, 10%), lighten($accent_bg_color, 7%)),
     border-color: $borders_color,
     disabled-bg-color: mix($bg_color, $fg_color, 80%),
-    switch-bg-color: if($variant == 'dark', lighten($inkstone, 5%), lighten($ash, 20%)),
-    check-bg-color: if($variant == 'dark', lighten($bg_color, 2%), $porcelain),
+    switch-bg-color: if($variant == 'light', lighten($ash, 20%), lighten($inkstone, 5%)),
+    check-bg-color: if($variant == 'light', $porcelain, lighten($bg_color, 2%)),
 );
 
 $sucharu_colors: map-merge($sucharu_colors, (
-    accent-border-color: lighten(map-get($sucharu_colors, accent-active-color), 17%),
+    accent-border-color: lighten(map-get($sucharu_colors, accent-active-color), 35%),
 ));
 
 @function opaque-color($color, $background: $bg_color) {

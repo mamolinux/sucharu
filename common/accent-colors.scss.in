@@ -11,13 +11,13 @@
     } @else if $accent_color == 'grey' {
         $color: #9d9d9d;
     } @else if $accent_color == 'orange' {
-        $color: #E95420;
+        $color: #e95420;
     } @else if $accent_color == 'pink' {
         $color: #c76199;
     } @else if $accent_color == 'purple' {
         $color: #8c6ec9;
     } @else if $accent_color == 'red' {
-        $color: #DA3450;
+        $color: #da3450;
     } @else if $accent_color == 'sand' {
         $color: #c8ac69;
     } @else if $accent_color == 'teal' {
