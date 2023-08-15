@@ -112,7 +112,7 @@ foreach variant: variants
     output: '@BASENAME@.css'.format(variant),
     command: [
       sassc, '-a', '@INPUT@', '@OUTPUT@',
-      '-I', css_sources_path / 'cinnamon-shell-sass',
+      '-I', css_sources_path / 'sass',
     ],
     depends: source_deps,
     depend_files: [
@@ -137,7 +137,7 @@ foreach variant: variants
     configuration: {
       'DarkVariant': is_dark ? 'true' : 'false',
       'SucharuVariant': variant,
-      'VariantDir': 'cinnamon-shell-sass',
+      'VariantDir': 'sass',
       # 'UseGResource': cinnamonshell_use_gresource ? 'true' : 'false',
       'Colors': 'colors',
       'ColorableAssets': '@0@'.format(colorable_assets_names),
