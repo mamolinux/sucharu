@@ -3,6 +3,6 @@
 rm -rf ~/.local/share/themes/Sucharu*
 rm -rf builddir
 
-meson -Dprefix=$HOME/.local builddir
+meson setup -Dprefix=$HOME/.local builddir
 meson compile -C builddir
 meson install -C builddir

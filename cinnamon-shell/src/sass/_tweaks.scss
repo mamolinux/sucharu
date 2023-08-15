@@ -43,46 +43,40 @@ $active_borders_color: darken($borders_color,if($variant=='light', 5%, 3%));
 
 // arrow back
 .calendar-change-month-back {
+  border-radius: 10px;
   &:hover, &:focus {
     background-color: $hover_bg_color;
-    border-radius: 10px;
   }
   &:active {
     background-color: $active_bg_color;
-    border-radius: 10px;
   }
 
   &:rtl {
     &:hover, &:focus {
       background-color: $hover_bg_color;
-      border-radius: 10px;
     }
     &:active {
       background-color: $active_bg_color;
-      border-radius: 10px;
     }
   }
 }
 
 // arrow forward
 .calendar-change-month-forward {
+  border-radius: 10px;
 	&:hover, &:focus {
 	  background-color: $hover_bg_color;
-	  border-radius: 10px;
 	}
 	&:active {
 	  background-color: $active_bg_color;
-	  border-radius: 10px;
 	}
 
   &:rtl {
     &:hover, &:focus {
       background-color: $hover_bg_color;
-      border-radius: 10px;
     }
     &:active {
       background-color: $active_bg_color;
-      border-radius: 10px;
     }
   }
 }
@@ -97,7 +91,7 @@ $active_borders_color: darken($borders_color,if($variant=='light', 5%, 3%));
 }
 
 :focus, :hover, :hover:focus, :active, :active:focus, :insensitive {
-  border-radius: 50px;
+  border-radius: 10px;
 }
 
 
@@ -151,5 +145,31 @@ $active_borders_color: darken($borders_color,if($variant=='light', 5%, 3%));
       padding-bottom: 5px;
       border-radius: 25px;
     }
+  }
+}
+
+.panel {
+  &-top {
+    background-gradient-direction: vertical;
+    background-gradient-start: transparentize($panel_bg, 0.3);
+    background-gradient-end: transparentize(mix($panel_fg, $panel_bg, 60%), 0.6);
+  }
+
+  &-bottom {
+    background-gradient-direction: vertical;
+    background-gradient-start: transparentize(mix($panel_fg, $panel_bg, 60%), 0.6);
+    background-gradient-end: transparentize($panel_bg, 0.3);
+  }
+
+  &-left {
+    background-gradient-direction: horizontal;
+    background-gradient-start: transparentize($panel_bg, 0.3);
+    background-gradient-end: transparentize(mix($panel_fg, $panel_bg, 60%), 0.6);
+  }
+
+  &-right {
+    background-gradient-direction: horizontal;
+    background-gradient-start: transparentize(mix($panel_fg, $panel_bg, 60%), 0.6);
+    background-gradient-end: transparentize($panel_bg, 0.3);
   }
 }
