@@ -917,8 +917,8 @@ actionbar {
 //
 headerbar,
 %titlebar {
-  min-height: 42px;
-  padding: 0 7px;
+  min-height: 46px;
+  padding: 0 6px;
 
   border-width: 0 0 1px;
   border-style: solid;
@@ -1026,7 +1026,7 @@ headerbar,
 
   &.default-decoration {
     min-height: 28px;
-    padding: 0 7px;
+    padding: 2px 6px;
     border-bottom-width: 0;
 
     .maximized & { background-color: opacify($header_bg, 1); }
@@ -2087,8 +2087,9 @@ radio {
 // GtkScale
 //
 scale {
-  $_marks_length: 3px;
+  $_marks_length: 7px;
   $_marks_distance: 1px;
+  $_value_distance: 3px;
 
   min-height: 15px;
   min-width: 15px;
@@ -2232,7 +2233,18 @@ scale {
     &:disabled { background-color: transparent; }
   }
 
-  value { color: gtkalpha(currentColor, 0.4); }
+  value {
+    color: gtkalpha(currentColor, 0.4);
+
+    @each $value_class, $value_margin in (top, bottom),
+                                         (bottom, top),
+                                         (left, right),
+                                         (right, left) {
+      &.#{$value_class} {
+        margin-#{$value_margin}: $_value_distance;
+      }
+    }
+  }
 
   marks {
     color: gtkalpha(currentColor, 0.4);
@@ -2812,9 +2824,11 @@ infobar {
   &.question,
   &.warning,
   &.error {
-    background-color: $selected_bg_color;
-    color: $selected_fg_color;
-    caret-color: currentColor;
+    & > revealer > box {
+      background-color: $selected_bg_color;
+      color: $selected_fg_color;
+      caret-color: currentColor;
+    }
 
     button { @extend %selected_button }
 
@@ -2830,9 +2844,9 @@ infobar {
     }
   }
 
-  &.warning { background-color: $warning_color; }
-  &.error { background-color: $destructive_color; }
-  &.question { background-color: $question_color; }
+  &.warning > revealer > box { background-color: $warning_color; }
+  &.error > revealer > box { background-color: $destructive_color; }
+  &.question > revealer > box { background-color: $question_color; }
 }
 
 //
@@ -2884,20 +2898,19 @@ infobar {
 //
 // Tooltips
 //
-tooltip,
-.tooltip {
+tooltip {
   &.background {
     // background-color needs to be set this way otherwise it gets drawn twice
     // see https://bugzilla.gnome.org/show_bug.cgi?id=736155 for details.
     background-color: $tooltip_bg_color;
     background-clip: padding-box;
 
-    label { padding: 4px; }
+    label { padding: 6px 10px; }
   }
 
   color: $tooltip_fg_color;
-  border-radius: 2px;
-  border: 1px solid $tooltip_border_color;
+  border-radius: 5px;
+  border: none;
 
   decoration { background-color: transparent; }
 
@@ -3135,8 +3148,8 @@ decoration {
                 0 0 0 1px transparentize($_wm_border, 0.1);
   }
   tooltip.csd & {
-    border-radius: 2px;
-    box-shadow: 0 1px 3px 1px $_wm_border;
+    border-radius: 5px;
+    box-shadow: none;
   }
 
   messagedialog.csd & { border-radius: 8px; }
@@ -3160,19 +3173,17 @@ headerbar,
     padding-bottom: 0px;
     padding-right: 0px;
     padding-left: 0px;
-    min-width: 22px;
-    min-height: 22px;
     margin: 0;
   }
 
   button.titlebutton {
     $_wm_backdrop_icon_color: if($variant == 'light', darken($wm_icon_unfocused_bg, 5%), lighten($wm_icon_unfocused_bg, 5%));
 
-    min-width: 18px;
-    min-height: 18px;
+    min-width: 20px;
+    min-height: 20px;
     @extend .image-button;
 
-    padding: 10px 3px;
+    padding: 10px 1px;
     margin: 0;
     transition: none;
 
@@ -3200,23 +3211,24 @@ headerbar,
       color: $selected_fg_color;
       @include draw_circle($selected_bg_color);
 
+      &:backdrop { @include draw-circle($_wm_backdrop_icon_color); }
       &:hover { @include draw-circle(lighten($selected_bg_color, 5%)); }
       &:active { @include draw-circle(darken($selected_bg_color, 5%)); }
-      &:backdrop { @include draw-circle($_wm_backdrop_icon_color); }
     }
 
     &.maximize,
     &.minimize {
+      &:backdrop {
+        color: $_wm_backdrop_icon_color;
+      }
       &:hover,
       &:hover:backdrop {
+        color: $fg_color;
         @include draw-circle($wm_button_hover_bg);
       }
       &:active,
       &:active:backdrop {
         @include draw-circle($wm_button_active_bg);
-      }
-      &:backdrop {
-        color: $_wm_backdrop_icon_color;
       }
     }
   }
