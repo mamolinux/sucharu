@@ -6,6 +6,10 @@ on:
   schedule:
     - cron: '8 0 * * *'
 
+permissions:
+  pull-requests: write
+  contents: write
+
 jobs:
   refresh-upstream:
     name: Check for upstream theme related changes
@@ -20,17 +24,19 @@ jobs:
             localbranch: cinnamon,
             projectdir: mint-themes,
             src: src/Mint-Y/cinnamon/,
-            dest: cinnamon-shell/upstream
+            dest: cinnamon-shell/upstream,
+            label: "Area: cinnamon"
           },
-          # {
-          #   project: GTK3,
-          #   repo: "https://gitlab.gnome.org/GNOME/gtk.git",
-          #   upstreambranch: gtk-3-24,
-          #   localbranch: gtk3,
-          #   projectdir: gtk,
-          #   src: gtk/theme/Adwaita/,
-          #   dest: gtk/upstream/gtk-3.0/Adwaita
-          # },
+          {
+            project: GNOME Shell,
+            repo: "https://github.com/ubuntu/yaru.git",
+            upstreambranch: master,
+            localbranch: gnome-shell,
+            projectdir: yaru,
+            src: gnome-shell/src/,
+            dest: gnome-shell/upstream,
+            label: "Area: gnome-shell"
+          },
           {
             project: GTK3,
             repo: "https://github.com/linuxmint/mint-themes.git",
@@ -38,17 +44,19 @@ jobs:
             localbranch: gtk3,
             projectdir: mint-themes,
             src: src/Mint-Y/gtk-3.0/,
-            dest: gtk/upstream/gtk-3.0/Mint-Y
+            dest: gtk/upstream/gtk-3.0/Mint-Y,
+            label: "Area: gtk3"
           },
-          # {
-          #   project: GTK4,
-          #   repo: "https://gitlab.gnome.org/GNOME/gtk.git",
-          #   upstreambranch: main,
-          #   localbranch: gtk4,
-          #   projectdir: gtk,
-          #   src: gtk/theme/Default/,
-          #   dest: gtk/upstream/gtk-4.0/Default
-          # },
+          {
+            project: GTK3,
+            repo: "https://github.com/ubuntu/yaru.git",
+            upstreambranch: master,
+            localbranch: gtk3,
+            projectdir: yaru,
+            src: gtk/src/default/gtk-3.0/,
+            dest: gtk/upstream/gtk-3.0/Yaru,
+            label: "Area: gtk3"
+          },
           {
             project: GTK4,
             repo: "https://github.com/linuxmint/mint-themes.git",
@@ -56,7 +64,18 @@ jobs:
             localbranch: gtk4,
             projectdir: mint-themes,
             src: src/Mint-Y/gtk-4.0/,
-            dest: gtk/upstream/gtk-4.0/Mint-Y
+            dest: gtk/upstream/gtk-4.0/Mint-Y,
+            label: "Area: gtk4"
+          },
+          {
+            project: GTK4,
+            repo: "https://github.com/ubuntu/yaru.git",
+            upstreambranch: master,
+            localbranch: gtk4,
+            projectdir: yaru,
+            src: gtk/src/default/gtk-4.0/,
+            dest: gtk/upstream/gtk-4.0/Yaru,
+            label: "Area: gtk4"
           },
           # {
           #   project: Libhandy,
@@ -67,13 +86,11 @@ jobs:
           #   src: src/themes/,
           #   dest: gtk/upstream/libhandy/themes
           # },
-      ]
-    
-    permissions: write-all
+        ]
     
     steps:
       # Checkout code
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Download from ${{ matrix.buildenv.repo }}, on branch ${{ matrix.buildenv.upstreambranch }}
         id: checknewupstream
         run: |
@@ -95,7 +112,7 @@ jobs:
           if [ -n "$MODIFIED" ]; then
             hasModif="true"
           fi
-          echo "::set-output name=modified::${hasModif}"
+          echo "modified=${hasModif}"
         env:
           UPSTREAM_REPO_URL: ${{ matrix.buildenv.repo }}
           UPSTEAM_BRANCH: ${{ matrix.buildenv.upstreambranch }}
@@ -104,11 +121,11 @@ jobs:
           PROJECT_DIR: ${{ matrix.buildenv.projectdir }}
       - name: Create or update Pull Request
         if: steps.checknewupstream.outputs.modified == 'true'
-        uses: peter-evans/create-pull-request@v4
+        uses: peter-evans/create-pull-request@v5
         with:
           commit-message: New upstream snapshot for ${{ matrix.buildenv.project }}
           title: Auto update new upstream snapshot for ${{ matrix.buildenv.project }}
-          labels: automated pr, new upstream
-          body: "[New upstream ${{ matrix.buildenv.project }} changes](https://github.com/hsbasu/sucharu/actions?query=workflow%3A%22Update+PR+on+upstream+changes+once+landed+on+ubuntu%22) by GitHub Action"
+          labels: automated pr, new upstream, ${{ matrix.buildenv.label }}
+          body: "[New upstream ${{ matrix.buildenv.project }} changes](https://github.com/mamolinux/sucharu/actions?query=workflow%3A%22Update+PR+on+upstream+changes+once+landed+on+ubuntu%22) by GitHub Action"
           branch: upstream-${{ matrix.buildenv.localbranch }}-update
           token: ${{ secrets.GITHUB_TOKEN }}
