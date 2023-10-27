@@ -1,8 +1,9 @@
 $variant: 'light';
-$darker: 'true';
 $tint: 'no-tint';
+$darker: 'true';
 
 @import 'sass/colors';
 @import 'sass/drawing';
 @import 'sass/common';
 @import 'sass/colors-public';
+@import 'sass/tweaks';
