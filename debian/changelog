@@ -1,3 +1,53 @@
+sucharu (2.0.9) stable; urgency=medium
+
+  * Update readme to version 2.0.8 and add FUNDING (#49)
+  * New upstream snapshot for Cinnamon (#42)
+    Co-authored-by: hsbasu <hsbasu@users.noreply.github.com>
+  * New upstream snapshot for GTK4 (#48)
+    Co-authored-by: hsbasu <hsbasu@users.noreply.github.com>
+  * New upstream snapshot for GTK3 (#43)
+    Co-authored-by: hsbasu <hsbasu@users.noreply.github.com>
+  * New upstream snapshot for Cinnamon (#51)
+    Co-authored-by: hsbasu <hsbasu@users.noreply.github.com>
+  * New upstream snapshot for GTK3 (#50)
+    Co-authored-by: hsbasu <hsbasu@users.noreply.github.com>
+  * New upstream snapshot for GTK4 (#52)
+    Co-authored-by: hsbasu <hsbasu@users.noreply.github.com>
+  * New upstream snapshot for Cinnamon (#53)
+    Co-authored-by: hsbasu <hsbasu@users.noreply.github.com>
+  * Sync cinnamon with upstream at Linux Mint (#54)
+  * Update color defs to match icon theme (#56)
+  * Update cinnamon theme (#57)
+    - Rename sass directory
+    - Use semi-transparent panels
+    - Change border radius in calendar
+    - Add style file to support cinnamon's
+      simplified settings
+    - Update copyright year in LICENSE
+    - Update test-sucharu script
+  * Update gtk 4.0 assets (#59)
+    - Add titlebar buttons
+    - Update assets svg file
+    - Update assets list file
+  * Update gtk4 theme (#60)
+    - Add sucharu specific modifications
+    - Rebase from mint-y theme
+  * New upstream snapshot for Cinnamon (#55)
+    Co-authored-by: hsbasu <hsbasu@users.noreply.github.com>
+  * New upstream snapshot for GTK3 (#58)
+    Co-authored-by: hsbasu <hsbasu@users.noreply.github.com>
+  * Rebase gtk3 from mint-y (#61)
+  * Rebase cinnamon from mint-y (#62)
+  * Update testing script (#63)
+  * Update workflow for automated PR (#64)
+    - Update permissions
+    - Add area labels automatically
+    - Add gnome shell from yaru
+    - Add gtk3 and gtk4 from yaru
+    - Update github actions dependencies
+
+ -- Himadri Sekhar Basu <hsb10@iitbbs.ac.in>  Fri, 27 Oct 2023 16:48:49 +0530
+
 sucharu (2.0.8) stable; urgency=medium
 
   * Update readme with version 2.0.7 (#35)
