@@ -11,6 +11,7 @@ python = find_program('python3')
 sassc = find_program('sassc')
 
 subdir('common')
+subdir('files')
 
 components = [
   'metacity',
