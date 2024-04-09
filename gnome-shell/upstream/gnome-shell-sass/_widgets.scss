@@ -21,10 +21,8 @@
 @import 'widgets/ibus-popup';
 // Notifications
 @import 'widgets/notifications';
-@import 'widgets/hotplug';
 // Dialogs
 @import 'widgets/dialogs';
-@import 'widgets/network-dialog';
 // OSDs
 @import 'widgets/osd';
 @import 'widgets/switcher-popup';
@@ -33,6 +31,7 @@
 // Panel
 @import 'widgets/panel';
 @import 'widgets/corner-ripple';
+@import 'widgets/quick-settings';
 // Overview
 @import 'widgets/overview';
 @import 'widgets/window-picker';
@@ -46,9 +45,8 @@
 @import 'widgets/misc';
 @import 'widgets/keyboard';
 @import 'widgets/looking-glass';
-// Lock / login screens
-@import 'widgets/login-dialog';
-@import 'widgets/screen-shield';
+// Lock / login screen
+@import 'widgets/login-lock';
 
 // Yaru change: make font normal here to have less diff in the widgets
 * {
