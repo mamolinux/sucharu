@@ -1,3 +1,5 @@
+@import 'sass-utils';
+
 @function get_accent_color($accent_color, $is_dark: false) {
     $color: null;
     @if $accent_color == 'default' {
@@ -30,9 +32,19 @@
 }
 
 $sucharu_is_dark_variant: @sucharu_dark_variant@;
+$jet: #181818;
+$sucharu_bg_color: if($sucharu_is_dark_variant, #FAFAFA, lighten($jet, 8%));
 $sucharu_accent_bg_color: get_accent_color('@sucharu_accent_color@', $sucharu_is_dark_variant);
-$accent_bg_color: $sucharu_accent_bg_color;
-$accent_color: $sucharu_accent_bg_color;
+
+$contrast_target: if($sucharu_is_dark_variant, 4.5, 4.8);
+$sucharu_accent_color: optimize-contrast($sucharu_bg_color,
+    $sucharu_accent_bg_color, $target: $contrast_target);
+
 @debug("Accent color is " + $sucharu_accent_bg_color);
+@debug("Contrast optimized accent is " + $sucharu_accent_color);
+
+$accent_bg_color: $sucharu_accent_bg_color;
+$accent_fg_color: white;
+$accent_color: $sucharu_accent_color;
 
 @import '@sucharu_theme_entry_point@'
