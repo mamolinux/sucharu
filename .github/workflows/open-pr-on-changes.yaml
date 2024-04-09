@@ -112,7 +112,7 @@ jobs:
           if [ -n "$MODIFIED" ]; then
             hasModif="true"
           fi
-          echo "modified=${hasModif}"
+          echo "::set-output name=modified::${hasModif}"
         env:
           UPSTREAM_REPO_URL: ${{ matrix.buildenv.repo }}
           UPSTEAM_BRANCH: ${{ matrix.buildenv.upstreambranch }}
@@ -121,7 +121,7 @@ jobs:
           PROJECT_DIR: ${{ matrix.buildenv.projectdir }}
       - name: Create or update Pull Request
         if: steps.checknewupstream.outputs.modified == 'true'
-        uses: peter-evans/create-pull-request@v5
+        uses: peter-evans/create-pull-request@v6
         with:
           commit-message: New upstream snapshot for ${{ matrix.buildenv.project }}
           title: Auto update new upstream snapshot for ${{ matrix.buildenv.project }}
