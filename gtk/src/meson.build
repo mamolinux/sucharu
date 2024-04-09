@@ -9,11 +9,12 @@ gtk_versions = [
 ]
 
 gtk_sucharu_colors_defs = {}
-
+sass_global_paths = ['-I', meson.project_source_root() / 'common']
 message('\n\nAll flavours: ')
 message(flavours)
 
 foreach flavour: flavours
+  message('Configuring flavour ' + flavour)
   suffix = flavour == 'default' ? '' : '-@0@'.format(flavour)
   theme_name = meson.project_name() + suffix
   is_dark = flavour == 'dark' or flavour.endswith('-dark')
@@ -46,6 +47,7 @@ foreach flavour: flavours
     )
 
     accent_color_code = run_command(sassc,
+      sass_global_paths,
       accent_info_css, check: true).stderr().split(' Accent color is ')[1].strip()
     assert(accent_color_code.startswith('#'), 'No accent color code found')
   endif
@@ -138,7 +140,7 @@ foreach flavour: flavours
 
       # Look for scss files in the variant dir first, otherwise fallback to
       # base, default or upstream paths, so using reversed order
-      scss_paths = []
+      scss_paths = sass_global_paths
       gtk_scss_dependencies = []
       foreach src: sources_priority
         scss_paths += ['-I', meson.current_source_dir() / src ]
@@ -208,7 +210,7 @@ foreach flavour: flavours
       )
     endforeach
     install_data(gtk_css, install_dir: install_path)
-    
+
     # build and install assets
     foreach src: sources_priority
       assets_rel_dir = src / 'assets'

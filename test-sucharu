@@ -3,8 +3,8 @@
 rm -rf ~/.local/share/themes/Sucharu*
 
 meson setup -Dprefix=$HOME/.local builddir
-meson compile -C builddir
-meson install -C builddir
+meson compile -C builddir --verbose
+meson install -C builddir # --dry-run
 
 # remove build directory
 rm -rf builddir
