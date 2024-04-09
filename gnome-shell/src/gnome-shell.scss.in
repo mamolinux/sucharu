@@ -1,8 +1,9 @@
 $variant: if(@DarkVariant@, 'dark', 'light');
 $sucharu_variant: '@SucharuVariant@';
 $use_gresource: @UseGResource@;
-$high_contrast: @HighContrast@;
+$is_highcontrast: @HighContrast@;
 $UPSTREAM_VARIANTS: ['dark', 'light'];
+$contrast: if($is_highcontrast, 'high', 'normal');
 
 @import 'sass-utils';
 
@@ -53,7 +54,12 @@ $UPSTREAM_VARIANTS: ['dark', 'light'];
     @return url(quote($url));
 }
 
-@debug 'Generating GNOME Shell ' + $sucharu_variant + ' theme (' + $variant +' variant, hc: '+ $high_contrast+')';
+@if not list-index(["dark", "light"], $sucharu_variant) and
+    not variable-exists("accent_bg_color") {
+    @error "Missing definition for accent color variable: $accent_bg_color";
+}
+
+@debug 'Generating GNOME Shell ' + $sucharu_variant + ' theme (' + $variant +' variant, hc: '+ $is_highcontrast+')';
 
 @import "gnome-shell-sass/_@Colors@";
 @import "gnome-shell-sass/_drawing";
@@ -61,17 +67,3 @@ $UPSTREAM_VARIANTS: ['dark', 'light'];
 @import "gnome-shell-sass/_widgets";
 @import "gnome-shell-sass/_dock";
 
-@if $high_contrast {
-    //force symbolic icons
-    stage {
-        -st-icon-style: symbolic;
-    }
-
-    .toggle-switch {
-        width: 48px;
-        background-image: sucharu-url-handler("resource:///org/gnome/shell/theme/toggle-off-hc.svg");
-        &:checked {
-            background-image: sucharu-url-handler("resource:///org/gnome/shell/theme/toggle-on-hc.svg");
-        }
-    }
-}
