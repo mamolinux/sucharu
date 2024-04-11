@@ -38,5 +38,3 @@ foreach component: components
   subdir(component)
 
 endforeach
-
-run_command('make', check: true)

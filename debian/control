@@ -2,10 +2,9 @@ Source: sucharu
 Section: gnome
 Priority: optional
 Maintainer: Himadri Sekhar Basu <hsb10@iitbbs.ac.in>
-Build-Depends: debhelper-compat (= 13),
-               dh-migrations,
+Build-Depends: debhelper-compat (= 13)
 Build-Depends-Indep: libglib2.0-dev,
-                     meson (>= 0.60),
+                     meson (>= 0.61),
                      sassc,
                      python3
 Standards-Version: 4.6.0
