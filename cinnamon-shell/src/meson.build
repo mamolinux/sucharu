@@ -10,6 +10,7 @@ variants = [
 
 DEFAULT_VARIANT = 'light'
 message(meson.project_build_root())
+sucharu_colors_defs = {}
 
 foreach accent: enabled_accent_colors
   if enabled_accent_colors.contains(accent)
@@ -121,6 +122,7 @@ foreach variant: variants
       theme_sources,
     ]
   )
+  sucharu_colors_defs += {theme_full_name: shell_sucharu_colors_defs}
 
   # generate .css files
   variant_styles = []

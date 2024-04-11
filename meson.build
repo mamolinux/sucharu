@@ -23,6 +23,7 @@ components = [
   'ubuntu-unity',
   'xfwm4',
   'cinnamon-shell',
+  'plank',
 ]
 
 enabled_accent_colors = get_option('accent-colors')
