@@ -16,6 +16,7 @@ option('dark', type: 'boolean', value: true, description:'build Sucharu dark fla
 option('darker', type: 'boolean', value: true, description:'build Sucharu darker flavour')
 option('ubuntu-unity', type: 'boolean', value: false, description:'build Sucharu with Unity assets')
 option('xfwm4', type: 'boolean', value: false, description:'build Sucharu with xfwm4 assets')
+option('plank', type: 'boolean', value: true, description:'build Sucharu with plank assets')
 # option('cinnamon', type: 'boolean', value: false, description:'build Sucharu with Cinnamon flavour')
 # option('cinnamon-dark', type: 'boolean', value: false, description:'build Sucharu with Cinnamon dark flavour')
 
