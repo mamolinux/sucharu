@@ -1,3 +1,57 @@
+sucharu (2.1.0) stable; urgency=medium
+
+  [ Himadri Sekhar Basu ]
+  * Update automated PR workflow (#65)
+    - Use different branch for gtk 3 and 4
+      when pulling from mint-themes and yaru
+  * Add support for cinnamon theme accents (#66)
+    - Adding support to choose theme accents
+      from cinnamon's simplified theme settings
+      by clicking on accent colour
+  * Update workflow to fetch from upstream (#67)
+  * Update gnome-shell assets from upstream (#74)
+    - Rebase assets with yaru gnome-shell
+  * Update gnome shell sources with upstream (#75)
+    - Rebase source scss files from yaru
+    - Add Sucharu precific modifications to
+      panel and dash backgrounds
+    - Update meson build script for gnome-shell
+  * Update cinnamon sources with upstream (#76)
+    - Rebase source scss files from mint-themes
+    - Update meson build script for cinnamon
+  * Update common build scripts (#77)
+    - Rebase common build scripts from yaru
+    - Update meson build scripts for gtk and
+      metacity
+    - Update version in meson build script
+    - Update test script
+  * Build plank themes using meson (#78)
+    - Get accent colors from cinnamon
+    - Add option to colorize-dummy-svg
+      to output color in rgb
+  * Update debian packaging for plank themes (#79)
+    - Remove old plank building Makefile
+    - Remove unnecessary codes for debian
+      packaging
+  * Move cinnamon style accents (#80)
+    - Move cinnamon accent styles file to cinnamon
+      theme sources
+    - Modify meson build script to include cinnamon
+      accent styles
+  * Update readme with version 2.0.9 (#84)
+
+  [ github-actions[bot] ]
+  * New upstream snapshot for GTK3 (#69)
+    Co-authored-by: hsbasu <41947504+hsbasu@users.noreply.github.com>
+  * New upstream snapshot for Cinnamon (#71)
+    Co-authored-by: hsbasu <41947504+hsbasu@users.noreply.github.com>
+  * New upstream snapshot for GTK4 (#70)
+    Co-authored-by: hsbasu <41947504+hsbasu@users.noreply.github.com>
+  * New upstream snapshot for GNOME Shell (#73)
+    Co-authored-by: hsbasu <41947504+hsbasu@users.noreply.github.com>
+
+ -- Himadri Sekhar Basu <hsb10@iitbbs.ac.in>  Fri, 31 May 2024 14:53:43 +0530
+
 sucharu (2.0.9) stable; urgency=medium
 
   * Update readme to version 2.0.8 and add FUNDING (#49)
