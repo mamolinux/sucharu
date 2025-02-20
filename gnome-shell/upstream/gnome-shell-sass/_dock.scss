@@ -196,7 +196,8 @@ $dock_style_modes: [null, shrink, extended, extended-shrink];
                     padding-#{opposite($side)}: $padding;
                 }
 
-                .app-well-app {
+                .app-well-app,
+                .overview-tile {
                     &.running .overview-icon {
                         background-image: none;
                     }
@@ -204,7 +205,8 @@ $dock_style_modes: [null, shrink, extended, extended-shrink];
                         background-color: $dock_remark_color;
                     }
 
-                    .app-well-app-running-dot {
+                    .app-well-app-running-dot,
+                    .app-grid-running-dot {
                         margin-bottom: 2px;
                     }
                 }
@@ -337,7 +339,9 @@ $dock_style_modes: [null, shrink, extended, extended-shrink];
     background: $dash_background_color;
 }
 
-#dashtodockContainer.dashtodock .progress-bar {
+#dashtodockContainer.dashtodock .progress-bar,
+.overview-tile .progress-bar,
+.icon-grid .progress-bar {
     /* Customization of the progress bar style. The possible elements
      * are:
      *
@@ -381,12 +385,31 @@ $dock_style_modes: [null, shrink, extended, extended-shrink];
      *   -progress-bar-track-line-width: 1
      *   -progress-bar-background: 204, 204, 204, 1.0
      *   -progress-bar-border: 230, 230, 230, 1.0
+     *   -progress-bar-height-factor: (0.20) 20% of the icon size
      *   -progress-bar-line-width: 1
+     *   -progress-bar-top-offset: undefined
+     *   -progress-bar-valign: 1.0
+     *   -progress-bar-horizontal-padding: 0.05 (5% of icon size)
+     *   -progress-bar-vertical-padding: 0.05 (5% of icon size)
      */
     -progress-bar-track-background: rgba(0, 0, 0, 0.45);
     -progress-bar-track-border: rgba(0, 0, 0, 0.7);
     -progress-bar-background: rgba(255, 255, 255, 1.0);
     -progress-bar-border: rgba(255, 255, 255, 1.0);
+}
+
+#overview,
+.apps-scroll-view {
+    .progress-bar {
+        -progress-bar-height-factor: 0.15;
+        -progress-bar-top-offset: 0;
+        -progress-bar-valign: 0.95;
+    }
+}
+
+#overview .grid-search-results .overview-tile .progress-bar,
+#overview .app-folder-dialog .progress-bar {
+    -progress-bar-height-factor: 0.13;
 }
 
 #dashtodockContainer.top #dash .placeholder,
@@ -415,13 +438,17 @@ $dock_style_modes: [null, shrink, extended, extended-shrink];
     transition-duration: 500ms;
 }
 
-#dashtodockContainer .number-overlay {
+#dashtodockContainer .number-overlay,
+.overview-tile .number-overlay,
+.icon-grid .number-overlay {
     color: rgba(255, 255, 255, 1);
     background-color: rgba(0, 0, 0, 0.8);
     text-align: center;
 }
 
-#dashtodockContainer .notification-badge {
+#dashtodockContainer .notification-badge,
+.overview-tile .notification-badge,
+.icon-grid .notification-badge {
     color: rgba(255, 255, 255, 1);
     background-color: rgba(255, 0, 0, 1);
     padding: 0.2em 0.5em;
@@ -461,6 +488,9 @@ $dock_style_modes: [null, shrink, extended, extended-shrink];
 /* Yaru Dock styling */
 
 $dock_color: $panel_bg_color;
+@if $is_warty_nostalgia {
+    $dock_color: darken($jet, 2%);
+}
 
 @each $side in bottom, top, left, right {
     #dashtodockContainer.#{$side} {
@@ -512,12 +542,6 @@ $dock_color: $panel_bg_color;
             }
         }
 
-        .notification-badge {
-            background-color: $success_color;
-            border: 1px solid darken($success_color,10%);
-            box-shadow: -1px 1px 5px 0px transparentize(black, 0.5);
-        }
-
         .dash-item-container {
             // IMPORTANT: items on the dash need to extend to the edge to be adequate click targets
             // as such the %tile style is overriden and button styles are applied to the child class .overview-icon
@@ -531,7 +555,9 @@ $dock_color: $panel_bg_color;
 
                 $fg:$system_fg_color;
                 $normal_bg: transparent;
-                $bg: transparentize(lighten($dock_color, 15%), 0.25);
+                $focus_bg: transparentize($fg, .83);
+                $bg: transparentize($fg, .90);
+                $checked_bg: transparentize($fg, .75);
 
                 .overview-icon {
                     @extend %tile;
@@ -541,7 +567,8 @@ $dock_color: $panel_bg_color;
                 &:focus .overview-icon { @include button(focus, $tc:$fg, $c:$bg, $style: flat, $always_dark: true);}
                 &:hover .overview-icon { @include button(hover, $tc:$fg, $c:$bg, $style: flat, $always_dark: true);}
                 &:active .overview-icon { @include button(active, $tc:$fg, $c:$bg, $style: flat, $always_dark: true);}
-                &:checked .overview-icon { @include button(checked, $tc:$fg, $c:$bg, $style: flat, $always_dark: true);}
+                &:checked .overview-icon { @include button(checked, $tc:$fg, $c:$checked_bg, $style: flat, $always_dark: true);}
+                &.focused .overview-icon { @include button(active, $tc: $fg, $c:$focus_bg, $style: flat, $always_dark: true);}
             }
 
             // running app dot
@@ -553,5 +580,25 @@ $dock_color: $panel_bg_color;
                 background-color: $selected_bg_color; // Yaru: we want an accented dot
             }
         }
+    }
+}
+
+// Use success color for the notification badges in the overview
+#dashtodockContainer .notification-badge,
+.overview-tile .notification-badge,
+.icon-grid .notification-badge {
+    background-color: $success_color;
+    border: 1px solid darken($success_color, 10%);
+    box-shadow: -1px 1px 5px 0px transparentize(black, 0.5);
+}
+
+// Yaru: align the progress bar with the bottom edge of the icon
+#overview,
+.apps-scroll-view,
+#dashtodockContainer.dashtodock {
+    .progress-bar {
+        -progress-bar-height-multiplier: 0.95;
+        -progress-bar-valign: 1;
+        -progress-bar-vertical-padding: 0;
     }
 }

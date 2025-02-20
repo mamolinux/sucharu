@@ -108,6 +108,11 @@ $_gdm_dialog_width: 25em;
   text-align: center;
 }
 
+.login-dialog-message-hint, .login-dialog-message {
+  color: darken($_gdm_fg, 10%);
+  min-height: 2.75em;
+}
+
 .login-dialog-user-selection-box {
   // padding to ensure the box doesn't overlap the panel
   padding-top: 4em;
@@ -143,8 +148,10 @@ $_gdm_dialog_width: 25em;
 
 .login-dialog-auth-list-title {
   margin-left: 2em;
+  padding-bottom: $base_padding; // Yaru: add some bottom padding
 }
 
+/* Yaru: Use button styling
 .login-dialog-auth-list-item {
   border-radius: $base_border_radius * 2;
   padding: $base_margin;
@@ -153,6 +160,36 @@ $_gdm_dialog_width: 25em;
   &:focus, &:selected {
     background-color: $selected_bg_color;
     color: $selected_fg_color;
+  }
+}
+*/
+
+.login-dialog-auth-list-item {
+  min-width: 300px;
+}
+
+.login-dialog {
+  .login-dialog-auth-list-item {
+    // Yaru: use button styling
+    @extend %button_common;
+    @include button(normal, $tc:$_gdm_fg, $c:$system_base_color, $always_dark: true);
+    &:selected,
+    &:focus { @include button(focus, $tc:$_gdm_fg, $c:$system_base_color, $always_dark: true);}
+    &:hover { @include button(hover, $tc:$_gdm_fg, $c:$system_base_color, $always_dark: true);}
+    &:active { @include button(active, $tc:$_gdm_fg, $c:$system_base_color, $always_dark: true)};
+
+    border-radius: $modal_radius;
+    padding: $base_padding * 1.2;
+  }
+}
+
+.unlock-dialog {
+  // Yaru: use button styling
+  .login-dialog-auth-list-item {
+    @extend %lockscreen_button;
+
+    border-radius: $modal_radius;
+    padding: $base_padding * 1.2;
   }
 }
 
@@ -196,7 +233,6 @@ $_gdm_dialog_width: 25em;
       }
 
       &:logged-in {
-        // color border for logged-in user
         .user-icon {
           border-color: $selected_bg_color;
           StIcon {
@@ -213,9 +249,10 @@ $_gdm_dialog_width: 25em;
   min-width: 30em;
 }
 
-.login-dialog-prompt-entry {
+// removed, causes missing entry selection border theming
+/*.login-dialog-prompt-entry {
   @extend %system_entry;
-}
+}*/
 
 .web-login-dialog-content-overlay {
   background-color: transparentize($bg_color, 0.3);
@@ -224,32 +261,32 @@ $_gdm_dialog_width: 25em;
 }
 
 .web-login-spinner {
-  background-color: rgba(0, 0, 0, 0.5);
-  border: 5px rgba(0, 0, 0, 0.0);
+  color: $osd_fg_color;
+  background-color: transparentize($osd_bg_color, 0.5);
+  border: 5px transparent;
   border-radius: 50px;
 }
 
 .web-login-title-label {
   @include fontsize($base_font_size);
-  color: darken($_gdm_fg, 30%);
+  color: if($variant =='dark', darken($fg_color, 30%), lighten($fg_color, 20%));
 }
 
 .web-login-url-label {
   @include fontsize($base_font_size);
   @extend %monospace;
-  color: $_gdm_fg;
+  color: $fg_color;
   text-align: center;
 }
 
 .web-login-code-title-label {
   @include fontsize($base_font_size);
-  @include fontsize($base_font_size);
-  color: $_gdm_fg;
+  color: $fg_color;
 }
 
 .web-login-code-label {
   @include fontsize($base_font_size);
-  color: $_gdm_fg;
+  color: $fg_color;
   font-weight: bold;
 }
 
@@ -264,7 +301,7 @@ $_gdm_dialog_width: 25em;
 
 .web-login-intro-button-label {
   @include fontsize($base_font_size + 5);
-  color: $_gdm_fg;
+  color: $fg_color;
   height: 3em;
   text-align: center;
   font-weight: bold;
@@ -272,7 +309,7 @@ $_gdm_dialog_width: 25em;
 
 .web-login-intro-button {
   @include fontsize($base_font_size);
-  color: $_gdm_fg;
+  color: $fg_color;
   height: 3em;
   text-align: center;
   border-radius: $base_border_radius * 4;
@@ -314,7 +351,7 @@ $_gdm_dialog_width: 25em;
   .unlock-dialog-clock-time {
     @extend %numeric;
     @include fontsize(72pt);
-    font-weight: 200;
+    font-weight: 800;
   }
 
   .unlock-dialog-clock-date {
@@ -415,7 +452,8 @@ $_gdm_dialog_width: 25em;
       spacing: $base_padding * 4;
 
       .user-widget-label {
-        @extend %title_1;
+        font-weight: 400;
+        @include fontsize(20pt);
         text-align: center;
         margin-bottom: .75em;
       }
@@ -424,7 +462,7 @@ $_gdm_dialog_width: 25em;
         icon-size: $base_icon_size * 10;
 
         & StIcon {
-          padding: $base_padding * 4;
+          padding: $base_padding * 5;
           color: $_gdm_fg; // Yaru change: dark/light theme support
         }
       }
@@ -503,8 +541,16 @@ $_gdm_dialog_width: 25em;
 
 // QR Code
 .qr-code {
-  background: black;
+  @if ($variant == 'light') {
+    $qrcode_bg_color: mix($fg_color, $bg_color, 8%);
+    background-color: $qrcode_bg_color;
+    border-color: $qrcode_bg_color;
+    color: $fg_color;
+  } @else {
+    background-color: $_gdm_fg;
+    border-color: $_gdm_fg;
+    color: $_gdm_bg;
+  }
   border-radius: $base_border_radius * .5;
-  border-color: white;
   border-width: 1em;
 }
