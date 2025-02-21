@@ -69,7 +69,8 @@ source_deps = []
 
 css_sources_path = meson.current_build_dir()
 foreach src: theme_sources
-  out_name = '___'.join('@0@'.format(src).split('/'))
+  srcpath = join_paths(fs.parent(src), fs.name(src))
+  out_name = '___'.join(srcpath.split('/'))
   source_deps += custom_target(out_name,
     input: src,
     output: out_name,

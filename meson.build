@@ -15,13 +15,13 @@ subdir('common')
 components = [
   'metacity',
   'gnome-shell',
+  'cinnamon-shell',
   'gtk',
   'gtksourceview',
   # 'sounds',
   'sessions',
   'ubuntu-unity',
   'xfwm4',
-  'cinnamon-shell',
   'plank',
 ]
 
@@ -33,7 +33,7 @@ foreach component: components
     continue
   endif
 
-  message('\n\n\tBuilding component ' + component)
+  message('\n\tBuilding component ' + component)
   subdir(component)
 
 endforeach
