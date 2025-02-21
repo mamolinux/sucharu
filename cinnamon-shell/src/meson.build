@@ -60,7 +60,8 @@ source_deps = []
 
 css_sources_path = meson.current_build_dir()
 foreach src: theme_sources
-  out_name = '___'.join('@0@'.format(src).split('/'))
+  srcpath = join_paths(fs.parent(src), fs.name(src))
+  out_name = '___'.join(srcpath.split('/'))
   source_deps += custom_target(out_name,
     input: src,
     output: out_name,
@@ -91,7 +92,7 @@ foreach variant: variants
   is_custom_accent = enabled_accent_colors.contains(variant_base_name)
 
   install_theme_sources = true
-  install_dir = cinnamonshell_theme_dir + variant_suffix + '/cinnamon'
+  install_dir = join_paths(cinnamonshell_theme_dir + variant_suffix, 'cinnamon')
 
   accent_configuration = {
     'sucharu_dark_variant': is_dark ? 'true' : 'false',
@@ -131,12 +132,12 @@ foreach variant: variants
   stylename = 'cinnamon' + variant_suffix
   message('style: '+stylename)
 
-  variant_styles += '@0@.css'.format(stylename)
+  variant_styles += stylename+'.css'
   output_styles += 'cinnamon.css'
 
   theme_main_file = configure_file(
     input: 'cinnamon-shell.scss.in',
-    output: '@0@.scss'.format(stylename),
+    output: stylename+'.scss',
     configuration: {
       'DarkVariant': is_dark ? 'true' : 'false',
       'SucharuVariant': variant,
@@ -151,17 +152,17 @@ foreach variant: variants
     theme_sources += theme_main_file
     theme_main_file = configure_file(
       configuration: accent_configuration + {
-        'sucharu_theme_entry_point': meson.project_build_root() / '@0@'.format(theme_main_file),
+        'sucharu_theme_entry_point': join_paths(meson.project_build_root(), fs.parent(theme_main_file), fs.name(theme_main_file)),
       },
       input: accent_colors_definitions_scss,
-      output: '@0@-accent-colors.scss'.format(stylename),
+      output: stylename+'-accent-colors.scss',
     )
   endif
 
   css_file = custom_target(
     'style-@0@'.format(stylename),
     input: theme_main_file,
-    output: '@0@.css'.format(stylename),
+    output: stylename+'.css',
     command: [
       sassc, '-a', '@INPUT@', '@OUTPUT@',
       '-I', css_sources_path,
@@ -190,24 +191,23 @@ foreach variant: variants
   
   # install common assets
   foreach common_asset: common_theme_assets
-    asset_dir = '@0@'.format(common_asset).replace(common_asset_dir, '').replace(fs.name(common_asset), '')
+    asset_dir = fs.parent(common_asset).replace(common_asset_dir, '').split('/')
     basename = join_paths(asset_dir, fs.name(common_asset))
     
-    install_data(common_asset, install_dir: install_dir+'/common-assets'+asset_dir)
+    install_data(common_asset, install_dir: join_paths(install_dir, 'common-assets', asset_dir))
   endforeach
   
   # install colorable assets
   foreach colorable_asset: colorable_theme_assets
-    if '@0@'.format(colorable_asset).contains('common-assets')
-      asset_rel_dir = '@0@'.format(colorable_asset).replace(common_asset_dir, '').replace(fs.name(colorable_asset), '')
-      asset_rel_dir = '/common-assets'+asset_rel_dir
+    col_asset_dir = fs.parent(colorable_asset)
+    if col_asset_dir.contains('common-assets')
+      asset_rel_dir = 'common-assets' + col_asset_dir.replace(common_asset_dir, '')
     else
+      asset_rel_dir = col_asset_dir.replace(colorable_asset_dir, '')
       if is_dark
-        asset_rel_dir = '@0@'.format(colorable_asset).replace(colorable_asset_dir, '').replace(fs.name(colorable_asset), '')
-        asset_rel_dir = '/dark-assets'+asset_rel_dir
+        asset_rel_dir = 'dark-assets' + asset_rel_dir
       else
-        asset_rel_dir = '@0@'.format(colorable_asset).replace(colorable_asset_dir, '').replace(fs.name(colorable_asset), '')
-        asset_rel_dir = '/light-assets'+asset_rel_dir
+        asset_rel_dir = 'light-assets' + asset_rel_dir
       endif
     endif
     basename = join_paths(asset_rel_dir, fs.name(colorable_asset))
@@ -221,16 +221,16 @@ foreach variant: variants
         colorize_dummy_svg,
         shell_sucharu_colors_defs,
         '--input-file', '@INPUT@',
-        '--output-folder', '@OUTDIR@'+'/@0@@1@'.format(variant, asset_rel_dir),
+        '--output-folder', '@OUTDIR@'+'/@0@/@1@'.format(variant, asset_rel_dir),
         '--variant', variant,
       ],
       depends: shell_sucharu_colors_defs,
       build_by_default: true,
     )
 
-    asset_src = meson.current_build_dir() + '/' + variant + asset_rel_dir + fs.stem(basename) + '-' + variant + '.svg'
-    asset_dir = install_dir+asset_rel_dir
-    asset_tgt = install_dir+basename
+    asset_src = join_paths(meson.current_build_dir(), variant, asset_rel_dir, fs.stem(basename) + '-' + variant + '.svg')
+    asset_dir = join_paths(install_dir, asset_rel_dir)
+    asset_tgt = join_paths(install_dir, basename)
     meson.add_install_script(
       'rename-cinnamon-assets.sh', asset_src, asset_dir, asset_tgt
     )
