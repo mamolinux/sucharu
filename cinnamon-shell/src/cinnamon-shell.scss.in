@@ -8,4 +8,5 @@ $sucharu_variant: '@SucharuVariant@';
 @import "@VariantDir@/_@Colors@";
 @import "@VariantDir@/_drawing";
 @import "@VariantDir@/_common";
+@import "@VariantDir@/_dialogs"; // new in Cinnamon 6.4
 @import "@VariantDir@/_tweaks";
