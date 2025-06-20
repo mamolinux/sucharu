@@ -114,7 +114,7 @@ foreach variant: variants
     output: '@BASENAME@.css'.format(variant),
     command: [
       sassc, '-a', '@INPUT@', '@OUTPUT@',
-      '-I', css_sources_path / 'sass',
+      '-I', css_sources_path,
       '-I', meson.project_source_root() / 'common',
     ],
     depends: source_deps,
