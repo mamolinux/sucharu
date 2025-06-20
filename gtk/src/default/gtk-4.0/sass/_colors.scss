@@ -3,38 +3,43 @@
 
 // We need to set this first because we use it to tint many
 // of the remaining colors
+@import 'palette';
 
-$light_tint: if($tint == 'tint', mix(#35a854, #f5f5f5, 2%), #f5f5f5);
-$dark_tint: if($tint == 'tint', mix(#35a854, #383838, 2%), #383838);
+$light_tint: if($tint == 'tint', mix($accent_bg_color, $porcelain, 2%), $porcelain);
+$dark_tint: if($tint == 'tint', mix($accent_bg_color, $inkstone, 2%), $inkstone);
 
-$base_color: if($variant == 'light', #ffffff, #404040);
-$text_color: if($variant == 'light', #303030, #DADADA);
-$bg_color: if($variant == 'light', $light_tint, $dark_tint);
-$fg_color: if($variant =='light', transparentize(black, 0.13), transparentize(white, 0.13));
+$base_color: if($variant == 'light', #ffffff, lighten($jet, 6%));
+$text_color: if($variant == 'light', black, white);
+// $bg_color: if($variant == 'light', $light_tint, $dark_tint);
+$bg_color: if($variant == 'light', #FAFAFA, lighten($jet, 8%));
+$fg_color: if($variant == 'light', $inkstone, $porcelain);
 
-$selected_bg_color: if($variant == 'light', #35a854, #35a854);
-$selected_fg_color: #ffffff;
-$selected_borders_color: darken($selected_bg_color, 15%);
-$borders_color: if($variant =='light', darken($bg_color, 18%), darken($bg_color,6%));
-$separator_color: if($variant == 'light', #DFDFDF, darken($bg_color, 6%));
+$selected_bg_color: if($variant == 'light', lighten($accent_bg_color, 5%), darken($accent_bg_color, 5%));
+// Sucharu: Ignore transformations when using dark accent colors
+$selected_bg_color: $accent_bg_color;
 
-$link_color: #5294E2;
-$link_visited_color: #5294E2;
+$selected_fg_color: $accent_fg_color;
+$selected_borders_color: if($variant== 'light', darken($selected_bg_color, 15%), darken($selected_bg_color, 30%));
+$borders_color: if($variant == 'light', darken($bg_color, 20%), darken($bg_color,8%));
+$separator_color: if($variant == 'light', #dfdfdf, darken($bg_color, 6%));
+
+$link_color: #5294e2;
+$link_visited_color: #5294e2;
 
 $selection_mode_bg: $selected_bg_color;
 $selection_mode_fg: $selected_fg_color;
 $warning_color: #f27835;
 $warning_fg_color: white;
-$error_color: #FC4138;
+$error_color: #fc4138;
 $error_fg_color: white;
 $success_color: #73d216;
-$destructive_color: #F04A50;
+$destructive_color: #f04a50;
 $suggested_color: #6db442;
 $question_color: #55c1ec;
 
 $drop_target_color: $selected_bg_color;
 
-//insensitive state derived colors
+// insensitive state derived colors
 $insensitive_fg_color: transparentize($fg_color, 0.45);
 $insensitive_bg_color: if($variant == 'light', mix($bg_color, $base_color, 40%), lighten($bg_color, 2%));
 
@@ -44,7 +49,7 @@ $header_bg: if($variant == 'light', darken($bg_color, 5%), darken($bg_color, 5%)
 $header_bg_backdrop: if($variant == 'dark', lighten($header_bg, 1.5%), lighten($header_bg, 3%));
 
 $header_border: if($variant == 'light', #BDBDBD, darken($header_bg, 4%));
-$header_highlight: if($variant == 'light', #EEEEEE, #373737);
+$header_highlight: if($variant == 'light', #eeeeee, #373737);
 
 $header_fg: $fg_color;
 
@@ -75,8 +80,11 @@ $osd_borders_color: transparentize(black, 0.3);
 $panel_bg: #2f2f2f;
 $panel_fg: #DADADA;
 
+// Panel colors
+$panel_bg_panel: if($variant == 'light', lighten($accent_bg_color, 5%), darken($accent_bg_color, 5%));
+
 $entry_bg: if($variant=='light', $base_color, lighten($base_color, 0%));
-$entry_border: if($variant == 'light', #BABABA, darken($borders_color, 0%));
+$entry_border: if($variant == 'light', #bababa, darken($borders_color, 0%));
 
 $header_entry_bg: if($variant == 'dark', transparentize(lighten($header_bg, 22%), 0.6), transparentize($base_color, 0.1));
 $header_entry_border: if($variant == 'dark', transparentize(darken($header_bg, 12%), 0.6), transparentize($header_fg, 0.7));
@@ -118,4 +126,8 @@ $wm_button_active_bg: if($variant == 'light', #909090, #949494);
 $wm_icon_bg: if($variant == 'light', #404040, #909090);
 $wm_icon_unfocused_bg: if($variant == 'light', #b6b6b6, #555555);
 $wm_icon_hover_bg: if($variant == 'light', #404040, #C4C7CC);
-$wm_icon_active_bg: #ffffff
+$wm_icon_active_bg: #ffffff;
+
+// terminal colours
+$terminal_bg: if($variant == 'light', #fdf6e3, #380c0c);
+$terminal_fg: if($variant == 'light', #2e3436, #d3d3d3);

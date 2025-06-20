@@ -80,13 +80,10 @@ filechooser {
 // Thunar
 //
 .thunar {
-  @if $variant=='light' and $darker=='false' {
+  @if $variant=='light' {
       toolbar {
         color: $header_fg;
         background-color: $header_bg;
       }
   }
 }
-
-
-

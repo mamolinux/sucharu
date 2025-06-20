@@ -1,6 +1,3 @@
-
-$darker_asset_suffix: if($darker=='true', '-dark', $asset_suffix);
-
 // menu buttons
 menuitem.button.flat,
 modelbutton.flat {
@@ -19,13 +16,13 @@ spinbutton {
   entry {
 
 		&:focus {
-			background-clip: if($darker=='false' and $variant=='light', border-box, padding-box);
+			background-clip: if($variant=='light', border-box, padding-box);
 		}
 
     @each $e_type, $e_color, $e_fg_color in (warning, $warning_color, $warning_fg_color),
                                             (error, $error_color, $error_fg_color) {
       &.#{$e_type} {
-        border-color: if($darker=='false' and $variant=='light', $e_color, $header_entry_border);
+        border-color: if($variant=='light', $e_color, $header_entry_border);
   	  }
 		}
 	}
@@ -34,7 +31,7 @@ spinbutton {
   button {
     &:active, &:checked {
       @include button(header-active);
-      background-clip: if($darker=='false' and $variant=='light', border-box, padding-box);
+      background-clip: if($variant=='light', border-box, padding-box);
     }
   }
 
@@ -42,28 +39,28 @@ spinbutton {
   combobox {
     > .linked > entry.combo {
       &:dir(ltr) {
-        @if $variant=='light' and $darker=='false' { &:focus { box-shadow: 1px 0 $selected_bg_color; } }
+        @if $variant=='light' { &:focus { box-shadow: 1px 0 $selected_bg_color; } }
       }
       &:dir(rtl) {
-        @if $variant=='light' and $darker=='false' { &:focus { box-shadow: -1px 0 $selected_bg_color; } }
+        @if $variant=='light' { &:focus { box-shadow: -1px 0 $selected_bg_color; } }
       }
     }
 	}
 
   progressbar {
-    trough { background-color: if($variant=='light' and $darker=='false', opacify($header_button_border, 0.05), $header_button_border); }
+    trough { background-color: if($variant=='light', opacify($header_button_border, 0.05), $header_button_border); }
   }
 
   // Headerbar Scale
   scale {
-    $_trough_bg: if($variant=='light' and $darker=='false', opacify($header_button_border, 0.05), $header_button_border);
+    $_trough_bg: if($variant=='light', opacify($header_button_border, 0.05), $header_button_border);
 
     slider {
-      $_slider_border: if($variant=='light' and $darker=='false', opacify($header_button_border, 0.2), opacify($header_button_border, 0.3));
-      $_slider_bg: if($variant=='light' and $darker=='false', opacify($header_button_bg,1), lighten(opacify($header_bg,1), 10%));
+      $_slider_border: if($variant=='light', opacify($header_button_border, 0.2), opacify($header_button_border, 0.3));
+      $_slider_bg: if($variant=='light', opacify($header_button_bg,1), lighten(opacify($header_bg,1), 10%));
     }
     trough {
-      &:disabled { background-color: if($variant=='light' and $darker=='false', transparentize($_trough_bg, 0.05), transparentize($_trough_bg, 0.1)); }
+      &:disabled { background-color: if($variant=='light', transparentize($_trough_bg, 0.05), transparentize($_trough_bg, 0.1)); }
     }
   }
 }
@@ -107,7 +104,7 @@ menu,
   headerbar switch#{$k},
   .primary-toolbar switch#{$k},
   .primary-toolbar toolbar switch#{$k} {
-    background-image: -gtk-scaled(url("assets/switch#{$l}-header#{$darker_asset_suffix}.png"),url("assets/switch#{$l}-header#{$darker_asset_suffix}@2.png"));
+    background-image: -gtk-scaled(url("assets/switch#{$l}-header#{$asset_suffix}.png"),url("assets/switch#{$l}-header#{$asset_suffix}@2.png"));
   }
 }
 
@@ -127,13 +124,13 @@ calendar {
 //
 decoration {
 
-  $_wm_border: if($variant=='light' and $darker=='false', transparentize(black, 0.77), transparentize(black, 0.25));
+  $_wm_border: if($variant=='light', transparentize(black, 0.77), transparentize(black, 0.25));
 
 	.ssd &,
   .csd & {
-		border-radius: if($variant=='light' and $darker=='false', 8px 8px 0 0, 4px 4px 0 0);
+		border-radius: if($variant=='light', 8px 8px 0 0, 4px 4px 0 0);
 		// box-shadow: 0 0 0 1px $_wm_border;
-		box-shadow: 0 0 0 1px if($darker=='true' or $variant == 'dark', transparentize(black, 0.35), $_wm_border);
+		box-shadow: 0 0 0 1px if($variant == 'dark', transparentize(black, 0.35), $_wm_border);
 	}
 }
 
@@ -168,7 +165,7 @@ windowcontrols button {
   @each $n, $k in ('close','close'), ('maximize','max'), ('minimize','min') {
     @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
       &.#{$n}#{$l} {
-        // color: red;
+        color: red;
         background-image: -gtk-scaled(url('assets/titlebutton-#{$k}#{$m}#{$asset_suffix}.png'),
                                       url('assets/titlebutton-#{$k}#{$m}#{$asset_suffix}@2.png'));
       }
