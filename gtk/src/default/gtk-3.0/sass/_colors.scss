@@ -5,21 +5,22 @@
 // of the remaining colors
 @import 'palette';
 
+$light_tint: if($tint == 'tint', mix($accent_bg_color, $porcelain, 2%), $porcelain);
+$dark_tint: if($tint == 'tint', mix($accent_bg_color, $inkstone, 2%), $inkstone);
+
 $base_color: if($variant == 'light', #ffffff, lighten($jet, 6%));
 $text_color: if($variant == 'light', black, white);
+// $bg_color: if($variant == 'light', $light_tint, $dark_tint);
 $bg_color: if($variant == 'light', #FAFAFA, lighten($jet, 8%));
 $fg_color: if($variant == 'light', $inkstone, $porcelain);
 
+$selected_bg_color: if($variant == 'light', lighten($accent_bg_color, 5%), darken($accent_bg_color, 5%));
+// Sucharu: Ignore transformations when using dark accent colors
+$selected_bg_color: $accent_bg_color;
+
 $selected_fg_color: $accent_fg_color;
-$selected_bg_color: if($variant == 'light' and $darker == 'false', lighten($accent_bg_color, 5%), darken($accent_bg_color, 5%));
-
-// We need to set this first because we use it to tint many
-// of the remaining colors
-$light_tint: if($tint == 'tint', mix($selected_bg_color, #f5f5f5, 2%), #f5f5f5);
-$dark_tint: if($tint == 'tint', mix($selected_bg_color, #404040, 2%), #404040);
-
 $selected_borders_color: if($variant== 'light', darken($selected_bg_color, 15%), darken($selected_bg_color, 30%));
-$borders_color: if($variant == 'light' and $darker == 'false', darken($bg_color, 18%), darken($bg_color,6%));
+$borders_color: if($variant == 'light', darken($bg_color, 20%), darken($bg_color,8%));
 $separator_color: if($variant == 'light', #dfdfdf, darken($bg_color, 6%));
 
 $link_color: #5294e2;
@@ -44,30 +45,27 @@ $insensitive_bg_color: if($variant == 'light', mix($bg_color, $base_color, 40%),
 
 $dim_label_fg_color: transparentize($fg_color, 0.35);
 
-$header_bg: if($variant == 'light' and $darker == 'false', darken($bg_color, 9%), darken($bg_color, 5%));
-$header_bg: if($darker == 'true', $dark_tint, $header_bg);
-$header_bg_backdrop: if($variant == 'dark' or $darker == 'true', lighten($header_bg, 2.5%), lighten($header_bg, 5%));
+$header_bg: if($variant == 'light', darken($bg_color, 5%), darken($bg_color, 5%));
+$header_bg_backdrop: if($variant == 'dark', lighten($header_bg, 1.5%), lighten($header_bg, 3%));
 
-$header_border: if($variant == 'light' and $darker=='false', #d0d0d0, darken($header_bg, 4%));
+$header_border: if($variant == 'light', #BDBDBD, darken($header_bg, 4%));
 $header_highlight: if($variant == 'light', #eeeeee, #373737);
 
-$header_fg: if($darker == 'false', $fg_color, saturate(transparentize(#f0f0f0, 0.13), 10%));
+$header_fg: $fg_color;
 
-$menu_selected_bg_color: $selected_bg_color;
-$menu_selected_fg_color: $selected_fg_color;
+$menu_selected_bg_color: if($variant == 'light', transparentize(black, 0.9), transparentize(white, 0.9));
 
-$dark_sidebar_bg: if($variant == 'light' and $darker == 'false', saturate(darken($bg_color, 19%), 5%), #292929);
-$dark_sidebar_fg: $header_fg;
+$dark_sidebar_bg: if($variant == 'light', saturate(darken($bg_color, 1%), 5%), #353535);
+$dark_sidebar_fg: $fg_color;
 $dark_sidebar_border: $borders_color;
 
 $filechooser_bg: $header_bg;
 
-$tooltip_bg_color: #fbeaa0;
-$tooltip_fg_color: #4a4a4a;
-$tooltip_border_color: #d0d0d0;
+$tooltip_bg_color: transparentize(mix($selected_bg_color, black, 95%), 0.05);
+$tooltip_fg_color: $selected_fg_color;
 
-$osd_fg_color: $dark_sidebar_fg;
-$osd_bg_color: $dark_sidebar_bg;
+$osd_fg_color: #dbdbdb;
+$osd_bg_color: if($variant == 'light', #404040, #353535);
 
 $osd_button_bg: transparentize(lighten($osd_bg_color, 22%), 0.6);
 $osd_button_border: transparentize(darken($osd_bg_color, 12%), 0.6);
@@ -79,34 +77,33 @@ $osd_insensitive_bg_color: darken($osd_bg_color, 3%);
 $osd_insensitive_fg_color: mix($osd_fg_color, opacify($osd_bg_color, 1), 30%);
 $osd_borders_color: transparentize(black, 0.3);
 
-$panel_bg: if($variant == 'light' and $darker == 'false', #cccccc, #353535);
-$panel_fg: if($variant == 'light' and $darker == 'false', #404040, #dbdbdb);
+$panel_bg: #2f2f2f;
+$panel_fg: #DADADA;
 
 // Panel colors
-$panel_bg_panel: if($variant == 'light' and $darker == 'false', lighten($accent_bg_color, 5%), darken($accent_bg_color, 5%));
+$panel_bg_panel: if($variant == 'light', lighten($accent_bg_color, 5%), darken($accent_bg_color, 5%));
 
 $entry_bg: if($variant=='light', $base_color, lighten($base_color, 0%));
 $entry_border: if($variant == 'light', #bababa, darken($borders_color, 0%));
 
-$header_entry_bg: if($variant == 'dark' or $darker == 'true', transparentize(lighten($header_bg, 22%), 0.6), transparentize($base_color, 0.1));
-$header_entry_border: if($variant == 'dark' or $darker == 'true', transparentize(darken($header_bg, 12%), 0.6), transparentize($header_fg, 0.7));
+$header_entry_bg: if($variant == 'dark', transparentize(lighten($header_bg, 22%), 0.6), transparentize($base_color, 0.1));
+$header_entry_border: if($variant == 'dark', transparentize(darken($header_bg, 12%), 0.6), transparentize($header_fg, 0.7));
 
 $button_bg: if($variant == 'light', lighten($bg_color, 2%), lighten($base_color, 2%));
 $button_border: $borders_color;
-$button_active_bg: $selected_bg_color;
-// $button_active_bg: darken(transparentize($header_bg, 10%));
+$button_active_bg: transparentize(black, 0.85);
 $button_active_border: darken($button_border, 10%);
 
-$header_button_bg: if($variant == 'dark' or $darker == 'true', transparentize(lighten($header_bg, 22%), 0.6), transparentize($button_bg, 0.1));
-$header_button_border: if($variant == 'dark' or $darker == 'true', transparentize(darken($header_bg, 12%), 0.6), transparentize($header_fg, 0.7));
+$header_button_bg: if($variant == 'dark', transparentize(lighten($header_bg, 22%), 0.6), transparentize($button_bg, 0.1));
+$header_button_border: if($variant == 'dark', transparentize(darken($header_bg, 12%), 0.6), transparentize($header_fg, 0.7));
 
 $trough_color_treeview: if($variant == 'light', #d9d9d9, darken($bg_color, 5%));
 $trough_color: if($variant == 'light', #ffffff, darken($bg_color, 5%));
 
 // WM Colors
 
-$wm_title: if($variant == 'light' and $darker =='false', $fg_color, #e6e6e6);
-$wm_title_unfocused: if($variant == 'light' and $darker =='false', #808080, #bfbfbf);
+$wm_title: if($variant == 'light', #404040, $fg_color);
+$wm_title_unfocused: if($variant == 'light', #9d9d9d, #a7a7a7);
 $wm_bg: $header_bg;
 $wm_bg_unfocused: $header_bg;
 $wm_highlight: $header_highlight;
@@ -122,7 +119,7 @@ $wm_button_close_active_bg: darken($selected_bg_color, 20%);
 
 $wm_icon_close_bg: #f8f8f8;
 
-// // Minimize, Maximize
+// Minimize, Maximize
 $wm_button_hover_bg: if($variant == 'light', #fdfdfd, #4c4c4c);
 $wm_button_active_bg: if($variant == 'light', #909090, #949494);
 

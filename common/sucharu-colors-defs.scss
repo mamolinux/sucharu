@@ -4,7 +4,7 @@
 $variant: if($sucharu_is_dark_variant, 'dark', 'light');
 $hc_contrast_target: 5.5;
 
-@import 'colors';
+@import 'sass/colors';
 
 $sucharu_colors: (
     bg-color: $bg_color,

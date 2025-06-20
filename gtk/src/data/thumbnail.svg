@@ -1,0 +1,15 @@
+<svg version="1.1" viewBox="0 0 128 40" xmlns="http://www.w3.org/2000/svg">
+ <path x="-2.220446e-16" y="-4.4408921e-16" width="33.866665" height="10.583333" d="m4.9999 0h118a4.9999 5 0 0 1 4.9999 5v30a4.9999 5 0 0 1-4.9999 5h-118a4.9999 5 0 0 1-4.9999-5v-30a4.9999 5 0 0 1 4.9999-5z" fill="#f5f5f5" stroke-width=".4306"/>
+ <g transform="scale(3.7795)">
+  <rect x="27.781" y="2.6458" width="5.2917" height="5.2917" color="#000000" fill="none"/>
+  <rect x="28.112" y="2.9766" width="4.6302" height="4.6302" rx="2.3151" ry="2.3151" color="#000000" fill="#00ff02"/>
+  <rect x="29.766" y="4.6302" width="1.3229" height="1.3229" rx=".66109" ry=".66146" color="#000000" fill="#fff"/>
+ </g>
+ <rect x="80.001" y="9.9999" width="20" height="20" rx=".99998" ry=".99999" fill="none" stroke-width="0"/>
+ <g transform="scale(3.7795)">
+  <rect x="21.696" y="3.175" width="4.2333" height="4.2333" rx=".26458" ry=".26458" fill="#00ff02"/>
+  <path d="m24.759 4.1755-1.2609 1.265-0.63251-0.63252-0.42169 0.42168 0.63253 0.63252 0.42168 0.42168 0.41754-0.42168 1.2651-1.265z" fill="#fff"/>
+  <path x="1.389061" y="1.1244774" width="17.89126" height="8.3343773" d="m1.9182 1.1245h16.833a0.52917 0.52917 45 0 1 0.52917 0.52917v7.276a0.52917 0.52917 135 0 1-0.52917 0.52917h-16.833a0.52917 0.52917 45 0 1-0.52917-0.52917v-7.276a0.52917 0.52917 135 0 1 0.52917-0.52917z" fill="#fafafa" stroke="#00ff02" stroke-linejoin="round" stroke-width=".26458" style="paint-order:normal"/>
+  <text x="1.9884071" y="7.0731697" color="#000000" fill="#000000" font-family="sans-serif" font-size="4.9843px" stroke-width=".31152" style="line-height:1.25" xml:space="preserve"><tspan x="1.9884071" y="7.0731697" font-size="4.9843px" stroke-width=".31152">Button</tspan></text>
+ </g>
+</svg>

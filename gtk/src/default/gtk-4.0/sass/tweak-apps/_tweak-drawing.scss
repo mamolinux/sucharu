@@ -72,7 +72,7 @@ $container_padding: 2px;
   // pushed header-bar button
   //
     color: $selected_fg_color;
-    border-color: if($darker=='false' and $variant=='light', $header_button_border, transparent);
+    border-color: if($variant=='light', $header_button_border, transparent);
     border-radius: 5px;
   }
 

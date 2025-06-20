@@ -3,7 +3,7 @@
 //
 .nemo-window {
   .places-treeview {
-		-NemoPlacesTreeView-disk-full-bg-color: if($variant == 'light' and $darker == 'false', #dddddd, $dark_sidebar_fg);
+		-NemoPlacesTreeView-disk-full-bg-color: if($variant == 'light', #dddddd, $dark_sidebar_fg);
     
     .view:hover {
       &.cell{

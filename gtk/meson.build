@@ -3,7 +3,6 @@ flavours = []
 available_flavours = [
   'default',
   'dark',
-  'darker'
 ]
 
 foreach flavour: available_flavours
@@ -18,7 +17,6 @@ foreach accent: enabled_accent_colors
   if enabled_accent_colors.contains(accent)
     flavours += (get_option('default') ? [accent] : [])
     flavours += (get_option('dark') ? [ accent + '-dark' ] : [])
-    flavours += (get_option('darker') ? [ accent + '-darker' ] : [])
   endif
 endforeach
 
