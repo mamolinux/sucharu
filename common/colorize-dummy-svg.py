@@ -47,7 +47,7 @@ DUMMY_COLORS = {
 
 assert len(set(DUMMY_COLORS.values())) == len(DUMMY_COLORS.values())
 
-def read_colors_replacements(css_file):
+def read_colors_replacements(css_file, hex2rgb):
     colors_replacements = {}
 
     for l in css_file.readlines():
@@ -56,6 +56,9 @@ def read_colors_replacements(css_file):
                 continue
 
             [named_color, color] = line.split('-sucharu-', 1)[-1].split(': ')
+            if hex2rgb:
+                hexa = color.lstrip('#')
+                color = ';;'.join(str(int(hexa[i:i+2], 16)) for i in (0, 2, 4))
             colors_replacements[DUMMY_COLORS[named_color]] = color
             print(named_color, color, f'(replaces {DUMMY_COLORS[named_color]})')
 
@@ -86,9 +89,10 @@ if __name__ == '__main__':
     parser.add_argument('--variant', default=None)
     parser.add_argument('--filter', action='append', default=[])
     parser.add_argument('--exclude', action='append', default=[])
+    parser.add_argument('--hex2rgb', default=False)
 
     args = parser.parse_args()
-    replacements = read_colors_replacements(args.sucharu_colors_defs_scss)
+    replacements = read_colors_replacements(args.sucharu_colors_defs_scss, args.hex2rgb)
     variant = None if args.variant == 'default' else args.variant
 
     if args.input_file:
