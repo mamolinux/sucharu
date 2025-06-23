@@ -1,3 +1,66 @@
+sucharu (2.1.1) stable; urgency=medium
+
+  [ github-actions[bot] ]
+  * New upstream snapshot for Cinnamon (#83)
+    Co-authored-by: hsbasu <41947504+hsbasu@users.noreply.github.com>
+  * New upstream snapshot for GTK3 (#85)
+    Co-authored-by: hsbasu <41947504+hsbasu@users.noreply.github.com>
+  * New upstream snapshot for GTK3 (#72)
+    Co-authored-by: hsbasu <41947504+hsbasu@users.noreply.github.com>
+  * New upstream snapshot for GTK4 (#81)
+    Co-authored-by: hsbasu <41947504+hsbasu@users.noreply.github.com>
+  * New upstream snapshot for GTK4 (#68)
+    Co-authored-by: hsbasu <41947504+hsbasu@users.noreply.github.com>
+  * New upstream snapshot for GNOME Shell (#82)
+    Co-authored-by: hsbasu <41947504+hsbasu@users.noreply.github.com>
+  * New upstream snapshot for GTK3 (#88)
+    Co-authored-by: hsbasu <41947504+hsbasu@users.noreply.github.com>
+  * New upstream snapshot for GTK4 (#89)
+    Co-authored-by: hsbasu <41947504+hsbasu@users.noreply.github.com>
+  * New upstream snapshot for GNOME Shell (#90)
+    Co-authored-by: hsbasu <41947504+hsbasu@users.noreply.github.com>
+  * New upstream snapshot for Cinnamon (#91)
+    Co-authored-by: hsbasu <41947504+hsbasu@users.noreply.github.com>
+  * New upstream snapshot for GTK3 (#92)
+    Co-authored-by: hsbasu <41947504+hsbasu@users.noreply.github.com>
+  * New upstream snapshot for GTK4 (#93)
+    Co-authored-by: hsbasu <41947504+hsbasu@users.noreply.github.com>
+
+  [ Himadri Sekhar Basu ]
+  * Fix deprecation warnings raised by meson (#86)
+  * Update cinnamon sources with upstream (#87)
+    - Rebase source scss files from mint-themes
+    - Update color definitions to match
+      upstream cinnamon themes
+  * Update gtk themes and scripts (#95)
+    - Drop darker(transition) themes
+    - Add svg templates for thumbnails
+    - Update dummy svg script
+  * Update cinnamon build script (#96)
+  * Rebase and update gnome-shell themes (#97)
+    - Rebase gnome-shell themes from upstream
+    - Update gnome-shell themes build scripts
+    - Add new assets for gnome-shell
+  * Build and install gtk thumbnail (#98)
+    - Build and install gtk thumbnail for cinnamon
+      desktop
+    - Remove darker variant from build scripts
+    - Add svg thumbnail template
+    - Add inkscape and optipng as dependency
+  * Build plank themes using meson and gtk colors (#99)
+    - Build plank themes using meson
+    - Uses gtk color definitions, so gtk must me turned
+      on in meson build file
+    - Restore colorize-dummy-svg script for plank themes
+    - Remove old plank themes
+  * Fix gnome-shell themes (#100)
+  * Update meson, test scripts and workflow (#101)
+    - Update meson version to 1.3.0
+    - Update test script
+  * Update sucharu styles for cinnamon (#102)
+
+ -- Himadri Sekhar Basu <mamolinux@mamolinux.org>  Tue, 24 Jun 2025 02:00:08 +0530
+
 sucharu (2.1.0) stable; urgency=medium
 
   [ Himadri Sekhar Basu ]
