@@ -1,10 +1,19 @@
 #!/bin/bash
 
+rm -rf ~/.local/share/gnome-shell/theme/Sucharu*
 rm -rf ~/.local/share/themes/Sucharu*
-
-meson setup -Dprefix=$HOME/.local builddir
-meson compile -C builddir --verbose
-meson install -C builddir # --dry-run
+rm -rf ~/.local/share/plank/themes/Sucharu*
 
 # remove build directory
 rm -rf builddir
+
+meson setup -Dprefix=$HOME/.local builddir
+meson compile -C builddir --verbose
+meson install -C builddir #--dry-run
+
+echo "Remove builddir?"
+read ans
+if [ "$ans" = "Yes" ] || [ "$ans" = "yes" ] || [ "$ans" = "Y" ] || [ "$ans" = "y" ]; then
+  # remove build directory
+  rm -rf builddir
+fi
