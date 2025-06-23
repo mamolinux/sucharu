@@ -17,7 +17,7 @@ foreach variant: variants
     warning('cinnamon-shell is not enabled, so we won\'t be able to generate plank themes.')
     continue
   endif
-  
+
   is_dark = variant == 'dark' or variant.endswith('-dark')
   is_variant = variant != 'default'
   variant_base_name = is_dark ? variant.split('-dark')[0] : variant
@@ -28,11 +28,9 @@ foreach variant: variants
 
   install_dir = join_paths(plank_theme_dir, theme_full_name)
   target_name = theme_full_name + '-' + 'dock.theme'
-  message(target_name)
 
-  colors_definitions = sucharu_colors_defs['@0@'.format(theme_full_name)]
+  colors_definitions = gtk_sucharu_colors_defs['@0@'.format(theme_full_name)]
   accented_theme = custom_target(
-    '___'.join('@0@'.format(target_name).split('/')),
     input: 'dock.theme.in',
     output: target_name,
     command: [
@@ -49,9 +47,5 @@ foreach variant: variants
   # rename theme variant
   replacestring = theme_full_name.replace(meson.project_name(), '') + '.svg'
   curr_theme = join_paths(meson.current_build_dir(), ('dock.theme' + replacestring))
-  # install_data(curr_theme,
-  #   rename: 'dock.theme',
-  #   install_dir: install_dir)
-
   meson.add_install_script('rename-plank-theme.sh', curr_theme, install_dir)
 endforeach
