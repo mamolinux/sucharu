@@ -1,39 +1,8 @@
-$variant: if(@DarkVariant@, 'dark', 'light');
-$sucharu_variant: '@SucharuVariant@';
+$variant: @Variant@;
 $use_gresource: @UseGResource@;
-$is_highcontrast: @HighContrast@;
-$UPSTREAM_VARIANTS: ['dark', 'light'];
-$contrast: if($is_highcontrast, 'high', 'normal');
+$contrast: @Contrast@;
 
 @import 'sass-utils';
-
-@function is-asset-colorable($asset) {
-    $COLORABLE_ASSETS: @ColorableAssets@; // This is going to be a list.
-
-    @return list-index($COLORABLE_ASSETS, $asset) != null;
-}
-
-@function maybe-add-variant-to-colorable-asset($url) {
-    $path: str-dirname($url);
-    $path: if($path == '.', '', $path + '/');
-    $asset: str-basename($url);
-    $extension: str-extension($asset);
-    $extension: if($extension, '.' + $extension, '');
-
-    /* First remove the upstream variant (if any) from the asset */
-    @each $v in $UPSTREAM_VARIANTS {
-        $suffix: '-' + $v + $extension;
-        @if str-ends-with($asset, $suffix) {
-            $asset: str-slice($asset, 1, - (str-length($suffix) + 1)) + $extension;
-        }
-    }
-
-    @if is-asset-colorable($asset) {
-        $url: $path + str-insert($asset, '-' + $sucharu_variant, str-index($asset, $extension));
-    }
-
-    @return $url;
-}
 
 @function sucharu_url_handler($arg) {
     $url: unquote($arg);
@@ -45,8 +14,6 @@ $contrast: if($is_highcontrast, 'high', 'normal');
         }
     }
 
-    $url: maybe-add-variant-to-colorable-asset($url);
-
     @if $url != $arg {
         @debug($arg + " -> " + $url);
     }
@@ -54,16 +21,10 @@ $contrast: if($is_highcontrast, 'high', 'normal');
     @return url(quote($url));
 }
 
-@if not list-index(["dark", "light"], $sucharu_variant) and
-    not variable-exists("accent_bg_color") {
-    @error "Missing definition for accent color variable: $accent_bg_color";
-}
-
-@debug 'Generating GNOME Shell ' + $sucharu_variant + ' theme (' + $variant +' variant, hc: '+ $is_highcontrast+')';
+@debug 'Generating GNOME Shell ' + $variant + ' theme (contrast: '+ $contrast + ')';
 
 @import "gnome-shell-sass/_@Colors@";
 @import "gnome-shell-sass/_drawing";
 @import "gnome-shell-sass/_common";
 @import "gnome-shell-sass/_widgets";
 @import "gnome-shell-sass/_dock";
-
