@@ -4,15 +4,15 @@
 // When color definition differs for dark and light variant, it gets @if-ed depending on $variant
 
 @import '_palette.scss';
-//@import '_default-colors.scss';
-@import '_yaru-default-colors.scss';
+@import '_default-colors.scss';
+@import '_sucharu-default-colors.scss';
 
 // global colors
 $base_color: if($variant == 'light', $light_1, $_base_color_dark);
-$bg_color: if($variant == 'light', $_base_color_light, lighten($base_color, 5%));
+$bg_color: if($variant == 'light', $_base_color_light, #36363a);
 $fg_color: if($variant == 'light', $_base_color_dark, $light_1);
 
-// Yaru, customize global colors
+// Sucharu, customize global colors
 $bg_color_dark: lighten($jet, 2%);
 $bg_color: if($variant=='light', #FAFAFA, $bg_color_dark);
 $fg_color_dark: $porcelain;
@@ -26,11 +26,11 @@ $osd_bg_color: lighten($_base_color_dark, 5%);
 $system_base_color: $_base_color_dark;
 $system_fg_color: $_base_color_light;
 
-// Yaru override
+// Sucharu override
 $system_fg_color: darken($porcelain, 2%);
 
 // panel colors
-$panel_bg_color: if($variant == 'light', lighten($accent_bg_color, 10%), darken($accent_bg_color, 10%));
+$panel_bg_color: if($variant == 'light', $_base_color_light, $dark_5);
 $panel_fg_color: if($variant == 'light', $_base_color_dark, $light_1);
 
 // card elements
@@ -48,7 +48,7 @@ $borders_color: transparentize($fg_color, $border_opacity);
 $outer_borders_color: if($variant == 'light', darken($bg_color, 7%), lighten($bg_color, 5%));
 
 // Yaru borders color
-$borders_color: if($variant=='light', darken($bg_color, 20%), $yaru_borders_color_dark);
+$borders_color: if($variant=='light', darken($bg_color, 20%), $sucharu_borders_color_dark);
 $outer_borders_color: transparentize($fg_color, 0.85);
 
 // osd colors
@@ -57,7 +57,7 @@ $osd_outer_borders_color: transparentize($osd_fg_color, 0.98);
 
 // system colors
 $system_bg_color: lighten($system_base_color, 5%);
-$system_bg_color: lighten($jet, 4%); // Lighten than dash but darken than bg-color
+$system_bg_color: $_base_color_dark; // Sucharu - use our definition our definition
 $system_borders_color: transparentize($system_fg_color, .9);
 $system_insensitive_fg_color: mix($system_fg_color, $system_bg_color, 50%);
 $system_overlay_bg_color: mix($system_base_color, $system_fg_color, 90%); // for non-transparent items, e.g. dash
@@ -72,7 +72,7 @@ $checked_bg_color: if($variant=='light', darken($bg_color, 7%), lighten($bg_colo
 $checked_fg_color: if($variant=='light', darken($fg_color, 7%), lighten($fg_color, 9%));
 
 // hover state
-// Yaru: we want the hover bg to be a visible gray for dark and light shell themes
+// Sucharu: we want the hover bg to be a visible gray for dark and light shell themes
 $hover_bg_color: transparentize($fg_color, 0.9);
 $hover_fg_color: $fg_color;
 $hover_borders_color: lighten($borders_color, 5%);
@@ -81,7 +81,6 @@ $hover_borders_color: lighten($borders_color, 5%);
 $active_bg_color: if($variant=='light', darken($bg_color, 11%), lighten($bg_color, 12%));
 $active_fg_color: if($variant=='light', darken($fg_color, 11%), lighten($fg_color, 12%));
 
-// selection colors
-$selected_borders_color: if($variant== 'light', darken($selected_bg_color, 15%), lighten($selected_bg_color, 15%));
-
-@import '_yaru-colors.scss';
+// accent colors
+$accent_borders_color: if($variant== 'light', st-darken(-st-accent-color, 20%), st-lighten(-st-accent-color, 30%));
+@import '_sucharu-colors.scss';
