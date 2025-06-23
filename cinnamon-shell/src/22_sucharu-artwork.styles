@@ -2,20 +2,7 @@
   "styles": [
     {
       "name": "Sucharu",
-      "default": "mixed",
-      "mixed": [
-          {"name": "aqua", "color": "#6cabcd", "themes": "Sucharu-aqua-darker", "cinnamon": "Sucharu-aqua", "icons": "Sucharu-aqua", "cursor": "Sucharu-Aqua"},
-          {"name": "blue", "color": "#5b73c4", "themes": "Sucharu-blue-darker", "cinnamon": "Sucharu-blue", "icons": "Sucharu-blue", "cursor": "Sucharu-Blue"},
-          {"name": "brown", "color": "#aa876a", "themes": "Sucharu-brown-darker", "cinnamon": "Sucharu-brown", "icons": "Sucharu-brown", "cursor": "Sucharu-Brown"},
-          {"name": "green", "color": "#12a327", "themes": "Sucharu-darker", "cinnamon": "Sucharu", "icons": "Sucharu", "cursor": "Sucharu-Green", "default": "true"},
-          {"name": "grey", "color": "#9d9d9d", "themes": "Sucharu-grey-darker", "cinnamon": "Sucharu-grey", "icons": "Sucharu-grey", "cursor": "Sucharu-Grey"},
-          {"name": "orange", "color": "#e95420", "themes": "Sucharu-orange-darker", "cinnamon": "Sucharu-orange", "icons": "Sucharu-orange", "cursor": "Sucharu-Orange"},
-          {"name": "pink", "color": "#c76199", "themes": "Sucharu-pink-darker", "cinnamon": "Sucharu-pink", "icons": "Sucharu-pink", "cursor": "Sucharu-Pink"},
-          {"name": "purple", "color": "#8c6ec9", "themes": "Sucharu-purple-darker", "cinnamon": "Sucharu-purple", "icons": "Sucharu-purple", "cursor": "Sucharu-Purple"},
-          {"name": "red", "color": "#da3450", "themes": "Sucharu-red-darker", "cinnamon": "Sucharu-red", "icons": "Sucharu-red", "cursor": "Sucharu-Red"},
-          {"name": "sand", "color": "#c8ac69", "themes": "Sucharu-sand-darker", "cinnamon": "Sucharu-sand", "icons": "Sucharu-sand", "cursor": "Sucharu-Sand"},
-          {"name": "teal", "color": "#5aaa9a", "themes": "Sucharu-teal-darker", "cinnamon": "Sucharu-teal", "icons": "Sucharu-teal", "cursor": "Sucharu-Teal"}
-        ],
+      "default": "light",
       "dark": [
           {"name": "aqua", "color": "#6cabcd", "themes": "Sucharu-aqua-dark", "cursor": "Sucharu-Aqua"},
           {"name": "blue", "color": "#5b73c4", "themes": "Sucharu-blue-dark", "cursor": "Sucharu-Blue"},
