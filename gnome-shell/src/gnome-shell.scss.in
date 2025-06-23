@@ -23,8 +23,8 @@ $contrast: @Contrast@;
 
 @debug 'Generating GNOME Shell ' + $variant + ' theme (contrast: '+ $contrast + ')';
 
-@import "gnome-shell-sass/_@Colors@";
-@import "gnome-shell-sass/_drawing";
-@import "gnome-shell-sass/_common";
-@import "gnome-shell-sass/_widgets";
-@import "gnome-shell-sass/_dock";
+@import "sass/_@Colors@";
+@import "sass/_drawing";
+@import "sass/_common";
+@import "sass/_widgets";
+@import "sass/_dock";
