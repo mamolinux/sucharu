@@ -39,7 +39,7 @@ for f in flavours:
             move(theme_gresource_src, theme_gresource_dst)
 
         # rename css
-        for variant in ['', '-dark', '-darker']:
+        for variant in ['', '-dark']:
             theme_gtk_css = "{flavour}-gtk{variant}-{ver}.css".format(flavour=flavour_name, ver=gtkver, variant=variant)
             theme_gtk_css_src = path.join(gtk_dir, theme_gtk_css)
             if path.exists(theme_gtk_css_src):

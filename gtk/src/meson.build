@@ -6,7 +6,7 @@ gtk_versions = [
 
 gtk_sucharu_colors_defs = {}
 sass_global_paths = ['-I', meson.project_source_root() / 'common']
-message('\n\tAll flavours: @0@'.format(flavours))
+message('All flavours: @0@\n'.format(flavours))
 
 foreach flavour: flavours
   suffix = flavour == 'default' ? '' : '-@0@'.format(flavour)
@@ -65,20 +65,14 @@ foreach flavour: flavours
     message('Working on GTK version ' + gtk_ver)
     gtk_dir = 'gtk-@0@'.format(gtk_ver)
     base_path = (flavour.startswith('mate') ? base_theme_name : 'default') / gtk_dir
-    dark_path = is_dark ? 'dark' : base_path
     default_path = 'default' / gtk_dir
     upstream_path = '..' / 'upstream' / gtk_dir / 'Yaru'
-    # flavour_path = join_paths(flavour, gtk_dir)
     flavour_path = join_paths('flavours', accent, gtk_dir)
-    message('flavour_path : ' + flavour_path+'\n')
-    message('base_path : ' + base_path+'\n')
     install_path = theme_dir / gtk_dir
 
     # Sort by most relevant for the theme flavour
     sources_priority = [
       flavour_path,
-      dark_path,
-      base_path,
       default_path,
       upstream_path,
     ]
@@ -147,41 +141,41 @@ foreach flavour: flavours
     endforeach
 
     # if is_accent
-      gtk_accents_css = configure_file(
-        configuration: accent_configuration + {
-          'sucharu_theme_entry_point': meson.current_source_dir() / gtk_scss_path,
-        },
-        input: accent_colors_definitions_scss,
-        output: '@0@-accent-colors.scss'.format(target_name),
-      )
+    gtk_accents_css = configure_file(
+      configuration: accent_configuration + {
+        'sucharu_theme_entry_point': meson.current_source_dir() / gtk_scss_path,
+      },
+      input: accent_colors_definitions_scss,
+      output: '@0@-accent-colors.scss'.format(target_name),
+    )
 
-      gtk_scss_path = gtk_accents_css
+    gtk_scss_path = gtk_accents_css
 
-      gtk_sucharu_colors_defs_scss = configure_file(
-        configuration: accent_configuration + {
-          'sucharu_theme_entry_point': sucharu_colors_defs_scss,
-        },
-        input: accent_colors_definitions_scss,
-        output: '@0@-sucharu-colors-defs.scss'.format(target_name),
-      )
+    gtk_sucharu_colors_defs_scss = configure_file(
+      configuration: accent_configuration + {
+        'sucharu_theme_entry_point': sucharu_colors_defs_scss,
+      },
+      input: accent_colors_definitions_scss,
+      output: '@0@-sucharu-colors-defs.scss'.format(target_name),
+    )
 
-      sucharu_gtk_colors_defs = custom_target(
-        '@0@-sucharu-colors-definitions'.format(target_name),
-        input: gtk_sucharu_colors_defs_scss,
-        output: '@BASENAME@.css',
-        command: [
-          sassc, '-a',
-          scss_paths,
-          '@INPUT@', '@OUTPUT@',
-        ],
-        depend_files: [
-          sucharu_colors_defs_scss,
-          gtk_scss_dependencies,
-        ]
-      )
+    sucharu_gtk_colors_defs = custom_target(
+      '@0@-sucharu-colors-definitions'.format(target_name),
+      input: gtk_sucharu_colors_defs_scss,
+      output: '@BASENAME@.css',
+      command: [
+        sassc, '-a',
+        scss_paths,
+        '@INPUT@', '@OUTPUT@',
+      ],
+      depend_files: [
+        sucharu_colors_defs_scss,
+        gtk_scss_dependencies,
+      ]
+    )
     # endif
     if gtk_ver == '3.0'
-      gtk_sucharu_colors_defs += {target_name: sucharu_gtk_colors_defs}
+      gtk_sucharu_colors_defs += {theme_full_name: sucharu_gtk_colors_defs}
     endif
     
     generated_css += custom_target(target_name,
@@ -246,16 +240,40 @@ foreach flavour: flavours
   endforeach
 
   if get_option('cinnamon-shell')
-    message('Building thumbnail for: '+theme_full_name)
+    message('Building thumbnail for: @0@\n'.format(flavour))
     # install thumbnail (cinnamon only)
+    colors_definitions = gtk_sucharu_colors_defs['@0@'.format(theme_full_name)]
     if is_dark
-      inputfile = 'data/thumbnail-dark.svg'
-    # elif is_darker
-    #   inputfile = 'data/thumbnail-darker.svg'
+      inputfile = meson.current_source_dir() + '/data/thumbnail-dark.svg'
     else
-      inputfile = 'data/thumbnail.svg'
+      inputfile = meson.current_source_dir() + '/data/thumbnail.svg'
     endif
-    svg_target_name = theme_full_name + '-' + 'thumbnail'
+    basename = join_paths(flavour, 'gtk-3.0', fs.stem(inputfile))
+    if flavour == 'default'
+      svg_target_name = fs.stem(basename) + '.svg'
+      svg_src = join_paths(meson.current_build_dir(), '@0@.svg'.format(basename))
+    else
+      svg_target_name = fs.stem(basename) + '-' + flavour + '.svg'
+      svg_src = join_paths(meson.current_build_dir(), '@0@-@1@.svg'.format(basename, flavour))
+    endif
+    
+    accented_thumbnail_svg = custom_target(
+      '___'.join('@0@'.format(svg_target_name).split('/')),
+      input: inputfile,
+      output: '@BASENAME@-@0@.svg'.format(flavour),
+      command: [
+        colorize_dummy_svg,
+        colors_definitions,
+        '--input-file', '@INPUT@',
+        '--output-folder', '@OUTDIR@'+'/@0@/@1@'.format(flavour, 'gtk-3.0'),
+        '--variant', flavour,
+      ],
+      depends: colors_definitions,
+      build_by_default: true,
+    )
+
+    png_dir = join_paths(theme_dir, 'gtk-3.0')
+    meson.add_install_script('install-thumbnail.py', svg_src, png_dir)
   endif
 endforeach
 
