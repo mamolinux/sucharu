@@ -9,7 +9,6 @@ variants = [
 ]
 
 DEFAULT_VARIANT = 'light'
-message(meson.project_build_root())
 sucharu_colors_defs = {}
 
 foreach accent: enabled_accent_colors
@@ -82,7 +81,7 @@ endforeach
 
 # theme_gresource_xml = files('data/cinnamon-shell-theme.gresource.xml')[0]
 # icons_gresource_xml = files('data/cinnamon-shell-icons.gresource.xml')[0]
-
+message('All variants: @0@\n'.format(variants))
 foreach variant: variants
   is_dark = variant == 'dark' or variant.endswith('-dark')
   is_variant = variant != DEFAULT_VARIANT
@@ -130,7 +129,6 @@ foreach variant: variants
   output_styles = []
 
   stylename = 'cinnamon' + variant_suffix
-  message('style: '+stylename)
 
   variant_styles += stylename+'.css'
   output_styles += 'cinnamon.css'
@@ -239,10 +237,33 @@ foreach variant: variants
     # theme_gresource_deps += asset_target
   endforeach
 
-  # # Install thumbnail image
-  # install_data(join_paths(flavour, 'thumbnail.png'),
-  #   install_dir: theme_dir
-  # )
+  # Install thumbnail image
+  message('Building thumbnail for: @0@\n'.format(variant))
+  if is_dark
+    inputfile = meson.current_source_dir() + '/thumbnail-dark.svg'
+  else
+    inputfile = meson.current_source_dir() + '/thumbnail.svg'
+  endif
+  basename = join_paths(variant, fs.stem(inputfile))
+  svg_target_name = fs.stem(basename) + '-' + variant + '.svg'
+  svg_src = join_paths(meson.current_build_dir(), '@0@-@1@.svg'.format(basename, variant))
+  
+  accented_thumbnail_svg = custom_target(
+    '___'.join('@0@'.format(svg_target_name).split('/')),
+    input: inputfile,
+    output: '@BASENAME@-@0@.svg'.format(variant),
+    command: [
+      colorize_dummy_svg,
+      shell_sucharu_colors_defs,
+      '--input-file', '@INPUT@',
+      '--output-folder', '@OUTDIR@'+'/@0@'.format(variant),
+      '--variant', variant,
+    ],
+    depends: shell_sucharu_colors_defs,
+    build_by_default: true,
+  )
+
+  meson.add_install_script('install-thumbnail.py', svg_src, install_dir)
 endforeach
 
 # install accent to share/cinnamon/styles.d

@@ -1,5 +1,5 @@
 project('Sucharu',
-        version: '2.1.0',
+        version: '2.1.1',
         meson_version: '>= 1.3.0',
         license : ['GPL3', 'CC BY-SA 4.0'],
         default_options: ['prefix=/usr'])
