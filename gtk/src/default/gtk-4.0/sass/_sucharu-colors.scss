@@ -1,0 +1,44 @@
+// When color definition differs for dark and light variant,
+// it gets @if ed depending on $variant
+
+// We need to redefine many colors which are
+// done here
+@import 'palette';
+
+// Accents
+$selected_bg_color: $accent_bg_color;
+$selected_fg_color: $accent_fg_color;
+$selected_borders_color: darken($selected_bg_color, 15%);
+$tooltip_bg_color: transparentize(mix($selected_bg_color, black, 95%), 0.05);
+$tooltip_fg_color: $accent_fg_color;
+$drop_target_color: $selected_bg_color;
+
+@if $variant == 'light' {
+    // Light Variant Colors
+    $opposite:              $jet;
+    $base_color:            $white;
+    $text_color:            $inkstone;
+    $bg_color:              $porcelain;
+    $header_bg:             darken($bg_color, 5%);
+    $borders_color:         darken($bg_color, 10%);
+    $fg_color:              $inkstone;
+	$panel_bg:              lighten($accent_bg_color, 5%);
+    $terminal_bg:           #fdf6e3;
+    $terminal_fg:           $text_color;
+} @else {
+    // Dark Variant Colors
+    $opposite:              $porcelain;
+    $base_color:            lighten($jet, 6%);
+    $text_color:            $white;
+    $bg_color:              lighten($jet, 8%);
+    $header_bg:             darken($bg_color, 5%);
+    $borders_color:         lighten($bg_color, 10%);
+    $fg_color:              $porcelain;
+	$panel_bg:              darken($accent_bg_color, 5%);
+    $terminal_bg:           #380c0c;
+    $terminal_fg:           $text_color;
+}
+
+$wm_button_close_bg: lighten($red, 20%);
+$wm_button_max_bg: lighten($green, 20%);
+$wm_button_min_bg: lighten($yellow, 20%);

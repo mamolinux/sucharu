@@ -143,13 +143,6 @@ windowcontrols button {
 
   @include button(undecorated);
 
-  &:hover {
-    @include button(header-hover);
-  }
-  &:active, &:checked {
-    @include button(header-active);
-  }
-
   &.close, &.maximize, &.minimize {
     &, &:hover, &:active, &:checked {
       color: transparent;
@@ -163,11 +156,25 @@ windowcontrols button {
   }
   // Load png assets for each button
   @each $n, $k in ('close','close'), ('maximize','max'), ('minimize','min') {
-    @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
+    @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active'), (':hover:backdrop',''), (':active:backdrop','') {
       &.#{$n}#{$l} {
-        color: red;
-        background-image: -gtk-scaled(url('assets/titlebutton-#{$k}#{$m}#{$asset_suffix}.png'),
-                                      url('assets/titlebutton-#{$k}#{$m}#{$asset_suffix}@2.png'));
+        color: $jet;
+        $bgcolor: null;
+        @if $l == ':backdrop' {color: $slate; $bgcolor: $silk}
+        @else if $l == ':hover' or $l == ':hover:backdrop' {
+          @if $n == 'close' {$bgcolor: lighten($red, 10%)}
+          @else if $n == 'maximize' {$bgcolor: lighten($green, 10%)}
+          @else if $n == 'minimize' {$bgcolor: lighten($yellow, 10%)}
+        } @else if $l == ':active' or $l == ':active:backdrop' {
+          @if $n == 'close' {$bgcolor: darken($red, 5%)}
+          @else if $n == 'maximize' {$bgcolor: darken($green, 5%)}
+          @else if $n == 'minimize' {$bgcolor: darken($yellow, 5%)}
+        }
+        @else { @if $n == 'close' {$bgcolor: $red}
+          @else if $n == 'maximize' {$bgcolor: $green}
+          @else if $n == 'minimize' {$bgcolor: $yellow}
+        }
+        @include draw-circle($bgcolor);
       }
     }
   }
