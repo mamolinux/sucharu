@@ -13,6 +13,8 @@ $tooltip_bg_color: transparentize(mix($selected_bg_color, black, 95%), 0.05);
 $tooltip_fg_color: $accent_fg_color;
 $drop_target_color: $selected_bg_color;
 
+$terminal_fg: null;
+
 @if $variant == 'light' {
     // Light Variant Colors
     $opposite:              $jet;
