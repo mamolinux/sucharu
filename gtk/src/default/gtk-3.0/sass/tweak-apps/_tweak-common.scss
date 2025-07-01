@@ -4,21 +4,14 @@ modelbutton.flat {
 	&:checked { color: $selected_fg_color; }
 }
 
-//
-// Spinbuttons
-//
-spinbutton {
-  // button:active { color: $selected_fg_color; }
+
+check, radio {
+  border-color: $selected_bg_color;
 }
 
 %header_widgets {
   // Headerbar Entries
   entry {
-
-		&:focus {
-			background-clip: if($variant=='light', border-box, padding-box);
-		}
-
     @each $e_type, $e_color, $e_fg_color in (warning, $warning_color, $warning_fg_color),
                                             (error, $error_color, $error_fg_color) {
       &.#{$e_type} {
@@ -29,9 +22,12 @@ spinbutton {
 
   // Headerbar Buttons
   button {
+    padding: 2px;
+    background-color: if($variant=='light', lighten($bg_color, 10%), darken($bg_color, 10%));
+    border-color: if($variant=='light', darken($header_bg, 10%), lighten($header_bg, 10%));
     &:active, &:checked {
       @include button(header-active);
-      background-clip: if($variant=='light', border-box, padding-box);
+      background-color: if($variant=='light', lighten($selected_bg_color, 5%), darken($selected_bg_color, 5%));
     }
   }
 
@@ -134,7 +130,6 @@ decoration {
 	.ssd &,
   .csd & {
 		border-radius: if($variant=='light', 8px 8px 0 0, 4px 4px 0 0);
-		// box-shadow: 0 0 0 1px $_wm_border;
 		box-shadow: 0 0 0 1px if($variant == 'dark', transparentize(black, 0.35), $_wm_border);
 	}
 }
@@ -172,6 +167,7 @@ headerbar.selection-mode {
     }
 
     &.close, &.maximize, &.minimize {
+      -gtk-icon-theme: "Sucharu";
       &, &:hover, &:active, &:active:hover, &:disabled {
         color: transparent;
         background-color: transparent;

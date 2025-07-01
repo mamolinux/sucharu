@@ -1,11 +1,7 @@
-
-
 //
 // GNOME Terminal
 //
 vte-terminal.terminal-screen {
-  -TerminalScreen-background-darkness: 1.0;
-  background-color: $terminal_bg;
   color: $terminal_fg;
 }
 
@@ -13,8 +9,6 @@ vte-terminal.terminal-screen {
 // MATE Terminal
 //
 vte-terminal {
-  -TerminalScreen-background-darkness: 1.0;
-  background-color: $terminal_bg;
   color: $terminal_fg;
 }
 
@@ -72,7 +66,7 @@ filechooser {
 .gnome-panel-menu-bar,
 .mate-panel-menu-bar {
 	&, menubar {
-		background-image: linear-gradient(to bottom, $panel_bg_panel,	shade($panel_bg_panel, 0.85));
+		background-image: linear-gradient(to bottom, $panel_bg,	shade($panel_bg, 0.85));
 	}
 }
 
