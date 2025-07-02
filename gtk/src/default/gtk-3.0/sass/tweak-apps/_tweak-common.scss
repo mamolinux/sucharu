@@ -158,6 +158,8 @@ headerbar.selection-mode {
     @extend .image-button;
 
     @include button(undecorated);
+    background-color: if($variant=='light', lighten($selected_bg_color, 10%), darken($selected_bg_color, 10%));
+    color: $text_color;
 
     &:hover {
       @include button(header-hover);
