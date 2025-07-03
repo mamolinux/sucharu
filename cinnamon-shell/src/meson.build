@@ -263,7 +263,7 @@ foreach variant: variants
     build_by_default: true,
   )
 
-  meson.add_install_script('install-thumbnail.py', svg_src, install_dir)
+  meson.add_install_script('install_thumbnail.py', svg_src, install_dir)
 endforeach
 
 # install accent to share/cinnamon/styles.d

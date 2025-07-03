@@ -18,8 +18,8 @@ Once you have made your edits run ./parse-sass.sh to update the css files
 
 * Open the `assets.svg` file in inkscape. Each object in the .svg file corresponds to an image in the `assets` folder.
 
-* Find the object you want to edit and make your changes. Important: Don't change the obejct id.
+* Find the object you want to edit and make your changes. Important: **Don't change the obejct id**.
 
 * Save `assets.svg` and delete the images corresponding to the edited .svg objects from the `assets` folder (or just delete everything in the `assets` folder).
 
-* Run `./render-assets.sh` from a terminal.
+* Run `python3 ../render_assets.py` from a terminal and follow the instructions.

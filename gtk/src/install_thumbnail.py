@@ -15,5 +15,5 @@ png_thumb = os.path.join(svg_dir, 'thumbnail.png')
 if __name__ == '__main__':
 	os.makedirs(png_dir, exist_ok=True)
 	os.system('inkscape %s -o %s --export-dpi=192' % (svg_src, png_thumb))
-	os.system('optipng -o7 %s' % png_thumb)
+	os.system('optipng -o7 --quiet %s' % png_thumb)
 	os.system('cp -uv %s %s' % (png_thumb, os.path.join(png_dir, 'thumbnail.png')))
