@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# vi: set ft=python :
 
 import sys
 from os import environ, path

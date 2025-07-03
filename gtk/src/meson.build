@@ -273,7 +273,7 @@ foreach flavour: flavours
     )
 
     png_dir = join_paths(theme_dir, 'gtk-3.0')
-    meson.add_install_script('install-thumbnail.py', svg_src, png_dir)
+    meson.add_install_script('install_thumbnail.py', svg_src, png_dir)
   endif
 endforeach
 
