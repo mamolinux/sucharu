@@ -1,3 +1,56 @@
+sucharu (2.1.2) stable; urgency=medium
+
+  [ Himadri Sekhar Basu ]
+  * Build and install cinnamon thumbnail (#104)
+    - Build and install thumbnail for cinnamon theme
+      thumbnail for cinnamon desktop
+    - Add thumbnail svg templates
+    - Update version in meson build
+  * Rebase with upstream mint-themes (#105)
+    - Define all sucharu colors in a separate file
+      and import it to replace default colours
+  * Rebase with upstream mint-themes (#106)
+    - Define sucharu colours in a separate file and
+      import it to replace default colours
+    - Match gtk4 window control buttons with sucharu
+      gtk3 themes. Now we are using coloured close,
+      minimize and maximize buttons in gtk4
+  * Define terminal_fg color in gtk3 and gtk4 (#107)
+  * Fix menu button in titlebar (#108)
+    - Fix invisible menu button in the titlebar
+    - Modify active accent colours
+  * Update gtk3 and gtk4 assets (#109)
+    - Optimize assets svg files for all accents
+    - Update dark mode colours for accents
+    - Update png assets for all accents
+    - Fixes invisible check and radio buttons in dark mode
+  * Update meson build and helper scripts (#110)
+    - Rename cinnamon thumbnail build script
+    - Rename gtk3 thumbnail build script
+    - Use single python script to render all gtk
+      assets. gtk2 assets are exclued. The script
+      needs location of assets svg to render png
+      assets. Updates both gtk3 and gtk4 assets
+    - Remove unnecessary scripts which came with
+      mint-themes
+    - Add reference file to store accent colors in
+      light and dark mode.
+  * Update readme with version 2.1.1 (#111)
+    - Update installation and testing instructions for
+      users and developers.
+    - Add inkscape and optipng as dependencies
+  * Update themes for cinnamon 6.6.0 (#116)
+    - Rebase themes from linux mint for cinnamon 6.6.0
+  * Update workflow (#117)
+    - Use centralized workflow
+    - Run only for tag pushes
+
+  [ github-actions[bot] ]
+  * New upstream snapshot for Cinnamon (#94)
+    Co-authored-by: hsbasu <41947504+hsbasu@users.noreply.github.com>
+
+ -- Himadri Sekhar Basu <hsb10@iitbbs.ac.in>  Sun, 28 Dec 2025 10:37:37 +0530
+
 sucharu (2.1.1) stable; urgency=medium
 
   [ github-actions[bot] ]
