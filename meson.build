@@ -1,5 +1,5 @@
 project('Sucharu',
-        version: '2.1.1',
+        version: run_command('head', '-1', 'debian/changelog', check: true).stdout().split(' ')[1].strip('(').strip(')'),
         meson_version: '>= 1.3.0',
         license : ['GPL3', 'CC BY-SA 4.0'],
         default_options: ['prefix=/usr'])
