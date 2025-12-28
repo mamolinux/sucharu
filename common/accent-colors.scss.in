@@ -32,7 +32,6 @@
 }
 
 $sucharu_is_dark_variant: @sucharu_dark_variant@;
-$tint: "no-tint";
 $jet: #181818;
 $sucharu_bg_color: if($sucharu_is_dark_variant, #FAFAFA, lighten($jet, 8%));
 $sucharu_accent_bg_color: get_accent_color('@sucharu_accent_color@', $sucharu_is_dark_variant);
