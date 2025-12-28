@@ -24,6 +24,7 @@ $fg_color: if($variant=='light', $inkstone, $porcelain);
 $text_color: $fg_color;
 $noaccent_selected_fg_color: if($variant=='light', $text_color, $white);
 $selected_fg_color: $accent_fg_color;
+$dim_color: if($variant=='light', lighten($text_color, 20%), darken($text_color, 20%));
 
 // Panel
 // Sucharu: we are imitating gnome-shell panel

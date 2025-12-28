@@ -9,4 +9,7 @@ $sucharu_variant: '@SucharuVariant@';
 @import "@VariantDir@/_drawing";
 @import "@VariantDir@/_common";
 @import "@VariantDir@/_dialogs"; // new in Cinnamon 6.4
+@import "@VariantDir@/_keyboard"; // new in Cinnamon 6.6
+@import "@VariantDir@/_ibus-popup"; // 6.6
+@import "@VariantDir@/_deprecated";
 @import "@VariantDir@/_tweaks";
