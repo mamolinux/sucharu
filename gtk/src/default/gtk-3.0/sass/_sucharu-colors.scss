@@ -25,6 +25,7 @@ $terminal_fg: null;
     $borders_color:         darken($bg_color, 10%);
     $fg_color:              $inkstone;
 	$panel_bg:              lighten($accent_bg_color, 5%);
+    $panel_fg:              $header_fg;
     $terminal_bg:           #fdf6e3;
     $terminal_fg:           $text_color;
 } @else {
@@ -37,6 +38,7 @@ $terminal_fg: null;
     $borders_color:         lighten($bg_color, 10%);
     $fg_color:              $porcelain;
 	$panel_bg:              darken($accent_bg_color, 5%);
+    $panel_fg:              $header_fg;
     $terminal_bg:           #380c0c;
     $terminal_fg:           $text_color;
 }

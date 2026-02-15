@@ -3,6 +3,20 @@
  * Budgie Desktop *
  ******************/
 
+$menu_bg: $bg_color;
+$trans: 'true';
+$bt_radius: 2px;
+$wm_radius: 10px;
+$solid_borders_color: $borders_color;
+$container_padding: 4px;
+$disabled_fg_color: $insensitive_fg_color;
+$shorter_transition: 0.1s;
+$dash_bg: lighten(red, 20%);
+// $dash_bg: if($trans == 'false',  $panel_bg, rgba(white, 0.1));
+$selection_mode_bg: mix(red, $selected_bg_color, 25%);
+$shadow_4: 0 2px 3px 0 rgba(black, 0.2), 0 3px 5px 0 rgba(black, 0.15);     // Switch-slider hover shadow
+$circular_radius: 5px;
+$small_size: 16px;
 $raven_base_color: $base_color;
 $raven_bg_color: $menu_bg;
 $raven_fg_color: $text_color;
@@ -13,6 +27,10 @@ $raven_border_color: if($variant =='light', $borders_color, rgba(black, 0.75));
 
 $raven_radius: 10px;
 $raven_padding: 8px;
+
+%dim-label, .dim-label {
+  opacity: 0.55;
+}
 
 %raven_middle_button {
   border-radius: 0;
@@ -246,7 +264,7 @@ $raven_padding: 8px;
       }
 
       > box.horizontal > button.image-button.toggle {
-        @extend %flat_button;
+        @include button(normal);
         margin-right: $container_padding;
       }
 
@@ -388,7 +406,7 @@ window.budgie-popover:not(.csd) {
 
 // Menu Button
 button.budgie-menu-launcher {
-  @extend %flat_button;
+  @include button(normal);
 }
 
 // Raven Trigger
@@ -435,13 +453,13 @@ $budgie_panel_radius: $wm_radius + $container_padding / 2;
 // Panel
 .budgie-panel {
   transition: background-color 0.2s cubic-bezier(0, 0, 0.2, 1);
-  background-color: opacify($header_bg, 1);
+  background-color: opacify($panel_bg, 1);
   color: $header_fg;
   font-weight: 500;
   border-width: 0;
 
   &.transparent {
-    background-color: $panel_bg;
+    background-color: transparentize($panel_bg, 0.4);
     color: $panel_fg;
     border-width: 0;
   }
@@ -610,7 +628,7 @@ $budgie_panel_radius: $wm_radius + $container_padding / 2;
   // Icon Tasklist
   button.flat.launcher {
     padding: 0;
-    @extend %flat_button;
+    @include button(normal);
 
     // for indicator colors
     &:not(:checked) {
@@ -759,7 +777,13 @@ $raven_shadow: 0 0 3px 0 rgba(black, 0.2), 0 0 8px 0 rgba(black, 0.15), 0 0 16px
 
   button {
     @extend %raven_button;
-    &.image-button { @extend %circular_button; }
+    &.image-button {
+      @extend %budgie_button;
+      &:active {
+        color: if($variant =='light', lighten($panel_bg, 0.1), lighten($panel_bg, 0.2));
+        background-color: if($variant =='light', lighten($bg_color, 0.1), lighten($bg_color, 0.2));
+      }
+    }
   }
 
   stackswitcher { padding: 0 8px 12px 8px; }
@@ -774,7 +798,7 @@ $raven_shadow: 0 0 3px 0 rgba(black, 0.2), 0 0 8px 0 rgba(black, 0.15), 0 0 16px
       margin-top: -6px; // remove extra spaces, but not perfect :(
 
       button {
-        @extend %flat_button;
+        @include button(normal);
         min-height: 32px;
         min-width: 32px;
         margin: 0;
@@ -877,13 +901,13 @@ $raven_shadow: 0 0 3px 0 rgba(black, 0.2), 0 0 8px 0 rgba(black, 0.15), 0 0 16px
           button.image-button {
             padding: 8px;
             border: none;
-            @extend %selected-button;
+            @extend %selected_button_active;
           }
         }
       }
 
       button.flat {
-        @extend %selected-button;
+        @extend %selected_button_active;
       }
     }
 
@@ -894,7 +918,7 @@ $raven_shadow: 0 0 3px 0 rgba(black, 0.2), 0 0 8px 0 rgba(black, 0.15), 0 0 16px
       > button.text-button.radio {
         padding-top: $raven_padding;
         padding-bottom: $raven_padding;
-        border-top: 1px solid $dark_borders_color;
+        border-top: 1px solid $raven_border_color;
         background-color: $menu_bg;
         @extend %raven_middle_button;
 
@@ -969,7 +993,7 @@ $raven_shadow: 0 0 3px 0 rgba(black, 0.2), 0 0 8px 0 rgba(black, 0.15), 0 0 16px
         image { padding-left: 8px; }
 
         button.image-button { // 'dismiss'
-          @extend %circular_button;
+          @extend %selected_button;
           margin: 8px;
           padding: 2px;
           image { padding: 0; }
@@ -1183,8 +1207,8 @@ window.budgie-switcher-window {
   padding: 8px;
   border-radius: $wm_radius;
   box-shadow: 0 5px 5px 0 transparent, 0 8px 15px 0 transparent,
-              0 3px 3px 0 if($variant == 'light', opacify($wm_shadow, 0.15), opacify($wm_shadow, 0.1)),
-              0 0 0 1px if($variant=='light', rgba($borders_color, 0.15), rgba($dark_borders_color, 0.55)),
+              0 3px 3px 0 if($variant == 'light', opacify(rgba(black, 0.2), 0.15), opacify(rgba(black, 0.2), 0.1)),
+              0 0 0 1px if($variant=='light', rgba($borders_color, 0.15), rgba($raven_border_color, 0.55)),
               inset 0 0 0 1px rgba(white, 0.06);
 
   background-color: if($trans == 'true', rgba($base_color, 0.95), $base_color);
@@ -1251,7 +1275,7 @@ window.budgie-switcher-window {
   entry.search {
     font-size: 120%;
     padding: 6px 12px;
-    box-shadow: inset 0 1px $highlight_color;
+    box-shadow: inset 0 1px $header_highlight;
     background-color: transparent;
   }
 
