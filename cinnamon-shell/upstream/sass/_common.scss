@@ -1615,7 +1615,7 @@ $base_padding: 7px;
     &:hover,
     &:focus {
       color: $panel_fg;
-      background-color: $bg_color2;
+      background-color: $panel_active_bg;
     }
 
     &:active,
@@ -1648,6 +1648,10 @@ $base_padding: 7px;
     border-radius: 99px;
     background-color: $accent_color;
     margin: 0;
+  }
+
+  &-notifications-badge-label {
+    font-size: 12px;
   }
 
   &-button-label {
@@ -1963,7 +1967,7 @@ $applet_padding: 5px;
     &:hover,
     &:checked {
       color: $noaccent_selected_fg_color;
-      background-color: $bg_color2;
+      background-color: $panel_active_bg;
     }
 
     &:highlight {
