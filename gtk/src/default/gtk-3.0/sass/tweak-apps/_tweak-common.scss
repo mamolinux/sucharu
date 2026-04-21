@@ -86,9 +86,10 @@ menubar,
 
 menu,
 .menu {
+  $_menu_bg: linear-gradient(to bottom, mix($accent_bg_color, $bg_color, 20%) 40%, $base_color);
+  background-image: $_menu_bg;
 
   menuitem {
-
     &:hover {
       color: $selected_fg_color;
     }
