@@ -18,25 +18,27 @@ $terminal_fg: null;
 @if $variant == 'light' {
     // Light Variant Colors
     $opposite:              $jet;
-    $base_color:            $white;
+    $base_color:            #e0e4e8;
     $text_color:            $inkstone;
     $bg_color:              $porcelain;
-    $header_bg:             darken($bg_color, 5%);
+    $header_bg:             darken($base_color, 5%);
     $borders_color:         darken($bg_color, 10%);
     $fg_color:              $inkstone;
 	$panel_bg:              lighten($accent_bg_color, 5%);
+    $panel_fg:              $header_fg;
     $terminal_bg:           #fdf6e3;
     $terminal_fg:           $text_color;
 } @else {
     // Dark Variant Colors
     $opposite:              $porcelain;
-    $base_color:            lighten($jet, 6%);
+    $base_color:            #1a1d23;
     $text_color:            $white;
-    $bg_color:              lighten($jet, 8%);
-    $header_bg:             darken($bg_color, 5%);
+    $bg_color:              lighten($base_color, 8%);
+    $header_bg:             darken($base_color, 5%);
     $borders_color:         lighten($bg_color, 10%);
     $fg_color:              $porcelain;
 	$panel_bg:              darken($accent_bg_color, 5%);
+    $panel_fg:              $header_fg;
     $terminal_bg:           #380c0c;
     $terminal_fg:           $text_color;
 }
