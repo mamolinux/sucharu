@@ -43,6 +43,10 @@ $terminal_fg: null;
     $terminal_fg:           $text_color;
 }
 
+// from Space theme
+$headerbar_color: $bg_color;
+
+// close, min, max buttons
 $wm_button_close_bg: lighten($red, 20%);
 $wm_button_max_bg: lighten($green, 20%);
 $wm_button_min_bg: lighten($yellow, 20%);
