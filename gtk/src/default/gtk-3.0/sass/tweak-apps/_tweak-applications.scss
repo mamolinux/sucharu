@@ -75,9 +75,9 @@ filechooser {
 //
 .thunar {
   @if $variant=='light' {
-      toolbar {
-        color: $header_fg;
-        background-color: $header_bg;
-      }
+    toolbar {
+      color: $header_fg;
+      background-color: $header_bg;
+    }
   }
 }

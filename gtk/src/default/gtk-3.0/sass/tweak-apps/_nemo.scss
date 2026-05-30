@@ -1,155 +1,74 @@
-//
-// Nemo
-//
 .nemo-window {
-  .places-treeview {
-		-NemoPlacesTreeView-disk-full-bg-color: if($variant == 'light', #dddddd, $dark_sidebar_fg);
-    
-    .view:hover {
-      &.cell{
-        background-color: transparentize($selected_bg_color, 0.5);
-      }
-      // &:last-child {
-      //   border-radius: 10px;
-      // }
-    }
-  }
-  
-  .sidebar {
-    &.expander {
-      color: red;
+	.places-treeview {
+		-NemoPlacesTreeView-disk-full-bg-color: lighten($header_bg, 15%);
+		-NemoPlacesTreeView-disk-full-fg-color: $blue;
+		-GtkTreeView-vertical-separator: 10; 
+		.view.cell,
+		iconview.cell {
+			&:hover,
+			&:selected {
+				background: $selected_bg_color;
+				color: $selected_fg_color;
+			}
+		}
+	}
 
-      &:hover {
-        // border-radius: 10px;
-        color: $dark_sidebar_fg;
-      }
-    }
+	.sidebar {
+		background-color: $header_bg;
+		.view, .iconview, row {
+			color: $fg_color;
+			background-color: transparent;
+		}
+	}
 
-    .view, row {
-      background-color: inherit;
-    }
-  }
+	.nemo-window-pane {
+		widget.entry {
+			background-clip: padding-box;
+			min-height: 28px;
+			padding: 5px;
+			color: $fg_color;
+			border: 1px solid $blue;
+			border-radius: 3px;
+			&:selected {
+				background-color: $selected_bg_color;
+				color: $selected_fg_color;
+			}
+		}
+	}
 
-  // paned > separator { background-image: image($solid_borders_color); }
+	toolbar.primary-toolbar {
+		margin-bottom: -1px;
+		background: $headerbar_color;
+		button {
+			@include button(header-normal);
+			min-height: 24px;
+			padding: 3px;
+			&:hover { @include button(header-hover); }
 
-  // .nemo-window-pane {
-  //   background-color: red;
-  //   widget.entry { // Rename entry
-  //     border: 2px solid if($variant =='light', $wm_highlight, $selected_bg_color);
-  //     background-color: $entry_bg;
-  //     border-radius: 20px;
-  //     box-shadow: none;
+			&:selected,
+			&:active,
+			&:checked {
+				@include button(header-active); 
+				&:backdrop {
+					@include button(header-normal);
+				}
+			}
 
-  //     &:selected {
-  //       @extend %selected_items;
+			&:backdrop,
+			&:disabled,
+			&:backdrop:disabled {
+				@include button(header-insensitive);
+			}
+		}
+		.path-bar button {
+			&:active, &:checked { border-radius: 0; }
+		}
+	}
 
-  //       &:focus { @extend %selected_items; }
-  //     }
-  //   }
+	.nemo-inactive-pane .view:not(:selected),
+	.nemo-inactive-pane iconview {
+		background-color: darken($base_color, 5%); 
+	}
 
-  //   treeview.view { // Treeview rename entry
-  //     &, &:selected {
-  //       entry {
-  //         color: $fg_color;
-  //         background-color: $base_color;
-  //         border-radius: 20px;
-  //       }
-  //     }
-  //   }
-
-  //   > notebook {
-  //     background-color: $base_color;
-
-  //     infobar > revealer > box { border-bottom: 1px solid $borders_color; }
-
-  //     box.vertical > separator { background: none; }
-  //   }
-  // }
-
-  // .toolbar {
-  //   > button {
-  //     margin-top: 2px;
-  //     margin-bottom: 2px;
-  //     @extend %flat_button;
-  //   }
-  // }
-
-  // .primary-toolbar {
-  //   padding-top: 0;
-  //   padding-bottom: 0;
-  //   border: none;
-  //   color: $header_fg;
-  //   box-shadow: inset 0 -1px $borders_color;
-  //   background-color: $header_bg;
-
-  //   button {
-  //     @extend %headerbar_buttons;
-  //     padding: 0 $container_padding + 2px;
-  //     margin: 6px 1px;
-  //   }
-
-  //   entry {
-  //     @extend %headerbar_entrys;
-  //     margin-top: 4px;
-  //     margin-bottom: 4px;
-  //     margin-left: 0;
-  //     margin-right: 0;
-  //     padding: 2px 10px;
-  //   }
-
-  //   .linked.raised > button {
-  //     border-radius: $bt_radius;
-  //   }
-
-  //   // Pathbar
-  //   .linked.path-bar {
-  //     > button, > button.image-button {
-  //       min-height: 0;
-  //       min-width: 0;
-  //       padding-top: 0;
-  //       padding-bottom: 0;
-  //       border-radius: $bt_radius;
-  //     }
-  //   }
-  // }
-
-  // // Floating Bar
-  // .floating-bar {
-  //   padding: 2px;
-  //   background-color: $selected_bg_color;
-  //   color: $selected_fg_color;
-  //   border-radius: 0;
-  //   border: none;
-
-  //   &.bottom.left {
-  //     border-top-right-radius: 5px;
-  //   }
-
-  //   &.bottom.right {
-  //     border-top-left-radius: 5px;
-  //   }
-
-    // button {
-    //   border: none;
-    //   border-radius: 30px;
-    //   min-height: 16px;
-    //   min-width: 16px;
-    //   -gtk-icon-shadow: none;
-    //   @extend %undecorated_button;
-    //   @extend %selected-button;
-    // }
-  // }
+	grid > paned > separator { background-image: image(darken($base_color, 2%)); }
 }
-
-menu#background,
-menu#selection,
-.nemo-window menu {
-  padding: 6px;
-
-  menuitem {
-    margin: 0;
-  }
-}
-
-// Cinnamon setting
-.view.cs-category-view { border-bottom-right-radius: 10px; }
