@@ -58,7 +58,7 @@ $wm_icon_hover_bg:      null;
 } @else {
     // Dark Variant Colors
     $opposite:              WHITE;
-    $base_color:            #2E2E33;
+    $base_color:            #333339;
     $text_color:            #DADADA;
     $header_bg:             #222226;
     $bg_color:              lighten($header_bg, 5%);
@@ -127,6 +127,12 @@ $tooltip_bg_color: transparentize(mix($selected_bg_color, black, 95%), 0.05);
 $tooltip_fg_color: #FFFFFF;
 $drop_target_color: $selected_bg_color;
 
+@if $variant == 'light' {
+    $button_active_bg: transparentize(black, 0.85);
+} @else {
+    $button_active_bg: transparentize(white, 0.85);
+}
+
 // Links and status
 $link_color: #5294E2;
 $link_visited_color: #5294E2;
@@ -140,8 +146,9 @@ $suggested_color: #6DB442;
 $question_color: #55C1EC;
 
 // Panel (MATE/Xfce)
-$panel_bg: #2F2F2F;
-$panel_fg: #DADADA;
+$xfce_panel_bg: #2e2e33;
+$panel_bg: #222226;
+$panel_fg: #e1e1e1;
 
 // Apps
 $terminal_bg: #222226;
